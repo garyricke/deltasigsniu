@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delta Sigs NIU — Brand Guide</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ---- Brand palette (copy this block into later pages) ---- */
+    --brand-primary:#489868;   /* Nile Green — primary */
+    --brand-pine:#2C5C42;      /* Deep Pine — depth / headers */
+    --brand-cream:#FAF8F3;     /* Carnation White — surface */
+    --brand-white:#FFFFFF;
+    --brand-ink:#1F2A24;       /* Charcoal — body text */
+    --brand-gold:#C9A24B;      /* Heritage Gold — legacy accent */
+    --brand-line:#E6E9E6;      /* hairline / borders */
+    --brand-muted:#8A938C;     /* secondary text */
+
+    --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --maxw:1080px;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(31,42,36,.05), 0 8px 28px rgba(31,42,36,.07);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font-body);
+    color:var(--brand-ink);
+    background:var(--brand-cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- Eyebrow / headings ---------- */
+  .eyebrow{
+    font-family:var(--font-body);
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.72rem;
+    font-weight:600;
+    color:var(--brand-primary);
+  }
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.12;color:var(--brand-pine)}
+  h2{font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.01em}
+  h3{font-size:1.25rem;color:var(--brand-ink)}
+  p{max-width:62ch}
+
+  /* ---------- Top bar / hero ---------- */
+  header.hero{
+    background:
+      radial-gradient(120% 140% at 80% -10%, rgba(72,152,104,.18), transparent 60%),
+      linear-gradient(180deg, var(--brand-white), var(--brand-cream));
+    border-bottom:1px solid var(--brand-line);
+    padding:56px 0 48px;
+  }
+  .hero-logo{width:min(360px,68vw);height:auto;display:block;margin-bottom:28px}
+  .hero h1{font-size:clamp(2.2rem,6vw,3.6rem);color:var(--brand-pine);max-width:16ch}
+  .hero .lede{font-size:1.12rem;color:var(--brand-ink);margin-top:16px;max-width:54ch}
+  .hero .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--brand-white);border:1px solid var(--brand-line);
+    border-radius:999px;padding:7px 14px;font-size:.82rem;font-weight:500;color:var(--brand-pine);
+  }
+  .pill svg{width:16px;height:16px}
+
+  /* ---------- Section scaffolding ---------- */
+  section{padding:64px 0;border-bottom:1px solid var(--brand-line)}
+  section > .wrap > .eyebrow{display:block;margin-bottom:10px}
+  .sec-head{margin-bottom:36px}
+  .sec-head p{color:var(--brand-muted);margin-top:10px}
+
+  /* ---------- Color swatches ---------- */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+  .swatch{background:var(--brand-white);border:1px solid var(--brand-line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .swatch .chip{height:96px}
+  .swatch .info{padding:14px 16px}
+  .swatch .name{font-weight:600;font-size:.95rem}
+  .swatch .role{color:var(--brand-muted);font-size:.8rem;margin-top:2px}
+  .swatch .hex{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;margin-top:8px;color:var(--brand-ink)}
+  .swatch .wcag{font-size:.72rem;color:var(--brand-muted);margin-top:6px}
+
+  /* ---------- Type specimens ---------- */
+  .type-card{background:var(--brand-white);border:1px solid var(--brand-line);border-radius:var(--radius);padding:22px 24px;margin-bottom:16px;box-shadow:var(--shadow)}
+  .type-card .label{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--brand-muted);margin-bottom:10px}
+  .t-display{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,5vw,3rem);line-height:1.05;color:var(--brand-pine)}
+  .t-h2{font-family:var(--font-display);font-weight:600;font-size:2rem;color:var(--brand-pine)}
+  .t-h3{font-family:var(--font-display);font-weight:600;font-size:1.4rem;color:var(--brand-ink)}
+  .t-body{font-size:1.05rem}
+  .t-caption{font-size:.82rem;color:var(--brand-muted)}
+  .font-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.font-pair{grid-template-columns:1fr}}
+
+  .pullquote{
+    font-family:var(--font-display);font-style:italic;font-weight:400;
+    font-size:clamp(1.4rem,3.2vw,2rem);line-height:1.3;color:var(--brand-pine);
+    border-left:4px solid var(--brand-gold);padding-left:22px;max-width:34ch;
+  }
+  .pullquote cite{display:block;font-family:var(--font-body);font-style:normal;font-size:.85rem;color:var(--brand-muted);margin-top:14px;letter-spacing:.02em}
+
+  /* ---------- Logo usage ---------- */
+  .logo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .logo-box{border-radius:var(--radius);border:1px solid var(--brand-line);padding:34px 24px;display:flex;align-items:center;justify-content:center;min-height:150px}
+  .logo-box img{width:170px;height:auto}
+  .bg-white{background:var(--brand-white)}
+  .bg-cream{background:var(--brand-cream)}
+  .bg-green{background:var(--brand-primary)}
+  .bg-photo{background-image:linear-gradient(rgba(31,42,36,.35),rgba(31,42,36,.35)),url('assets/photo-hero.webp');background-size:cover;background-position:center}
+  .logo-caption{font-size:.78rem;color:var(--brand-muted);margin-top:8px;text-align:center}
+
+  .rules{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
+  @media(max-width:640px){.rules{grid-template-columns:1fr}}
+  .rule-col h3{margin-bottom:12px}
+  .rule-col ul{list-style:none;display:grid;gap:9px}
+  .rule-col li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
+  .rule-col li svg{width:18px;height:18px;flex:0 0 18px;margin-top:3px}
+  .do svg{color:var(--brand-primary)}
+  .dont svg{color:#C0573E}
+
+  .clearspace{position:relative;background:var(--brand-white);border:1px dashed var(--brand-muted);border-radius:var(--radius);padding:36px;display:inline-block;margin-top:8px}
+  .clearspace img{width:200px;display:block}
+  .clearspace .x{position:absolute;font-size:.7rem;color:var(--brand-muted);font-family:ui-monospace,monospace}
+
+  /* ---------- Imagery ---------- */
+  .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+  .photo-grid figure{border-radius:var(--radius);overflow:hidden;border:1px solid var(--brand-line);background:var(--brand-white);box-shadow:var(--shadow)}
+  .photo-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .photo-grid figcaption{font-size:.76rem;color:var(--brand-muted);padding:8px 12px}
+  .duotone img{filter:grayscale(1) contrast(1.05);mix-blend-mode:luminosity}
+  .duotone{background:var(--brand-primary)}
+
+  /* ---------- Icons ---------- */
+  .icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:14px}
+  .icon-cell{background:var(--brand-white);border:1px solid var(--brand-line);border-radius:var(--radius);padding:20px;text-align:center;color:var(--brand-primary)}
+  .icon-cell svg{width:28px;height:28px}
+  .icon-cell span{display:block;margin-top:10px;font-size:.76rem;color:var(--brand-muted)}
+
+  /* ---------- Components ---------- */
+  .comp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;align-items:start}
+  .panel{background:var(--brand-white);border:1px solid var(--brand-line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+  .panel > .label{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--brand-muted);margin-bottom:16px}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:600;font-size:.92rem;border-radius:999px;padding:11px 22px;cursor:pointer;border:1.5px solid transparent;text-decoration:none;transition:.15s}
+  .btn svg{width:17px;height:17px}
+  .btn-primary{background:var(--brand-primary);color:#fff}
+  .btn-primary:hover{background:var(--brand-pine)}
+  .btn-outline{background:transparent;color:var(--brand-pine);border-color:var(--brand-primary)}
+  .btn-outline:hover{background:rgba(72,152,104,.08)}
+  .btn-gold{background:var(--brand-gold);color:#3a2f12}
+  .btn-gold:hover{filter:brightness(.96)}
+  .btn-row{display:flex;flex-wrap:wrap;gap:12px}
+
+  .badge-lock{display:inline-flex;align-items:center;gap:7px;background:rgba(201,162,75,.15);color:#7a5e1b;border:1px solid rgba(201,162,75,.4);border-radius:999px;padding:5px 12px;font-size:.76rem;font-weight:600}
+  .badge-lock svg{width:14px;height:14px}
+
+  /* member card */
+  .member-card{background:var(--brand-white);border:1px solid var(--brand-line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .member-card .mc-photo{aspect-ratio:16/10;object-fit:cover;width:100%;display:block}
+  .member-card .mc-body{padding:18px}
+  .member-card .mc-eyebrow{font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--brand-primary);font-weight:600}
+  .member-card h3{font-family:var(--font-display);margin:6px 0 4px}
+  .member-card .mc-meta{font-size:.82rem;color:var(--brand-muted)}
+  .member-card .mc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+
+  /* audio chip */
+  .audio-chip{display:flex;align-items:center;gap:14px;background:var(--brand-pine);color:#fff;border-radius:999px;padding:10px 18px 10px 12px}
+  .audio-chip .play{width:42px;height:42px;flex:0 0 42px;border-radius:50%;background:var(--brand-gold);color:#3a2f12;display:flex;align-items:center;justify-content:center}
+  .audio-chip .play svg{width:18px;height:18px}
+  .audio-chip .track{flex:1;min-width:0}
+  .audio-chip .track .ttl{font-size:.85rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .audio-chip .bar{height:4px;background:rgba(255,255,255,.25);border-radius:2px;margin-top:7px;overflow:hidden}
+  .audio-chip .bar i{display:block;height:100%;width:38%;background:var(--brand-gold)}
+  .audio-chip .time{font-size:.72rem;opacity:.8;margin-top:5px}
+
+  /* signup */
+  .signup{background:linear-gradient(160deg,var(--brand-pine),#234734);color:#fff;border-radius:var(--radius)}
+  .signup h3{color:#fff;font-family:var(--font-display);font-size:1.3rem}
+  .signup p{color:rgba(255,255,255,.82);font-size:.9rem;margin:8px 0 16px}
+  .signup form{display:flex;gap:8px;flex-wrap:wrap}
+  .signup input{flex:1;min-width:160px;border:none;border-radius:999px;padding:11px 16px;font-family:var(--font-body);font-size:.9rem}
+
+  footer{padding:48px 0;text-align:center;color:var(--brand-muted);font-size:.82rem}
+  footer img{width:160px;margin-bottom:18px;opacity:.9}
+
+  /* code block for css vars */
+  .codeblock{background:#13201a;color:#cfe6d8;border-radius:var(--radius);padding:20px 22px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;overflow:auto;line-height:1.7}
+  .codeblock .c{color:#7fa890}
+  .codeblock .v{color:#e7c777}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="hero-logo" src="assets/delta-sigs-logo.svg" alt="Delta Sigs NIU logo">
+    <span class="eyebrow">Brand Guide · v1.0</span>
+    <h1>The look, voice &amp; spirit of Delta Sigs NIU</h1>
+    <p class="lede">A shared visual language for the alumni interview project — built to feel warm, timeless, and unmistakably Delta Sig as we reconnect brothers four decades on.</p>
+    <div class="meta">
+      <span class="pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Established 1985
+      </span>
+      <span class="pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Northern Illinois University
+      </span>
+      <span class="pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M5 12a7 7 0 0 1 7-7M19 12a7 7 0 0 1-7 7"/></svg>
+        Nile Green &amp; White
+      </span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ COLOR ============ -->
+<section id="color">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">01 — Color</span>
+      <h2>Palette</h2>
+      <p>Rooted in Delta Sigma Phi's heritage colors — Nile green and white, with the white carnation. Green leads; cream and white carry the content; gold is a restrained accent reserved for legacy and reunion moments.</p>
+    </div>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="chip" style="background:#489868"></div>
+        <div class="info"><div class="name">Nile Green</div><div class="role">Primary · buttons, links, accents</div><div class="hex">#489868</div><div class="wcag">White text: AA (large/UI)</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#2C5C42"></div>
+        <div class="info"><div class="name">Deep Pine</div><div class="role">Headings · dark surfaces</div><div class="hex">#2C5C42</div><div class="wcag">White text: AAA</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#FAF8F3;border-bottom:1px solid #E6E9E6"></div>
+        <div class="info"><div class="name">Carnation White</div><div class="role">Default page surface</div><div class="hex">#FAF8F3</div><div class="wcag">Ink text: AAA</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#FFFFFF;border-bottom:1px solid #E6E9E6"></div>
+        <div class="info"><div class="name">Pure White</div><div class="role">Cards, panels</div><div class="hex">#FFFFFF</div><div class="wcag">Ink text: AAA</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#1F2A24"></div>
+        <div class="info"><div class="name">Charcoal</div><div class="role">Body text / ink</div><div class="hex">#1F2A24</div><div class="wcag">On cream: AAA</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#C9A24B"></div>
+        <div class="info"><div class="name">Heritage Gold</div><div class="role">Accent · legacy / 40 years</div><div class="hex">#C9A24B</div><div class="wcag">Dark text only</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#E6E9E6"></div>
+        <div class="info"><div class="name">Hairline</div><div class="role">Borders / dividers</div><div class="hex">#E6E9E6</div><div class="wcag">Non-text</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#8A938C"></div>
+        <div class="info"><div class="name">Slate Gray</div><div class="role">Secondary / captions</div><div class="hex">#8A938C</div><div class="wcag">On white: AA</div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:30px">
+      <div class="type-card">
+        <div class="label">CSS variables — copy into every page</div>
+<pre class="codeblock"><span class="c">:root{</span>
+  --brand-primary:<span class="v">#489868</span>;  <span class="c">/* Nile Green   */</span>
+  --brand-pine:<span class="v">#2C5C42</span>;     <span class="c">/* Deep Pine    */</span>
+  --brand-cream:<span class="v">#FAF8F3</span>;    <span class="c">/* Carnation    */</span>
+  --brand-white:<span class="v">#FFFFFF</span>;
+  --brand-ink:<span class="v">#1F2A24</span>;      <span class="c">/* Charcoal     */</span>
+  --brand-gold:<span class="v">#C9A24B</span>;     <span class="c">/* Heritage     */</span>
+  --brand-line:<span class="v">#E6E9E6</span>;
+  --brand-muted:<span class="v">#8A938C</span>;
+<span class="c">}</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TYPOGRAPHY ============ -->
+<section id="type">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">02 — Typography</span>
+      <h2>Type system</h2>
+      <p>Two typefaces. <strong>Fraunces</strong> (serif) gives headlines and pull-quotes a timeless, editorial warmth that suits storytelling. <strong>Inter</strong> (sans) handles body copy and UI for clean legibility. The script wordmark lives only in the logo — never set live text in a script font.</p>
+    </div>
+
+    <div class="font-pair">
+      <div class="type-card">
+        <div class="label">Fraunces · Display &amp; Headings</div>
+        <div class="t-display">Brothers, then &amp; now</div>
+        <p class="t-caption" style="margin-top:12px">Weights 400–700 · use for h1–h3, pull-quotes. Optical sizing on.</p>
+      </div>
+      <div class="type-card">
+        <div class="label">Inter · Body &amp; UI</div>
+        <div class="t-body">Forty years on, the stories are still worth telling. We sat down with the brothers who built Delta Sigs NIU to hear where life took them — and to bring the chapter back together.</div>
+        <p class="t-caption" style="margin-top:12px">Weights 400–700 · body, labels, buttons, captions.</p>
+      </div>
+    </div>
+
+    <div class="type-card">
+      <div class="label">Type scale</div>
+      <div class="t-display">Aa — Display 48</div>
+      <div class="t-h2" style="margin-top:14px">Aa — Heading 32</div>
+      <div class="t-h3" style="margin-top:12px">Aa — Subhead 22</div>
+      <p class="t-body" style="margin-top:12px">Aa — Body 17 · The quick brown fox jumps over the lazy dog.</p>
+      <p class="eyebrow" style="margin-top:14px">Aa — Eyebrow / label 12 · tracked</p>
+      <p class="t-caption" style="margin-top:10px">Aa — Caption 13 · metadata, photo credits, timestamps</p>
+    </div>
+
+    <div class="type-card">
+      <div class="label">Pull-quote treatment (interview pages)</div>
+      <blockquote class="pullquote">
+        We pledged not knowing it would shape the next forty years of friendships.
+        <cite>— Founding member, Delta Sigs NIU</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGO ============ -->
+<section id="logo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">03 — Logo</span>
+      <h2>The wordmark</h2>
+      <p>The vintage athletic script — "Delta Sigs" anchored by the NIU banner. It's the heart of the brand; protect it. Use the white-stroke version over photos and green; the plain version on white and cream.</p>
+    </div>
+
+    <div class="logo-grid">
+      <div>
+        <div class="logo-box bg-white"><img src="assets/delta-sigs-logo.svg" alt="Logo on white"></div>
+        <div class="logo-caption">On white</div>
+      </div>
+      <div>
+        <div class="logo-box bg-cream"><img src="assets/delta-sigs-logo.svg" alt="Logo on cream"></div>
+        <div class="logo-caption">On Carnation White</div>
+      </div>
+      <div>
+        <div class="logo-box bg-green"><img src="assets/delta-sigs-logo-white.svg" alt="Logo on green"></div>
+        <div class="logo-caption">On Nile Green (white stroke)</div>
+      </div>
+      <div>
+        <div class="logo-box bg-photo"><img src="assets/delta-sigs-logo-white.svg" alt="Logo on photo"></div>
+        <div class="logo-caption">On photo (darkened + white stroke)</div>
+      </div>
+    </div>
+
+    <div style="margin-top:34px">
+      <h3>Clear space &amp; minimum size</h3>
+      <p style="color:var(--brand-muted);margin:8px 0 4px">Keep clear space equal to the height of the NIU banner on all four sides. Minimum digital width ≈ 160px so the NIU lettering stays legible.</p>
+      <div class="clearspace">
+        <span class="x" style="top:8px;left:50%;transform:translateX(-50%)">↕ banner-height</span>
+        <img src="assets/delta-sigs-logo.svg" alt="Clear space demo">
+      </div>
+    </div>
+
+    <div class="rules">
+      <div class="rule-col do">
+        <h3>Do</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Use the white-stroke variant on photos &amp; green.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Give it room — respect the clear space.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Keep it on calm, high-contrast areas.</li>
+        </ul>
+      </div>
+      <div class="rule-col dont">
+        <h3>Don't</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Recolor, add gradients, shadows or 3D.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Stretch, skew, or rotate the mark.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Place on busy, low-contrast photos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VOICE ============ -->
+<section id="voice">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">04 — Voice &amp; Tone</span>
+      <h2>How we sound</h2>
+      <p>Warm, plain-spoken, and brotherhood-first. We're not marketing — we're catching up with old friends. Nostalgic but never stiff; proud but humble.</p>
+    </div>
+    <div class="comp-grid">
+      <div class="panel">
+        <div class="label" style="color:var(--brand-primary)">Say this</div>
+        <ul style="list-style:none;display:grid;gap:12px;font-size:.95rem">
+          <li>"Where are they now? Hear it from the brothers themselves."</li>
+          <li>"Forty years later, the stories are still good."</li>
+          <li>"Pull up a chair — let's catch up."</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="label" style="color:#C0573E">Not this</div>
+        <ul style="list-style:none;display:grid;gap:12px;font-size:.95rem;color:var(--brand-muted)">
+          <li>"Leverage our exclusive alumni content platform."</li>
+          <li>"Sign up now to unlock premium member assets."</li>
+          <li>"Engage with our digital brotherhood ecosystem."</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="label">Principles</div>
+        <ul style="list-style:none;display:grid;gap:12px;font-size:.95rem">
+          <li><strong>Personal</strong> — first names, real memories.</li>
+          <li><strong>Brief</strong> — short sentences, no jargon.</li>
+          <li><strong>Inviting</strong> — every line nudges a reconnect.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMAGERY ============ -->
+<section id="imagery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">05 — Imagery</span>
+      <h2>Photography</h2>
+      <p>Real, candid chapter moments — homecoming, gatherings, workouts, reunions. Favor warmth and faces over staged shots. A Nile-green duotone is available for hero overlays and section dividers.</p>
+    </div>
+    <div class="photo-grid">
+      <figure><img loading="lazy" src="assets/photo-hero.webp" alt="Group photo"><figcaption>Group — hero candidate</figcaption></figure>
+      <figure><img loading="lazy" src="assets/photo-2.webp" alt="Event"><figcaption>Gathering</figcaption></figure>
+      <figure><img loading="lazy" src="assets/photo-3.webp" alt="Workout morning"><figcaption>Candid moment</figcaption></figure>
+      <figure class="duotone"><img loading="lazy" src="assets/photo-1.webp" alt="Duotone example"><figcaption style="background:var(--brand-primary);color:#fff">Nile-green duotone option</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ICONS ============ -->
+<section id="icons">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">06 — Iconography</span>
+      <h2>Icons</h2>
+      <p>Flat, minimalist line icons (Lucide style) — 24×24, 2px stroke, drawn with <code>currentColor</code> so they pick up brand colors. No emoji as functional icons.</p>
+    </div>
+    <div class="icon-grid">
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><span>play</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 19v3"/></svg><span>mic</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>mail</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>lock</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>member</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>calendar</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPONENTS ============ -->
+<section id="components" style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">07 — UI Kit</span>
+      <h2>Components</h2>
+      <p>The reusable building blocks for the home page, interview pages, and emails — so everything we build next stays consistent.</p>
+    </div>
+
+    <div class="comp-grid">
+      <div class="panel">
+        <div class="label">Buttons</div>
+        <div class="btn-row">
+          <a class="btn btn-primary"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Listen now</a>
+          <a class="btn btn-outline">Read transcript</a>
+        </div>
+        <div class="btn-row" style="margin-top:12px">
+          <a class="btn btn-gold">Join the reunion</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="label">Members-only badge</div>
+        <span class="badge-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Members only</span>
+        <p style="font-size:.85rem;color:var(--brand-muted);margin-top:14px">Full audio &amp; transcripts sit behind member login; teasers stay public.</p>
+      </div>
+
+      <div class="panel">
+        <div class="label">Audio player chip</div>
+        <div class="audio-chip">
+          <span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <div class="track">
+            <div class="ttl">Ep. 1 — Founding the chapter</div>
+            <div class="bar"><i></i></div>
+            <div class="time">12:04 / 31:55</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="mc-photo" loading="lazy" src="assets/photo-2.webp" alt="Member">
+        <div class="mc-body">
+          <div class="mc-eyebrow">Interview · Class of '87</div>
+          <h3>A brother's story</h3>
+          <div class="mc-meta">From DeKalb to a 30-year career — and back for homecoming.</div>
+          <div class="mc-foot">
+            <span class="badge-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Members</span>
+            <a class="btn btn-primary" style="padding:8px 16px;font-size:.82rem">Listen</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel signup">
+        <h3>Reconnect with the brothers</h3>
+        <p>Join the mailing list — we'll send a note when each new interview drops.</p>
+        <form onsubmit="return false">
+          <input type="email" placeholder="you@email.com" aria-label="Email">
+          <button class="btn btn-gold" type="submit">Sign up</button>
+        </form>
+        <p style="font-size:.72rem;margin-top:10px">Powered by Email Octopus · no spam, unsubscribe anytime.</p>
+      </div>
+
+      <div class="panel">
+        <div class="label">Section header pattern</div>
+        <span class="eyebrow">Interviews</span>
+        <h2 style="font-size:1.6rem;margin-top:6px">Where are they now?</h2>
+        <p style="font-size:.9rem;color:var(--brand-muted);margin-top:8px">Eyebrow + Fraunces heading + supporting line. Use on every section.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/delta-sigs-logo.svg" alt="Delta Sigs NIU">
+    <p>Delta Sigs NIU · Established 1985 · Brand Guide v1.0</p>
+    <p style="margin-top:6px">Nile Green &amp; White · The Carnation</p>
+  </div>
+</footer>
+
+</body>
+</html>

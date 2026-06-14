@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+
+# Secrets / env
+.env
+.env.*
+
+# Audio: confidential masters, transcripts, raw recordings (never publish)
+audio/
+
+# Member-only interview audio (served from private Supabase Storage, not the repo)
+assets/brent-allen-delta-sigs-interview.mp3
+
+# Image masters & AI intermediates (not needed for the site)
+assets/logo-options/
+assets/*.HEIC
+assets/*-gemini.png
+assets/*-openai.png
+assets/delta-sigs-logo-niu-redraw-white-stroke-v3.png
+
+# Node (in case tooling is added later)
+node_modules/
