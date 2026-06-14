@@ -128,7 +128,8 @@
   .chip{background:rgba(201,162,75,.14);color:#7a5e1b;border:1px solid rgba(201,162,75,.38);border-radius:999px;padding:7px 14px;font-size:.8rem;font-weight:600}
 
   .fig{margin:42px 0}
-  .fig img{width:100%;border-radius:16px;display:block;box-shadow:0 10px 30px rgba(44,92,66,.14)}
+  .fig img,.fig video{width:100%;border-radius:16px;display:block;box-shadow:0 10px 30px rgba(44,92,66,.14)}
+  .fig video{aspect-ratio:16/9;background:#13201a;object-fit:cover}
   .fig figcaption{font-size:.82rem;color:var(--brand-muted);margin-top:10px;text-align:center;font-style:italic;font-family:var(--font-display)}
 
   .divider{border:none;border-top:1px solid var(--brand-line);margin:46px 0}
@@ -317,6 +318,12 @@
           <div id="chapter-list"></div>
         </div>
       </div>
+
+      <!-- ════ Watch a moment (members-only, signed URL) ════ -->
+      <figure class="fig">
+        <video id="ds-video" controls preload="none" playsinline poster="assets/brent-shelter-pro.webp" data-video-path="brent-gary-fireplace.mp4"></video>
+        <figcaption>From the 360° camera by the fire — a moment from the night, August 29, 2025.</figcaption>
+      </figure>
 
       <p class="lede">It is the night before Labor Day, 2025. A stone fireplace in an Illinois forest preserve, a good fire going, a bottle of Buffalo Trace, and two men who have known each other for forty years. One of them brought a microphone. What follows is less an interview than a fire that wouldn't go out.</p>
 
@@ -600,6 +607,11 @@
       const { data, error } = await sb.storage.from(BUCKET).createSignedUrl(AUDIO_PATH, 3600);
       if (error || !data){ pending(session.user.email); return; }
       document.getElementById('audio').src = data.signedUrl;
+      const vid = document.getElementById('ds-video');
+      if (vid && vid.dataset.videoPath){
+        const { data:vd } = await sb.storage.from(BUCKET).createSignedUrl(vid.dataset.videoPath, 3600);
+        if (vd) vid.src = vd.signedUrl;
+      }
       reveal();
     }
 
