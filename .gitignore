@@ -23,3 +23,8 @@ node_modules/
 
 # Member-only interview video (served from private Supabase Storage)
 assets/brent-gary-fireplace.mp4
+
+# Raster images now hosted on Cloudinary (kept locally as source)
+assets/*.webp
+assets/favicon.png
+assets/apple-touch-icon.png
