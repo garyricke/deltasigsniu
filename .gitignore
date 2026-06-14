@@ -28,3 +28,7 @@ assets/brent-gary-fireplace.mp4
 assets/*.webp
 assets/favicon.png
 assets/apple-touch-icon.png
+
+# Raster source images (hosted on Cloudinary)
+assets/*.jpg
+assets/*.jpeg
