@@ -204,6 +204,23 @@
   .wm-card p{color:#43504a;font-size:1.02rem;line-height:1.6;margin-bottom:26px}
   .wm-close{position:absolute;top:14px;right:18px;background:none;border:0;font-size:1.6rem;color:var(--brand-muted);cursor:pointer;line-height:1}
   .wm-close:hover{color:var(--brand-pine)}
+
+  /* ── Upcoming events (home) ── */
+  .home-events{background:var(--brand-white);border-top:1px solid var(--brand-line);border-bottom:1px solid var(--brand-line)}
+  .he-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:760px){.he-grid{grid-template-columns:1fr}}
+  .he-card{display:flex;flex-direction:column;border:1px solid var(--brand-line);border-radius:18px;overflow:hidden;text-decoration:none;color:inherit;background:var(--brand-cream);box-shadow:0 12px 30px rgba(31,42,36,.06);transition:.2s}
+  .he-card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(31,42,36,.13);border-color:rgba(72,152,104,.4)}
+  .he-media{height:200px;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background-color:#13201a}
+  .he-media.niu{background:linear-gradient(150deg,#7a1416,#b01e22)}
+  .he-media .big{font-family:var(--font-display);font-weight:700;font-size:2rem;line-height:1.05}
+  .he-media .sub{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;opacity:.9;margin-top:8px}
+  .he-body{padding:22px 24px;flex:1}
+  .he-k{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--brand-primary);font-weight:600}
+  .he-card h3{font-family:var(--font-display);font-size:1.4rem;color:var(--brand-pine);margin:6px 0 8px}
+  .he-meta{color:var(--brand-pine);font-weight:600;font-size:.9rem;margin-bottom:6px}
+  .he-body p{font-size:.92rem;color:var(--brand-muted)}
+  .he-body p b{color:var(--brand-ink)}
 </style>
 </head>
 <body>
@@ -248,6 +265,38 @@
     <span class="eyebrow">Our mission</span>
     <h2>Capture every brother's story — then share them.</h2>
     <p>We're recording <span class="em">every brother's story</span> and gathering them in one place, so we can all see what's happened in each other's lives since NIU — and truly reconnect. One conversation at a time, the whole chapter comes back together.</p>
+  </div>
+</section>
+
+<!-- ── Upcoming events ── -->
+<section class="home-events" id="events">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Get-Togethers</span>
+      <h2>Upcoming events</h2>
+      <p>Come reconnect in person — and bring a brother.</p>
+    </div>
+    <div class="he-grid">
+      <a href="events.html" class="he-card">
+        <div class="he-media niu"><div><div class="big">NIU Homecoming</div><div class="sub">Oct 10 · Huskie Stadium</div></div></div>
+        <div class="he-body">
+          <span class="he-k">The big one</span>
+          <h3>Huskies vs. Air Force</h3>
+          <div class="he-meta">Sat, Oct 10, 2026 · 6:30 PM CT · CBS Sports Network</div>
+          <p>The Huskies' first-ever home Mountain West game. Let's get a Delta Sigs crew together for the weekend.</p>
+        </div>
+      </a>
+      <a href="events.html" class="he-card">
+        <div class="he-media" style="background-image:url('https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/events/dilfs-back-at-lamps')"></div>
+        <div class="he-body">
+          <span class="he-k">Night out</span>
+          <h3>The DILFs — Back at Lamp's</h3>
+          <div class="he-meta">Sat, Aug 22, 2026 · Lamplighter's, Palatine</div>
+          <p>Featuring brothers <b>Jim Klimas, Joe Nelson &amp; Matt Denten</b> — come catch the band and join the crew.</p>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:34px"><a href="events.html" class="btn btn-primary">See all get-togethers</a></div>
   </div>
 </section>
 
@@ -436,22 +485,6 @@
   </div>
 </section>
 
-<!-- ── Event ── -->
-<section>
-  <div class="wrap">
-    <div class="event">
-      <div class="event-cal">
-        <div class="event-date"><span class="m">Aug</span><span class="d">22</span></div>
-        <div class="event-info">
-          <span class="eyebrow">Next Get-Together</span>
-          <h3>The DILFs — Back at Lamp's</h3>
-          <p>Sat, Aug 22 · Lamplighter's, Palatine — then NIU Homecoming Oct 10. See all get-togethers.</p>
-        </div>
-      </div>
-      <a href="events.html" class="btn btn-gold">See all events</a>
-    </div>
-  </div>
-</section>
 
 <!-- ── Newsletter ── -->
 <section id="join" style="padding-top:24px">
@@ -494,6 +527,9 @@
 </form>
 <form name="photo-upload" data-netlify="true" netlify-honeypot="bot-field" hidden>
   <input name="submitter"><input name="email"><textarea name="files"></textarea><input name="bot-field">
+</form>
+<form name="event-submission" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input name="event"><input name="date"><input name="location"><textarea name="details"></textarea><input name="submitter"><input name="email"><input name="file_url"><input name="bot-field">
 </form>
 
 <script>

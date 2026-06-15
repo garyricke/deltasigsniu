@@ -73,17 +73,6 @@
 </head>
 <body>
 
-<!-- per-page gate -->
-<div id="pw-gate">
-  <div id="pw-box">
-    <img src="assets/delta-sigs-logo-white.svg" alt="Delta Sigs NIU" onerror="this.style.display='none'">
-    <h2>Internal Document</h2>
-    <p class="sub">Project status — password protected.</p>
-    <input id="pw-input" type="password" placeholder="Enter password" autocomplete="current-password">
-    <button id="pw-btn">Enter</button>
-    <p id="pw-error"></p>
-  </div>
-</div>
 
 <header class="top">
   <div class="wrap">
@@ -158,24 +147,8 @@
 
 <footer>Delta Sigs NIU · Internal status · Yours in the Bond of the Sphinx</footer>
 
-<script>
-(function(){
-  var KEY='ds_admin',PASS='yitbos',gate=document.getElementById('pw-gate');
-  if(sessionStorage.getItem(KEY)==='1'){gate.style.display='none';return;}
-  document.body.style.overflow='hidden';
-  function attempt(){
-    if(document.getElementById('pw-input').value===PASS){
-      sessionStorage.setItem(KEY,'1');document.body.style.overflow='';gate.style.display='none';
-    } else {
-      document.getElementById('pw-error').textContent='Incorrect password. Try again.';
-      var box=document.getElementById('pw-box');box.classList.remove('pw-shake');void box.offsetWidth;box.classList.add('pw-shake');
-    }
-  }
-  document.getElementById('pw-btn').addEventListener('click',attempt);
-  document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')attempt();});
-  document.getElementById('pw-input').focus();
-})();
-</script>
+<script src="assets/supabase-config.js"></script>
+<script type="module" src="assets/member-gate.js"></script>
 <script src="assets/admin.js"></script>
 </body>
 </html>
