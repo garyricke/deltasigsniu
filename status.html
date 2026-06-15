@@ -79,31 +79,44 @@
     <img src="assets/delta-sigs-logo-white.svg" alt="Delta Sigs NIU">
     <span class="ey">Internal · Build Log</span>
     <h1>Project Status</h1>
-    <p>Everything built for the Delta Sigs NIU alumni interview site, newest first. Internal reference for the team.</p>
+    <p>A dated, plain-English record of everything built for the Delta Sigs NIU alumni interview site — newest first. Internal reference for the team. Visible to logged-in members only.</p>
     <div class="updated">Last updated: June 15, 2026</div>
   </div>
 </header>
 
 <!-- June 15 -->
 <section><div class="wrap">
-  <div class="date-head"><h2>June 15, 2026</h2><span class="tag">Internal tools</span></div>
+  <div class="date-head"><h2>June 15, 2026</h2><span class="tag">Membership, content &amp; polish</span></div>
   <ul class="log">
-    <li><span class="ck">✓</span><span class="txt"><b>Project status page</b><span>This dated build log, password-gated for the team.</span></span></li>
-    <li><span class="ck">✓</span><span class="txt"><b>Discreet admin panel</b><span>A subtle "A" badge on the home page opens a password-gated slide-in menu of internal links (brand guide, status, interview, dashboards).</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>One unified membership signup</b><span>Retired the separate Email Octopus mailing list — it risked confusing email-only subscribers with real members. The home page now has a single "Become a member" flow: a modal that collects name, email, password, pledge class, grad year, phone and address, creates a real Supabase account, and shows a clear "check your email" confirmation. Every join/notify call-to-action (hero, teaser podcast, footer, "add your story") opens the same modal, so there's one front door. Your membership <em>is</em> the mailing list.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Next interview — Tom Prommer ("Coming soon")</b><span>Generated a professional solo portrait of Tom from a group selfie using two AI engines (Gemini &amp; OpenAI), then a second pass that kept the real nighttime-patio background and just re-lit him professionally. Best version hosted on Cloudinary with a face-aware crop; added to the interview grid as the next scheduled story with an "Interview scheduled" badge.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Restored 1980s chapter photo</b><span>An original party photo from the early years — AI-restored (sharpened, de-noised, color-corrected from the faded original) while preserving every brother's real face and the authentic '80s look. Now the image on the "More brothers" panel.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>"Every pledge class is welcome" messaging</b><span>Made it explicit in the interview section that we're only starting with the earliest classes to build momentum — all classes are wanted — so the early focus isn't mistaken for exclusivity.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Fixed washed-out "coming soon" cards</b><span>Those panels carried a leftover 85% opacity fade from when they were empty placeholders, which lightened the new photos against the cream background. Removed the fade so Tom's portrait and the chapter photo render at full strength.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Pinstripes promo video by the mission</b><span>Added a looping, muted, autoplaying clip beside the mission (stacks below on mobile); click to unmute and hear the music. Compressed and served from Cloudinary with a poster frame.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Social / OG share image</b><span>Composed a branded Open Graph + Twitter card image (logo over the hero photo) so links to the site preview cleanly when shared.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Project status page + admin panel</b><span>This dated build log, plus a discreet badge on every page that opens a slide-in menu of internal links (status, brand guide). Both are member-gated — shown only to logged-in members, with a "You must be a member to view" message otherwise.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Copy &amp; name fixes</b><span>Corrected Larry Picchiotti's name in the Rainier pull-quote on Brent's page; updated the "More brothers" list (Arnie, Walt, Matt, Julio, John, Tony).</span></span></li>
   </ul>
 </div></section>
 
 <!-- June 14 -->
 <section><div class="wrap">
-  <div class="date-head"><h2>June 14, 2026</h2><span class="tag">Security, launch &amp; media</span></div>
+  <div class="date-head"><h2>June 14, 2026</h2><span class="tag">Launch, domain, email &amp; events</span></div>
   <ul class="log">
-    <li><span class="ck">✓</span><span class="txt"><b>Member login + secure audio (Supabase)</b><span>Replaced the placeholder password gate with real accounts. Interview audio streams via a short-lived signed URL from a private bucket — only approved members can listen. Tested end-to-end.</span></span></li>
-    <li><span class="ck">✓</span><span class="txt"><b>Pushed to GitHub</b><span>Public repo at github.com/garyricke/deltasigsniu — confidential audio masters &amp; transcripts deliberately excluded.</span></span></li>
-    <li><span class="ck">✓</span><span class="txt"><b>Deployed to Netlify</b><span>The site is live.</span></span></li>
-    <li><span class="ck">✓</span><span class="txt"><b>All media moved to Cloudinary</b><span>Images and the fireside video served from Cloudinary's CDN (auto format + quality); raster files cleaned out of the repo.</span></span></li>
-    <li><span class="ck">✓</span><span class="txt"><b>Hero photo professionally graded</b><span>The group reunion shot, re-lit and color-graded.</span></span></li>
-    <li><span class="ck">✓</span><span class="txt"><b>Brent's profile enriched</b><span>"By the numbers" stats, interests cards, and a highlights row added to the interview.</span></span></li>
-    <li><span class="ck">✓</span><span class="txt"><b>Fireside video + Mackinac race photo</b><span>360° clip from the night and the sailing shot added to the interview.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Member login + secure audio (Supabase)</b><span>Replaced the placeholder password gate with real per-member accounts. Interview audio lives in a private storage bucket and streams via a short-lived signed URL — only approved members can listen, and the file can't be hot-linked. Tested end-to-end.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Custom domain — deltasigsniu.com</b><span>Pointed the Cloudflare-registered domain at Netlify using CNAME flattening on the apex (www redirects to the apex). HTTPS/SSL issued and verified live; existing Cloudflare email routing left untouched.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Branded email + one-tap approval</b><span>New-member signups send <em>you</em> a branded notification (via Resend, from gary.ricke@deltasigsniu.com) with the brother's full details and an Approve button — a secure, signed link you can tap from your phone. Approving flips their account to "approved" and auto-emails them a branded "You're in" message with a Listen link. The new brother gets a Delta Sigs-branded confirmation email (not a generic "Supabase Auth" one). A Netlify Forms fallback also records every signup so nothing is missed.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Expanded signup form</b><span>Now captures name, Delta Sig pledge class, year graduated NIU, contact phone, and a split address (street / city / state / ZIP). After submitting, the form is replaced by a large thank-you message instead of leaving the inputs on screen.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Upcoming events on the home page</b><span>Prominent square event cards (most-recent on the left): the DILFs show at Lamplighter's (Aug 22, 2026 — Jim Klimas, Joe Nelson &amp; Matt Denten) and NIU Homecoming vs. Air Force (Oct 10, 2026). A pulsing "Submit an event — we'll email alerts to everyone" button opens a popup form with optional flyer/document upload.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Brother-submitted interviews &amp; photos</b><span>A separate tool (contribute) lets any brother record and upload an interview following the question arc, and upload photos independently — files go to Cloudinary and notify the team. Photos use a full-name naming convention.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Member-gated internal pages</b><span>Status and brand-guide pages now require a logged-in member; visitors see a "Members only — you must be a member to view this page" overlay with inline login.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Interview structure &amp; the book</b><span>Home page now lays out the full interview arc (before NIU → finding Delta Sigs → the years → career &amp; family → today → advice to your younger self) and explains the goal: that final answer feeds a book Gary Ricke is writing, dedicated to young men starting out. Added a 4th "Record a brother yourself" panel alongside "We come to you."</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Tagline, header logo &amp; favicon</b><span>Added "Better Men. Better Lives." throughout; the header logo starts large and shrinks on scroll; a green-and-gold Sphinx favicon.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Pushed to GitHub + deployed to Netlify</b><span>Repo at github.com/garyricke/deltasigsniu (confidential audio masters &amp; transcripts excluded); site deployed and live. Sorted out Netlify's secret-scanning false positives on config values.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>All media on Cloudinary</b><span>Every image and video serves from Cloudinary's CDN with automatic format + quality; raster files removed from the repo.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Hero graded &amp; Brent's profile enriched</b><span>Group reunion hero photo re-lit and color-graded; added "by the numbers" stats, interests cards, and a highlights row to Brent's interview.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Audio-quality note + video removed</b><span>Removed the low-quality fireside video from Brent's page and added a note explaining the first conversation wasn't originally meant to be heard — it was recorded as raw material for the book, so its audio isn't representative of future episodes. Added a public-teaser "Coming soon" indicator.</span></span></li>
   </ul>
 </div></section>
 
@@ -111,12 +124,12 @@
 <section><div class="wrap">
   <div class="date-head"><h2>June 13, 2026</h2><span class="tag">Foundation</span></div>
   <ul class="log">
-    <li><span class="ck">✓</span><span class="txt"><b>Brand guide</b><span>Colors (Nile green &amp; white, heritage gold), type (Fraunces + Inter), logo usage, voice, and a reusable component kit.</span></span></li>
-    <li><span class="ck">✓</span><span class="txt"><b>Refined logo</b><span>New bold script with the NIU swoosh — delivered as green, white-reverse, favicon, and a clean vector SVG.</span></span></li>
-    <li><span class="ck">✓</span><span class="txt"><b>Public home page</b><span>Hero, founding-story spotlight, interview grid, event, and newsletter signup.</span></span></li>
-    <li><span class="ck">✓</span><span class="txt"><b>Interview #1 — "Lightning Struck"</b><span>Brent Allen's story as an editorial feature with a chaptered audio player (11 chapters).</span></span></li>
-    <li><span class="ck">✓</span><span class="txt"><b>Audio produced</b><span>Converted lossless masters to MP3, combined the three recordings, confirmed the running order, and cut a curated edit that omits the confidential business call and private moments.</span></span></li>
-    <li><span class="ck">✓</span><span class="txt"><b>Photos prepared</b><span>Converted, rotated, and AI-enhanced the fireside &amp; motorcycle shots; best versions chosen.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Brand guide</b><span>Studied deltasig.org and built a living style guide: colors (Nile green &amp; white, heritage gold), type (Fraunces display + Inter body), logo usage rules, voice &amp; tone, iconography, and a reusable UI component kit later pages copy from.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Refined logo</b><span>Iterated to a bolder athletic script with the NIU swoosh — delivered as full-color green, white-reverse for dark/photo backgrounds, a favicon, and a clean vector SVG.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Public home page</b><span>Built the public landing experience: hero, mission, founding-story spotlight, interview grid, and signup — the spine everything since has hung from.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Interview #1 — "Lightning Struck"</b><span>Brent Allen's story written as an editorial feature with a chaptered audio player (11 chapters) and pull-quotes.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Audio produced</b><span>Converted the lossless ALAC masters to MP3, combined the three recordings in the correct order, and cut a ~58-minute curated edit that omits a confidential business call and private moments. Re-encoded to fit Supabase's free-tier file cap.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Photos prepared</b><span>Converted HEIC originals, fixed rotations, and produced AI-enhanced "professionally shot" versions of the fireside, motorcycle and portrait photos; chose the best of each.</span></span></li>
   </ul>
 </div></section>
 
@@ -124,12 +137,14 @@
 <section><div class="wrap">
   <div class="date-head"><h2>The live stack</h2></div>
   <div class="stack">
-    <div class="scard"><div class="role">Hosting</div><b>Netlify</b><small>Static site deploy</small></div>
+    <div class="scard"><div class="role">Domain</div><b>deltasigsniu.com</b><small>Cloudflare DNS → Netlify, SSL live</small></div>
+    <div class="scard"><div class="role">Hosting</div><b>Netlify</b><small>Static deploy + Forms + Functions</small></div>
     <div class="scard"><div class="role">Auth + audio</div><b>Supabase</b><small>Members + private signed-URL audio</small></div>
-    <div class="scard"><div class="role">Media</div><b>Cloudinary</b><small>Images &amp; video CDN</small></div>
+    <div class="scard"><div class="role">Email</div><b>Resend</b><small>Branded signup + one-tap approval</small></div>
+    <div class="scard"><div class="role">Media</div><b>Cloudinary</b><small>Image &amp; video CDN</small></div>
     <div class="scard"><div class="role">Code</div><b>GitHub</b><small>garyricke/deltasigsniu</small></div>
-    <div class="scard"><div class="role">Newsletter</div><b>Email Octopus</b><small>Pending form connection</small></div>
-    <div class="scard"><div class="role">Podcast</div><b>Public teaser</b><small>Planned</small></div>
+    <div class="scard"><div class="role">Membership</div><b>Supabase accounts</b><small>Replaces a separate mailing list</small></div>
+    <div class="scard"><div class="role">Podcast</div><b>Public teaser</b><small>"Coming soon" — to be produced</small></div>
   </div>
 </div></section>
 
@@ -137,11 +152,10 @@
 <section style="border-bottom:none"><div class="wrap">
   <div class="date-head"><h2>Up next</h2></div>
   <ul class="next">
-    <li><span class="dot"></span><span>Connect the Email Octopus signup form so the newsletter goes live.</span></li>
-    <li><span class="dot"></span><span>Set the Supabase Auth Site URL / redirects to the Netlify domain (so signup confirmation links work on the live site).</span></li>
-    <li><span class="dot"></span><span>Produce and publish the short public teaser podcast (Spotify / Apple).</span></li>
-    <li><span class="dot"></span><span>Record and add the next brothers' interviews.</span></li>
-    <li><span class="dot"></span><span>Optional: custom domain on Netlify.</span></li>
+    <li><span class="dot"></span><span>Produce and publish the short public teaser podcast, then wire the Spotify / Apple buttons (currently "Coming soon").</span></li>
+    <li><span class="dot"></span><span>Record Tom Prommer's interview and build his page; flip his card from "Coming soon" to a live "Listen" link.</span></li>
+    <li><span class="dot"></span><span>Keep recording the next brothers and adding their stories.</span></li>
+    <li><span class="dot"></span><span>Optional: a one-click "email all members" tool so announcements (new episode, event) go out in a single step.</span></li>
   </ul>
 </div></section>
 
