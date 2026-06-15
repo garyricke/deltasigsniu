@@ -33,3 +33,5 @@ assets/apple-touch-icon.png
 # Raster source images (hosted on Cloudinary)
 assets/*.jpg
 assets/*.jpeg
+generated_imgs/
+assets/tom-options/
