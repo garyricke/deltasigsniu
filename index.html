@@ -221,6 +221,27 @@
   .he-meta{color:var(--brand-pine);font-weight:600;font-size:.9rem;margin-bottom:6px}
   .he-body p{font-size:.92rem;color:var(--brand-muted)}
   .he-body p b{color:var(--brand-ink)}
+
+  /* ── Submit-an-event modal ── */
+  .esm-overlay{position:fixed;inset:0;z-index:1600;display:none;align-items:flex-start;justify-content:center;background:rgba(19,32,26,.62);backdrop-filter:blur(4px);padding:40px 20px;overflow:auto}
+  .esm-overlay.show{display:flex}
+  .esm-card{position:relative;background:var(--brand-white);border-radius:20px;max-width:560px;width:100%;padding:38px 32px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+  .esm-card h3{font-family:var(--font-display);font-size:1.7rem;color:var(--brand-pine);margin-bottom:6px}
+  .esm-card .lead{color:var(--brand-muted);font-size:.95rem;margin-bottom:20px}
+  .esm-close{position:absolute;top:14px;right:18px;background:none;border:0;font-size:1.7rem;color:var(--brand-muted);cursor:pointer;line-height:1}
+  .esm-close:hover{color:var(--brand-pine)}
+  .efm{display:grid;gap:14px;text-align:left}
+  .efm label{font-size:.8rem;font-weight:600;color:var(--brand-pine);display:block;margin-bottom:6px}
+  .efm input,.efm textarea{width:100%;border:1px solid var(--brand-line);border-radius:10px;padding:12px 14px;font-family:var(--font-body);font-size:.95rem;background:var(--brand-cream);color:var(--brand-ink)}
+  .efm input:focus,.efm textarea:focus{outline:none;border-color:var(--brand-primary)}
+  .efm .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:520px){.efm .row{grid-template-columns:1fr}}
+  .efm .drop{border:2px dashed color-mix(in srgb,var(--brand-primary) 45%,transparent);border-radius:12px;padding:18px;text-align:center;background:var(--brand-cream);cursor:pointer}
+  .efm .drop:hover{border-color:var(--brand-primary);background:rgba(72,152,104,.05)}
+  .efm .drop b{color:var(--brand-pine)} .efm .drop span{display:block;font-size:.82rem;color:var(--brand-muted);margin-top:4px}
+  .efm .estatus{font-size:.88rem;color:var(--brand-muted);min-height:18px}
+  .efm .edone{display:none;background:rgba(72,152,104,.1);border:1px solid rgba(72,152,104,.45);color:var(--brand-pine);border-radius:14px;padding:26px;text-align:center}
+  .efm .edone .big{display:block;font-family:var(--font-display);font-size:1.5rem;font-weight:600;margin-bottom:6px}
 </style>
 </head>
 <body>
@@ -232,7 +253,7 @@
     <div class="nav-links">
       <a href="#featured">The Story</a>
       <a href="#interviews">Interviews</a>
-      <a href="events.html">Events</a>
+      <a href="#events">Events</a>
       <a href="#schedule">Get Interviewed</a>
       <a href="contribute.html">Contribute</a>
       <a href="brent-allen.html" class="btn btn-primary nav-cta">Members Listen</a>
@@ -277,26 +298,29 @@
       <p>Come reconnect in person — and bring a brother.</p>
     </div>
     <div class="he-grid">
-      <a href="events.html" class="he-card">
-        <div class="he-media niu"><div><div class="big">NIU Homecoming</div><div class="sub">Oct 10 · Huskie Stadium</div></div></div>
-        <div class="he-body">
-          <span class="he-k">The big one</span>
-          <h3>Huskies vs. Air Force</h3>
-          <div class="he-meta">Sat, Oct 10, 2026 · 6:30 PM CT · CBS Sports Network</div>
-          <p>The Huskies' first-ever home Mountain West game. Let's get a Delta Sigs crew together for the weekend.</p>
-        </div>
-      </a>
-      <a href="events.html" class="he-card">
+      <a href="https://maps.google.com/?q=Lamplighters+Palatine" target="_blank" rel="noopener" class="he-card">
         <div class="he-media" style="background-image:url('https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/events/dilfs-back-at-lamps')"></div>
         <div class="he-body">
-          <span class="he-k">Night out</span>
+          <span class="he-k">Night out · Aug 22</span>
           <h3>The DILFs — Back at Lamp's</h3>
           <div class="he-meta">Sat, Aug 22, 2026 · Lamplighter's, Palatine</div>
           <p>Featuring brothers <b>Jim Klimas, Joe Nelson &amp; Matt Denten</b> — come catch the band and join the crew.</p>
         </div>
       </a>
+      <a href="https://niuhuskies.com" target="_blank" rel="noopener" class="he-card">
+        <div class="he-media niu"><div><div class="big">NIU Homecoming</div><div class="sub">Oct 10 · Huskie Stadium</div></div></div>
+        <div class="he-body">
+          <span class="he-k">The big one · Oct 10</span>
+          <h3>Huskies vs. Air Force</h3>
+          <div class="he-meta">Sat, Oct 10, 2026 · 6:30 PM CT · CBS Sports Network</div>
+          <p>The Huskies' first-ever home Mountain West game. Let's get a Delta Sigs crew together for the weekend.</p>
+        </div>
+      </a>
     </div>
-    <div style="text-align:center;margin-top:34px"><a href="events.html" class="btn btn-primary">See all get-togethers</a></div>
+    <div style="text-align:center;margin-top:34px">
+      <button id="open-event-submit" type="button" class="btn btn-primary">Submit an event</button>
+      <p style="margin-top:12px;color:var(--brand-muted);font-size:.9rem">Hosting a get-together? Submit it and we'll email an alert to everyone.</p>
+    </div>
   </div>
 </section>
 
@@ -509,7 +533,7 @@
   <div class="f-links">
     <a href="#featured">The Story</a>
     <a href="#interviews">Interviews</a>
-    <a href="events.html">Events</a>
+    <a href="#events">Events</a>
     <a href="#about">About</a>
     <a href="#join">Join the List</a>
     <a href="brent-allen.html">Members Listen</a>
@@ -592,6 +616,68 @@
   var nav=document.querySelector('.nav'); if(!nav) return;
   function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 24); }
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+})();
+</script>
+<!-- Submit-an-event modal -->
+<div class="esm-overlay" id="event-modal">
+  <div class="esm-card">
+    <button class="esm-close" id="esm-x" aria-label="Close">&times;</button>
+    <h3>Submit an event</h3>
+    <p class="lead">Hosting a get-together — a tailgate, golf, dinner, a show? Send the details (and a flyer if you've got one). We'll review it, add it here, and email an alert to everyone.</p>
+    <form class="efm" id="efm">
+      <div class="row">
+        <div><label>Event name</label><input id="ef-name" type="text" placeholder="e.g. Homecoming tailgate"></div>
+        <div><label>Date</label><input id="ef-date" type="text" placeholder="e.g. Sat, Oct 10, 2026"></div>
+      </div>
+      <div><label>Location</label><input id="ef-loc" type="text" placeholder="Venue / address"></div>
+      <div><label>Details</label><textarea id="ef-desc" rows="3" placeholder="What's the plan?"></textarea></div>
+      <div class="row">
+        <div><label>Your name</label><input id="ef-submitter" type="text"></div>
+        <div><label>Your email</label><input id="ef-email" type="email"></div>
+      </div>
+      <div>
+        <label>Flyer or document (optional)</label>
+        <div class="drop" id="ef-drop"><b id="ef-fname">Tap to attach a flyer / PDF</b><span>image, PDF, or doc</span>
+          <input id="ef-file" type="file" accept="image/*,.pdf,.doc,.docx" hidden></div>
+      </div>
+      <button class="btn btn-primary" id="ef-send" type="button" style="justify-content:center">Submit event</button>
+      <div class="estatus" id="ef-status"></div>
+      <div class="edone" id="ef-done"><span class="big">🎉 Got it — thank you!</span>We'll review your event, add it here, and email everyone. Yours in the Bond of the Sphinx.</div>
+    </form>
+  </div>
+</div>
+<script src="assets/supabase-config.js"></script>
+<script>
+(function(){
+  var openBtn=document.getElementById('open-event-submit'), modal=document.getElementById('event-modal');
+  if(modal){
+    if(openBtn) openBtn.addEventListener('click',function(){ modal.classList.add('show'); document.body.style.overflow='hidden'; });
+    function close(){ modal.classList.remove('show'); document.body.style.overflow=''; }
+    document.getElementById('esm-x').addEventListener('click',close);
+    modal.addEventListener('click',function(e){ if(e.target===modal) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&modal.classList.contains('show')) close(); });
+  }
+  var CLOUD=window.DS_CLOUDINARY_CLOUD, PRESET=window.DS_CLOUDINARY_UPLOAD_PRESET;
+  var ready=CLOUD&&PRESET&&!/YOUR-/.test(PRESET);
+  var f=document.getElementById('efm'); if(!f) return;
+  function slug(s){return (s||'').toLowerCase().replace(/\.[a-z0-9]+$/,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')||'event';}
+  function netlify(form,data){data['form-name']=form;return fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()}).catch(function(){});}
+  function upload(file,publicId){return new Promise(function(res,rej){var fd=new FormData();fd.append('file',file);fd.append('upload_preset',PRESET);fd.append('asset_folder','deltasigsniu/submissions/events');if(publicId)fd.append('public_id',publicId);var x=new XMLHttpRequest();x.open('POST','https://api.cloudinary.com/v1_1/'+CLOUD+'/auto/upload');x.onload=function(){try{var j=JSON.parse(x.responseText);}catch(e){return rej('bad response');}(x.status>=200&&x.status<300)?res(j):rej((j.error&&j.error.message)||'upload failed');};x.onerror=function(){rej('network error');};x.send(fd);});}
+  var fileInput=document.getElementById('ef-file');
+  document.getElementById('ef-drop').addEventListener('click',function(){fileInput.click();});
+  fileInput.addEventListener('change',function(){ if(fileInput.files.length) document.getElementById('ef-fname').textContent=fileInput.files[0].name; });
+  document.getElementById('ef-send').addEventListener('click',function(){
+    var name=document.getElementById('ef-name').value.trim(), stat=document.getElementById('ef-status');
+    if(!name){ stat.textContent='Please add an event name.'; return; }
+    document.getElementById('ef-send').disabled=true; stat.textContent='Submitting…';
+    var payload={event:name,date:document.getElementById('ef-date').value.trim(),location:document.getElementById('ef-loc').value.trim(),details:document.getElementById('ef-desc').value.trim(),submitter:document.getElementById('ef-submitter').value.trim(),email:document.getElementById('ef-email').value.trim(),file_url:''};
+    function finish(){ Array.prototype.forEach.call(f.children,function(c){ if(c.id!=='ef-done') c.style.display='none'; }); document.getElementById('ef-done').style.display='block'; }
+    var file=fileInput.files[0];
+    if(file && ready){ stat.textContent='Uploading flyer…';
+      upload(file, slug(name)+'-'+Date.now()).then(function(r){ payload.file_url=r.secure_url||''; netlify('event-submission',payload); finish(); })
+        .catch(function(){ stat.textContent='Submitting details…'; netlify('event-submission',payload); finish(); });
+    } else { netlify('event-submission',payload); finish(); }
+  });
 })();
 </script>
 <script src="assets/admin.js"></script>
