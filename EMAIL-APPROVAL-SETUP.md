@@ -10,14 +10,14 @@ It uses **Resend** (free email service) + two serverless functions that are alre
 
 ---
 
-## 1. Create a Resend account + verify your domain (~10 min)
-1. Sign up at **resend.com** (free tier is plenty).
-2. **Domains → Add Domain** → enter `orbisdesign.com` (or a subdomain like `mail.orbisdesign.com`).
-3. Add the DNS records Resend shows (SPF/DKIM) at your domain registrar. Wait for **Verified**.
-   - (Domain verification is required so the emails can be sent to any brother, not just you.)
-4. **API Keys → Create API Key** → copy it (starts with `re_…`). You'll paste it into Netlify next.
-
-Your "from" address will be something like **`Delta Sigs NIU <noreply@orbisdesign.com>`**.
+## 1. Resend — reuse your existing account + verified domain
+You already have Resend (org: orbisdesign) with **`midwestwaste.app` verified**. Reuse it — no new
+account, no upgrade needed (free tier = 1 domain, and the sending domain need not match the site).
+1. **API Keys → Create API Key** → name it `deltasigs` → copy it (starts with `re_…`).
+2. Your "from" address rides on the verified domain, e.g. **`Delta Sigs NIU <noreply@midwestwaste.app>`**
+   (you don't need to create that mailbox — Resend just needs the domain verified). Recipients see the
+   "Delta Sigs NIU" name in their inbox.
+   - (If you later want the address itself on `orbisdesign.com`, add + verify that domain — that's a paid plan.)
 
 ## 2. Add environment variables in Netlify (~5 min)
 Netlify → your site → **Site configuration → Environment variables → Add a variable**. Add each:
@@ -25,7 +25,7 @@ Netlify → your site → **Site configuration → Environment variables → Add
 | Key | Value |
 |---|---|
 | `RESEND_API_KEY` | the `re_…` key from Resend |
-| `FROM_EMAIL` | `Delta Sigs NIU <noreply@orbisdesign.com>` (use your verified domain) |
+| `FROM_EMAIL` | `Delta Sigs NIU <noreply@midwestwaste.app>` (your verified Resend domain) |
 | `ADMIN_EMAIL` | `gary.ricke@orbisdesign.com` |
 | `SITE_URL` | `https://deltasigsniu.netlify.app` |
 | `APPROVE_SECRET` | any long random string (e.g. from a password generator) |
@@ -42,7 +42,7 @@ Then **Deploys → Trigger deploy** so the functions pick up the new variables.
 Supabase → **Project Settings → Authentication → SMTP Settings → Enable custom SMTP**:
 - Host: `smtp.resend.com`  ·  Port: `465`  ·  Username: `resend`
 - Password: your `RESEND_API_KEY`
-- Sender name: `Delta Sigs NIU`  ·  Sender email: `noreply@orbisdesign.com` (verified domain)
+- Sender name: `Delta Sigs NIU`  ·  Sender email: `noreply@midwestwaste.app` (your verified domain)
 
 **B. The wording** — Supabase → **Authentication → Email Templates → Confirm signup**.
 Set the **Subject** to:
