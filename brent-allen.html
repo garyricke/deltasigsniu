@@ -640,7 +640,7 @@
       } else {
         if (!val('m-name')){ primaryBtn.disabled=false; setMsg('Please add your full name.'); return; }
         var meta={ full_name:val('m-name'), pledge_class:val('m-class'), grad_year:val('m-grad'), phone:val('m-phone'), address:val('m-address') };
-        const { error } = await sb.auth.signUp({ email, password, options:{ data:meta }});
+        const { error } = await sb.auth.signUp({ email, password, options:{ data:meta, emailRedirectTo: window.location.origin + '/brent-allen.html' }});
         primaryBtn.disabled = false;
         if (error){ setMsg(error.message); return; }
         notifySignup(meta, email);
@@ -657,6 +657,7 @@
 
     setMode('login');
     gateCheck();
+    sb.auth.onAuthStateChange(function(event){ if (event === 'SIGNED_IN') gateCheck(); });
   }
 </script>
 <script src="assets/admin.js"></script>
