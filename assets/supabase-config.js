@@ -9,4 +9,4 @@ window.DS_SUPABASE_ANON_KEY = 'sb_publishable_UTlPjwg1O-OvV27WcWC3Tg_FgTzHE0T';
 // Create an UNSIGNED upload preset in Cloudinary (Settings → Upload → Upload presets),
 // set "Use filename" = on and "Unique filename" = off, then put its name below.
 window.DS_CLOUDINARY_CLOUD = 'dsbllwpbh';
-window.DS_CLOUDINARY_UPLOAD_PRESET = 'YOUR-UNSIGNED-PRESET';
+window.DS_CLOUDINARY_UPLOAD_PRESET = 'deltasigs_uploads';
