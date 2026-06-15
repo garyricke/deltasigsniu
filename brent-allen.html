@@ -608,12 +608,15 @@
     }
     function val(id){ var el=document.getElementById(id); return el ? el.value.trim() : ''; }
     function notifySignup(meta, email){
+      // 1) Netlify Forms email (works immediately, basic). 2) Function that emails an Approve button (once Resend is set up).
       try{ fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
         body:new URLSearchParams({'form-name':'member-signup',name:meta.full_name,email:email,pledge_class:meta.pledge_class,grad_year:meta.grad_year,phone:meta.phone,address:meta.address}).toString()}); }catch(e){}
+      try{ fetch('/.netlify/functions/notify-signup',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({name:meta.full_name,email:email,pledge_class:meta.pledge_class,grad_year:meta.grad_year,phone:meta.phone,address:meta.address})}); }catch(e){}
     }
     function pending(email){
-      titleEl.textContent='Pending Approval';
-      subEl.textContent='Your account ('+email+') is awaiting approval from a brother. You’ll get in as soon as you’re approved.';
+      titleEl.textContent='Thanks — you’re confirmed!';
+      subEl.innerHTML='Welcome, brother. Your account is being reviewed — we’ll email you the moment you have full access, usually within <b>10–60 minutes</b>. Then just come back and log in. Yours in the Bonds.';
       formEl.style.display='none'; toggleEl.style.display='none'; logoutLink.style.display='inline';
     }
 
@@ -644,7 +647,7 @@
         primaryBtn.disabled = false;
         if (error){ setMsg(error.message); return; }
         notifySignup(meta, email);
-        setMsg('Account created. Confirm via the email we sent, then a brother will approve you.', true);
+        setMsg('Almost there — check your email and click the confirmation link from Delta Sigs NIU. Then we’ll review your account and email you when you have full access (usually 10–60 min).', true);
       }
     }
 
