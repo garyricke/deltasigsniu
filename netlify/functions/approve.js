@@ -30,7 +30,7 @@ exports.handler = async (event) => {
 
   const SUPABASE_URL = process.env.SUPABASE_URL || 'https://wykfwtqnxttlabbbhhmn.supabase.co';
   const SR = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  const site = process.env.SITE_URL || 'https://deltasigsniu.netlify.app';
+  const site = process.env.SITE_URL || 'https://deltasigsniu.com';
 
   // Flip approved = true (service role bypasses RLS) and get the row back
   const res = await fetch(SUPABASE_URL + '/rest/v1/profiles?email=eq.' + encodeURIComponent(email), {

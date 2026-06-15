@@ -24,7 +24,7 @@ exports.handler = async (event) => {
     const email = (b.email || '').trim();
     if (!email) return { statusCode: 400, body: 'missing email' };
 
-    const site = process.env.SITE_URL || 'https://deltasigsniu.netlify.app';
+    const site = process.env.SITE_URL || 'https://deltasigsniu.com';
     const approveUrl = site + '/.netlify/functions/approve?e=' + encodeURIComponent(email.toLowerCase()) + '&t=' + tokenFor(email);
 
     const row = (label, val) => val ? `<tr><td style="padding:4px 14px 4px 0;color:#8A938C;font:13px Arial">${label}</td><td style="padding:4px 0;color:#1F2A24;font:14px Arial">${esc(val)}</td></tr>` : '';
