@@ -9,8 +9,8 @@
 <meta property="og:description" content="Wrestling, mountains, the price of everything, and the night Delta Sigs was born. A fireside conversation, 40 years on.">
 <meta property="og:type" content="article">
 <meta name="article:published_time" content="2026-06-13">
-<link rel="icon" type="image/png" href="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/favicon">
-<link rel="apple-touch-icon" href="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/apple-touch-icon">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/favicon-sphinx">
+<link rel="apple-touch-icon" href="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/favicon-sphinx">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -227,7 +227,12 @@
         <input id="m-class" class="gate-input" type="text" placeholder="Delta Sig pledge class">
         <input id="m-grad" class="gate-input" type="text" placeholder="Year graduated NIU" inputmode="numeric">
         <input id="m-phone" class="gate-input" type="tel" placeholder="Contact phone" autocomplete="tel">
-        <input id="m-address" class="gate-input" type="text" placeholder="Current address" autocomplete="street-address">
+        <input id="m-street" class="gate-input" type="text" placeholder="Street address" autocomplete="address-line1">
+        <input id="m-city" class="gate-input" type="text" placeholder="City" autocomplete="address-level2">
+        <div style="display:flex;gap:10px">
+          <input id="m-state" class="gate-input" type="text" placeholder="State" autocomplete="address-level1" style="flex:1;min-width:0">
+          <input id="m-zip" class="gate-input" type="text" placeholder="ZIP" inputmode="numeric" autocomplete="postal-code" style="flex:1;min-width:0">
+        </div>
       </div>
       <input id="m-email" class="gate-input" type="email" placeholder="Email" autocomplete="email">
       <input id="m-pass" class="gate-input" type="password" placeholder="Password" autocomplete="current-password">
@@ -642,12 +647,15 @@
         gateCheck();
       } else {
         if (!val('m-name')){ primaryBtn.disabled=false; setMsg('Please add your full name.'); return; }
-        var meta={ full_name:val('m-name'), pledge_class:val('m-class'), grad_year:val('m-grad'), phone:val('m-phone'), address:val('m-address') };
+        var addr=[ val('m-street'), val('m-city'), [val('m-state'), val('m-zip')].filter(Boolean).join(' ') ].filter(Boolean).join(', ');
+        var meta={ full_name:val('m-name'), pledge_class:val('m-class'), grad_year:val('m-grad'), phone:val('m-phone'), address:addr };
         const { error } = await sb.auth.signUp({ email, password, options:{ data:meta, emailRedirectTo: window.location.origin + '/?confirmed=1' }});
         primaryBtn.disabled = false;
         if (error){ setMsg(error.message); return; }
         notifySignup(meta, email);
-        setMsg('Almost there — check your email and click the confirmation link from Delta Sigs NIU. Then we’ll review your account and email you when you have full access (usually 10–60 min).', true);
+        formEl.style.display='none'; toggleEl.style.display='none'; setMsg('');
+        titleEl.textContent='Almost there — check your email';
+        subEl.innerHTML="We just emailed you a confirmation link from <b>Delta Sigs NIU</b>. Click it, then we'll review your account and email you the moment you have full access — usually within <b>10–60 minutes</b>.";
       }
     }
 
