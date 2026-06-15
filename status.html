@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Status — Delta Sigs NIU</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/favicon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand-primary:#489868; --brand-pine:#2C5C42; --brand-cream:#FAF8F3; --brand-white:#FFFFFF;
+    --brand-ink:#1F2A24; --brand-gold:#C9A24B; --brand-line:#E6E9E6; --brand-muted:#8A938C;
+    --font-display:'Fraunces', Georgia, serif; --font-body:'Inter', -apple-system, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--font-body);background:var(--brand-cream);color:var(--brand-ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--font-display);color:var(--brand-pine)}
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px}
+
+  /* header */
+  .top{background:linear-gradient(150deg,#16271d,#2C5C42 60%,#234c37);color:#fff;padding:48px 0 42px}
+  .top img{height:42px;margin-bottom:22px}
+  .top .ey{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-gold);font-weight:600}
+  .top h1{color:#fff;font-size:clamp(2rem,5vw,2.8rem);font-weight:600;margin:8px 0 8px}
+  .top p{color:rgba(255,255,255,.8);font-size:1rem;max-width:60ch}
+  .top .updated{margin-top:16px;font-size:.8rem;color:rgba(255,255,255,.6)}
+
+  section{padding:46px 0;border-bottom:1px solid var(--brand-line)}
+  .date-head{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;flex-wrap:wrap}
+  .date-head h2{font-size:1.6rem}
+  .date-head .tag{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-gold);background:rgba(201,162,75,.14);border:1px solid rgba(201,162,75,.38);border-radius:999px;padding:4px 11px}
+
+  /* timeline items */
+  ul.log{list-style:none;display:grid;gap:13px}
+  ul.log li{display:flex;gap:13px;align-items:flex-start;background:var(--brand-white);border:1px solid var(--brand-line);border-radius:13px;padding:15px 17px;box-shadow:0 1px 2px rgba(31,42,36,.04)}
+  ul.log li .ck{flex:none;width:22px;height:22px;border-radius:50%;background:rgba(72,152,104,.14);color:var(--brand-primary);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  ul.log li .ck svg{width:13px;height:13px}
+  ul.log li .txt b{font-weight:600;color:var(--brand-ink)}
+  ul.log li .txt span{display:block;font-size:.88rem;color:var(--brand-muted);margin-top:2px}
+
+  /* stack cards */
+  .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:640px){.stack{grid-template-columns:1fr 1fr}}
+  .scard{background:var(--brand-white);border:1px solid var(--brand-line);border-radius:13px;padding:16px}
+  .scard .role{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--brand-primary);font-weight:600}
+  .scard b{display:block;font-family:var(--font-display);font-size:1.05rem;color:var(--brand-pine);margin-top:3px}
+  .scard small{font-size:.78rem;color:var(--brand-muted)}
+
+  /* next up */
+  ul.next{list-style:none;display:grid;gap:10px}
+  ul.next li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem}
+  ul.next li .dot{flex:none;width:16px;height:16px;border-radius:4px;border:2px solid var(--brand-gold);margin-top:3px}
+  footer{padding:34px 0 50px;text-align:center;color:var(--brand-muted);font-size:.8rem}
+
+  /* per-page gate */
+  #pw-gate{position:fixed;inset:0;z-index:9999;background:#13201a;display:flex;align-items:center;justify-content:center;font-family:var(--font-body)}
+  #pw-gate::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,162,75,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,75,.06) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+  #pw-box{position:relative;background:rgba(255,255,255,.04);border:1px solid color-mix(in srgb, var(--brand-gold) 25%, transparent);border-radius:16px;padding:48px 40px;text-align:center;width:min(400px,90vw);box-shadow:0 24px 80px rgba(0,0,0,.5)}
+  #pw-box img{height:54px;margin-bottom:24px;display:block;margin-inline:auto}
+  #pw-box h2{font-family:var(--font-display);font-size:1.7rem;color:var(--brand-gold);letter-spacing:.04em;margin:0 0 8px}
+  #pw-box .sub{font-size:.85rem;color:rgba(255,255,255,.55);margin:0 0 28px}
+  #pw-input{width:100%;padding:12px 16px;background:rgba(0,0,0,.3);border:1px solid color-mix(in srgb, var(--brand-gold) 30%, transparent);border-radius:8px;color:#fff;font-size:.95rem;font-family:inherit;outline:none;transition:border-color .2s}
+  #pw-input:focus{border-color:var(--brand-gold)}
+  #pw-btn{margin-top:14px;width:100%;padding:12px;background:var(--brand-gold);color:#3a2f12;border:0;border-radius:8px;font-family:var(--font-display);font-size:1.05rem;letter-spacing:.04em;cursor:pointer;transition:filter .2s}
+  #pw-btn:hover{filter:brightness(.96)}
+  #pw-error{font-size:.8rem;color:#ff7a7a;margin:12px 0 0;min-height:1.2em}
+  .pw-shake{animation:pwShake .35s}
+  @keyframes pwShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+</style>
+</head>
+<body>
+
+<!-- per-page gate -->
+<div id="pw-gate">
+  <div id="pw-box">
+    <img src="assets/delta-sigs-logo-white.svg" alt="Delta Sigs NIU" onerror="this.style.display='none'">
+    <h2>Internal Document</h2>
+    <p class="sub">Project status — password protected.</p>
+    <input id="pw-input" type="password" placeholder="Enter password" autocomplete="current-password">
+    <button id="pw-btn">Enter</button>
+    <p id="pw-error"></p>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <img src="assets/delta-sigs-logo-white.svg" alt="Delta Sigs NIU">
+    <span class="ey">Internal · Build Log</span>
+    <h1>Project Status</h1>
+    <p>Everything built for the Delta Sigs NIU alumni interview site, newest first. Internal reference for the team.</p>
+    <div class="updated">Last updated: June 15, 2026</div>
+  </div>
+</header>
+
+<!-- June 15 -->
+<section><div class="wrap">
+  <div class="date-head"><h2>June 15, 2026</h2><span class="tag">Internal tools</span></div>
+  <ul class="log">
+    <li><span class="ck">✓</span><span class="txt"><b>Project status page</b><span>This dated build log, password-gated for the team.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Discreet admin panel</b><span>A subtle "A" badge on the home page opens a password-gated slide-in menu of internal links (brand guide, status, interview, dashboards).</span></span></li>
+  </ul>
+</div></section>
+
+<!-- June 14 -->
+<section><div class="wrap">
+  <div class="date-head"><h2>June 14, 2026</h2><span class="tag">Security, launch &amp; media</span></div>
+  <ul class="log">
+    <li><span class="ck">✓</span><span class="txt"><b>Member login + secure audio (Supabase)</b><span>Replaced the placeholder password gate with real accounts. Interview audio streams via a short-lived signed URL from a private bucket — only approved members can listen. Tested end-to-end.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Pushed to GitHub</b><span>Public repo at github.com/garyricke/deltasigsniu — confidential audio masters &amp; transcripts deliberately excluded.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Deployed to Netlify</b><span>The site is live.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>All media moved to Cloudinary</b><span>Images and the fireside video served from Cloudinary's CDN (auto format + quality); raster files cleaned out of the repo.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Hero photo professionally graded</b><span>The group reunion shot, re-lit and color-graded.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Brent's profile enriched</b><span>"By the numbers" stats, interests cards, and a highlights row added to the interview.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Fireside video + Mackinac race photo</b><span>360° clip from the night and the sailing shot added to the interview.</span></span></li>
+  </ul>
+</div></section>
+
+<!-- June 13 -->
+<section><div class="wrap">
+  <div class="date-head"><h2>June 13, 2026</h2><span class="tag">Foundation</span></div>
+  <ul class="log">
+    <li><span class="ck">✓</span><span class="txt"><b>Brand guide</b><span>Colors (Nile green &amp; white, heritage gold), type (Fraunces + Inter), logo usage, voice, and a reusable component kit.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Refined logo</b><span>New bold script with the NIU swoosh — delivered as green, white-reverse, favicon, and a clean vector SVG.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Public home page</b><span>Hero, founding-story spotlight, interview grid, event, and newsletter signup.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Interview #1 — "Lightning Struck"</b><span>Brent Allen's story as an editorial feature with a chaptered audio player (11 chapters).</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Audio produced</b><span>Converted lossless masters to MP3, combined the three recordings, confirmed the running order, and cut a curated edit that omits the confidential business call and private moments.</span></span></li>
+    <li><span class="ck">✓</span><span class="txt"><b>Photos prepared</b><span>Converted, rotated, and AI-enhanced the fireside &amp; motorcycle shots; best versions chosen.</span></span></li>
+  </ul>
+</div></section>
+
+<!-- Stack -->
+<section><div class="wrap">
+  <div class="date-head"><h2>The live stack</h2></div>
+  <div class="stack">
+    <div class="scard"><div class="role">Hosting</div><b>Netlify</b><small>Static site deploy</small></div>
+    <div class="scard"><div class="role">Auth + audio</div><b>Supabase</b><small>Members + private signed-URL audio</small></div>
+    <div class="scard"><div class="role">Media</div><b>Cloudinary</b><small>Images &amp; video CDN</small></div>
+    <div class="scard"><div class="role">Code</div><b>GitHub</b><small>garyricke/deltasigsniu</small></div>
+    <div class="scard"><div class="role">Newsletter</div><b>Email Octopus</b><small>Pending form connection</small></div>
+    <div class="scard"><div class="role">Podcast</div><b>Public teaser</b><small>Planned</small></div>
+  </div>
+</div></section>
+
+<!-- Next up -->
+<section style="border-bottom:none"><div class="wrap">
+  <div class="date-head"><h2>Up next</h2></div>
+  <ul class="next">
+    <li><span class="dot"></span><span>Connect the Email Octopus signup form so the newsletter goes live.</span></li>
+    <li><span class="dot"></span><span>Set the Supabase Auth Site URL / redirects to the Netlify domain (so signup confirmation links work on the live site).</span></li>
+    <li><span class="dot"></span><span>Produce and publish the short public teaser podcast (Spotify / Apple).</span></li>
+    <li><span class="dot"></span><span>Record and add the next brothers' interviews.</span></li>
+    <li><span class="dot"></span><span>Optional: custom domain on Netlify.</span></li>
+  </ul>
+</div></section>
+
+<footer>Delta Sigs NIU · Internal status · Yours in the Bonds</footer>
+
+<script>
+(function(){
+  var KEY='ds_admin',PASS='yitbos',gate=document.getElementById('pw-gate');
+  if(sessionStorage.getItem(KEY)==='1'){gate.style.display='none';return;}
+  document.body.style.overflow='hidden';
+  function attempt(){
+    if(document.getElementById('pw-input').value===PASS){
+      sessionStorage.setItem(KEY,'1');document.body.style.overflow='';gate.style.display='none';
+    } else {
+      document.getElementById('pw-error').textContent='Incorrect password. Try again.';
+      var box=document.getElementById('pw-box');box.classList.remove('pw-shake');void box.offsetWidth;box.classList.add('pw-shake');
+    }
+  }
+  document.getElementById('pw-btn').addEventListener('click',attempt);
+  document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')attempt();});
+  document.getElementById('pw-input').focus();
+})();
+</script>
+</body>
+</html>
