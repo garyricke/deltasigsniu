@@ -103,7 +103,12 @@
   .lock-note svg{width:14px;height:14px}
 
   /* ── Teaser podcast ── */
-  .teaser{background:linear-gradient(150deg,var(--brand-pine),#1f4231);color:#fff;border-radius:22px;padding:40px 40px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:space-between}
+  .teaser{background:linear-gradient(150deg,var(--brand-pine),#1f4231);color:#fff;border-radius:22px;padding:34px 36px;display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+  .teaser-media{flex:none;width:200px;border-radius:16px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.32);position:relative}
+  .teaser-media img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+  .teaser-media .tm-cap{position:absolute;left:0;right:0;bottom:0;padding:18px 12px 9px;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#f3e6c6;background:linear-gradient(transparent,rgba(13,20,16,.82))}
+  .teaser-body{flex:1;display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:space-between;min-width:min(100%,300px)}
+  @media(max-width:680px){.teaser-media{width:100%}.teaser-media img{aspect-ratio:16/10}}
   .teaser-txt{max-width:42ch}
   .teaser-txt h3{color:#fff;font-size:1.5rem;margin-bottom:8px}
   .teaser-txt p{color:rgba(255,255,255,.78);font-size:.95rem}
@@ -399,6 +404,11 @@
 <section style="padding-top:0">
   <div class="wrap">
     <div class="teaser">
+      <div class="teaser-media">
+        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto,c_fill,g_auto,ar_1:1/beach-brothers-80s" alt="Delta Sigs brothers on a beach trip in the 1980s">
+        <span class="tm-cap">Brothers, back in the day</span>
+      </div>
+      <div class="teaser-body">
       <div class="teaser-txt">
         <span class="cs-badge"><span class="dot"></span> Coming Soon</span>
         <h3 style="margin-top:14px">A public teaser podcast is on the way</h3>
@@ -414,6 +424,7 @@
           Apple <span class="tag">Soon</span>
         </span>
         <button type="button" data-join class="pod-btn" style="background:var(--brand-gold);color:#3a2f12;border-color:transparent;cursor:pointer;font-family:inherit">Notify me — become a member</button>
+      </div>
       </div>
     </div>
   </div>
