@@ -4,6 +4,7 @@
 # Secrets / env
 .env
 .env.*
+*.env
 
 # Audio: confidential masters, transcripts, raw recordings (never publish)
 audio/

@@ -32,12 +32,25 @@ Netlify → your site → **Site configuration → Environment variables → Add
 | `SITE_URL` | `https://deltasigsniu.netlify.app` |
 | `APPROVE_SECRET` | any long random string (e.g. from a password generator) |
 | `SUPABASE_URL` | `https://wykfwtqnxttlabbbhhmn.supabase.co` |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase → Project Settings → API → **service_role** secret key |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase **Secret key** (`sb_secret_…`) — exact steps below |
 
-⚠️ The **service_role** key is powerful — it only ever lives here in Netlify's server env (never in
-the website code or the repo). That's safe; it's exactly what server functions are for.
+**Exact steps to get the Supabase secret key:**
+1. **supabase.com/dashboard** → open the **deltasigsniu** project.
+2. Bottom of the left sidebar → **Project Settings** (gear icon).
+3. Under **CONFIGURATION**, click **API Keys**.
+4. Stay on the **"Publishable and secret API keys"** tab (NOT "Legacy anon, service_role").
+5. Scroll to the **Secret keys** section → row **default** → click the **👁 eye** to reveal, then the **copy** icon.
+6. That `sb_secret_…` value is your `SUPABASE_SERVICE_ROLE_KEY`. (In the new key system the *secret key* is the privileged/server key that replaced the old service_role.)
 
-Then **Deploys → Trigger deploy** so the functions pick up the new variables.
+⚠️ This key is powerful — it only ever lives here in Netlify's server env (never in the website code
+or the repo). That's safe; it's exactly what server functions are for.
+
+**Fastest way to add all of these:** fill in the two TODO values in `netlifyenvvars.env` (in the
+project folder), then in Netlify → Environment variables → **"Add a variable" dropdown → "Import from
+a .env file"** → upload that file. Then **Deploys → Trigger deploy** so the functions pick them up.
+
+(The browser/publishable key `sb_publishable_…` is a different key — it's already in
+`assets/supabase-config.js`; don't use it here.)
 
 ## 3. Brand the confirmation email (Supabase)
 **A. The from-name** ("Supabase Auth" → "Delta Sigs NIU") — set up custom SMTP with Resend:
