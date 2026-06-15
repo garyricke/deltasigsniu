@@ -4,14 +4,14 @@
 const crypto = require('crypto');
 
 function page(title, msg, ok){
-  const html = `<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1">
+  const html = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <div style="font-family:Arial,sans-serif;max-width:460px;margin:12vh auto;text-align:center;padding:0 20px">
     <div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#489868;font-weight:bold">Delta Sigs NIU</div>
-    <div style="font-size:46px;margin:14px 0">${ok ? '✅' : '⚠️'}</div>
+    <div style="font-size:46px;margin:14px 0">${ok ? '&#9989;' : '&#9888;&#65039;'}</div>
     <h1 style="color:#2C5C42;font-size:24px;margin:0 0 8px">${title}</h1>
     <p style="color:#43504a;font-size:15px;line-height:1.6">${msg}</p>
   </div>`;
-  return { statusCode: 200, headers: { 'Content-Type': 'text/html' }, body: html };
+  return { statusCode: 200, headers: { 'Content-Type': 'text/html; charset=utf-8' }, body: html };
 }
 async function sendEmail(to, subject, html){
   const r = await fetch('https://api.resend.com/emails', {
@@ -52,11 +52,11 @@ exports.handler = async (event) => {
     </div>
     <div style="border:1px solid #E6E9E6;border-top:0;border-radius:0 0 14px 14px;padding:24px">
       <p style="color:#1F2A24;font-size:15px;line-height:1.65;margin:0 0 18px">Your Delta Sigs NIU account is approved — you now have full access to the interviews and audio. Welcome back to the brotherhood.</p>
-      <a href="${site}/brent-allen.html" style="display:inline-block;background:#489868;color:#fff;text-decoration:none;font-weight:bold;padding:14px 28px;border-radius:999px;font-size:15px">Listen now</a>
+      <a href="${site}/?welcome=1" style="display:inline-block;background:#489868;color:#fff;text-decoration:none;font-weight:bold;padding:14px 28px;border-radius:999px;font-size:15px">Listen now</a>
       <p style="color:#8A938C;font-size:12px;margin-top:18px">Just log in with the email and password you signed up with. Yours in the Bonds of Sigma.</p>
     </div>
   </div>`;
   try { await sendEmail(email, 'You’re in — Delta Sigs NIU access is ready', html); } catch (e) {}
 
-  return page('Approved ✓', (prof.full_name || email) + ' now has full access and has been emailed. You can close this tab.', true);
+  return page('Approved &#10003;', (prof.full_name || email) + ' now has full access and has been emailed. You can close this tab.', true);
 };

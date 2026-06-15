@@ -188,6 +188,16 @@
   .fmt label{display:flex;align-items:center;gap:9px;border:1px solid var(--brand-line);border-radius:10px;padding:13px 16px;cursor:pointer;font-weight:500;color:var(--brand-ink);flex:1;margin:0;background:var(--brand-white)}
   .fmt input{width:auto;accent-color:var(--brand-primary)}
   .iform .ok{display:none;background:rgba(72,152,104,.1);border:1px solid rgba(72,152,104,.4);color:var(--brand-pine);border-radius:10px;padding:16px;font-size:.97rem;text-align:center}
+
+  /* ── Welcome / confirmed modal ── */
+  .wm-overlay{position:fixed;inset:0;z-index:1500;display:none;align-items:center;justify-content:center;background:rgba(19,32,26,.6);backdrop-filter:blur(4px);padding:20px}
+  .wm-overlay.show{display:flex}
+  .wm-card{position:relative;background:var(--brand-white);border-radius:20px;max-width:430px;width:100%;text-align:center;padding:44px 36px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+  .wm-emoji{font-size:48px;line-height:1}
+  .wm-card h3{font-family:var(--font-display);font-size:1.8rem;color:var(--brand-pine);margin:14px 0 10px}
+  .wm-card p{color:#43504a;font-size:1.02rem;line-height:1.6;margin-bottom:26px}
+  .wm-close{position:absolute;top:14px;right:18px;background:none;border:0;font-size:1.6rem;color:var(--brand-muted);cursor:pointer;line-height:1}
+  .wm-close:hover{color:var(--brand-pine)}
 </style>
 </head>
 <body>
@@ -491,6 +501,43 @@
       })
       .catch(function(){ alert('Sorry — something went wrong. Please email gary.ricke@orbisdesign.com.'); });
   });
+})();
+</script>
+
+<!-- Welcome / confirmed modal (triggered by ?welcome=1 or ?confirmed=1) -->
+<div class="wm-overlay" id="welcome-modal">
+  <div class="wm-card">
+    <button class="wm-close" id="wm-x" aria-label="Close">&times;</button>
+    <div class="wm-emoji" id="wm-emoji">🎉</div>
+    <h3 id="wm-title"></h3>
+    <p id="wm-msg"></p>
+    <a class="btn btn-primary" id="wm-cta" style="justify-content:center"></a>
+  </div>
+</div>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  var mode = p.has('welcome') ? 'welcome' : (p.has('confirmed') ? 'confirmed' : null);
+  if (!mode) return;
+  var modal=document.getElementById('welcome-modal'),
+      emoji=document.getElementById('wm-emoji'), title=document.getElementById('wm-title'),
+      msg=document.getElementById('wm-msg'), cta=document.getElementById('wm-cta'), x=document.getElementById('wm-x');
+  if (mode === 'welcome') {
+    emoji.textContent='🎉';
+    title.textContent="You're in!";
+    msg.textContent="Welcome to Delta Sigs NIU — you've got full access now. Start visiting the episodes and catch up with the brothers. (Just log in with the email and password you signed up with.)";
+    cta.textContent='Browse the interviews'; cta.setAttribute('href','#interviews');
+  } else {
+    emoji.textContent='✅';
+    title.textContent='Email confirmed!';
+    msg.textContent="Thanks, brother. We're reviewing your account — you'll get an email when you have full access, usually within 10–60 minutes.";
+    cta.textContent='Got it'; cta.setAttribute('href','#');
+  }
+  function close(){ modal.classList.remove('show'); history.replaceState(null,'',location.pathname); }
+  cta.addEventListener('click', function(e){ if (cta.getAttribute('href')==='#') e.preventDefault(); close(); });
+  x.addEventListener('click', close);
+  modal.addEventListener('click', function(e){ if (e.target===modal) close(); });
+  modal.classList.add('show');
 })();
 </script>
 

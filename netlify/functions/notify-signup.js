@@ -36,7 +36,7 @@ exports.handler = async (event) => {
       </div>
       <div style="border:1px solid #E6E9E6;border-top:0;border-radius:0 0 14px 14px;padding:22px 24px">
         <table>${row('Name', b.name)}${row('Email', email)}${row('Pledge class', b.pledge_class)}${row('Grad year', b.grad_year)}${row('Phone', b.phone)}${row('Address', b.address)}</table>
-        <a href="${approveUrl}" style="display:inline-block;margin:22px 0 6px;background:#C9A24B;color:#3a2f12;text-decoration:none;font-weight:bold;padding:14px 28px;border-radius:999px;font-size:15px">✓ Approve &amp; grant access</a>
+        <a href="${approveUrl}" style="display:inline-block;margin:22px 0 6px;background:#C9A24B;color:#3a2f12;text-decoration:none;font-weight:bold;padding:14px 28px;border-radius:999px;font-size:15px">&#10003; Approve &amp; grant access</a>
         <p style="color:#8A938C;font-size:12px;line-height:1.5;margin-top:14px">Tapping Approve grants full access and emails the brother right away. (You can also approve in Supabase → Table Editor → profiles.)</p>
       </div>
     </div>`;
