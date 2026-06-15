@@ -53,7 +53,7 @@ exports.handler = async (event) => {
     <div style="border:1px solid #E6E9E6;border-top:0;border-radius:0 0 14px 14px;padding:24px">
       <p style="color:#1F2A24;font-size:15px;line-height:1.65;margin:0 0 18px">Your Delta Sigs NIU account is approved — you now have full access to the interviews and audio. Welcome back to the brotherhood.</p>
       <a href="${site}/?welcome=1" style="display:inline-block;background:#489868;color:#fff;text-decoration:none;font-weight:bold;padding:14px 28px;border-radius:999px;font-size:15px">Listen now</a>
-      <p style="color:#8A938C;font-size:12px;margin-top:18px">Just log in with the email and password you signed up with. Yours in the Bonds of Sigma.</p>
+      <p style="color:#8A938C;font-size:12px;margin-top:18px">Just log in with the email and password you signed up with. Yours in the Bond of the Sphinx.</p>
     </div>
   </div>`;
   try { await sendEmail(email, 'You’re in — Delta Sigs NIU access is ready', html); } catch (e) {}
