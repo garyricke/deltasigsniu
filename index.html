@@ -307,7 +307,7 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         Hear the first story
       </a>
-      <a href="#join" class="btn btn-outline">Join the mailing list</a>
+      <button type="button" class="btn btn-outline" data-join>Become a member</button>
     </div>
   </div>
 </header>
@@ -413,7 +413,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm3.6 14.9c-.14.32-.39.49-.74.49-.1 0-.22-.02-.34-.07-.93-.4-1.96-.6-3.06-.6s-2.13.2-3.06.6c-.45.18-.86-.02-1.04-.42-.18-.45.02-.86.42-1.04 1.13-.49 2.37-.74 3.68-.74s2.55.25 3.68.74c.4.18.6.64.46 1.04zM12 7.5a2.6 2.6 0 0 1 2.6 2.6c0 .55-.17 1.06-.46 1.49a5.9 5.9 0 0 0-2.14-.39c-.77 0-1.5.14-2.14.39a2.58 2.58 0 0 1-.46-1.49A2.6 2.6 0 0 1 12 7.5z"/></svg>
           Apple <span class="tag">Soon</span>
         </span>
-        <a href="#join" class="pod-btn" style="background:var(--brand-gold);color:#3a2f12;border-color:transparent">Notify me when it's live</a>
+        <button type="button" data-join class="pod-btn" style="background:var(--brand-gold);color:#3a2f12;border-color:transparent;cursor:pointer;font-family:inherit">Notify me — become a member</button>
       </div>
     </div>
   </div>
@@ -425,7 +425,7 @@
     <div class="sec-head">
       <span class="eyebrow">The Archive</span>
       <h2>Where are they now?</h2>
-      <p>One brother at a time, we're capturing the stories. New interviews drop regularly — join the list and we'll tell you when.</p>
+      <p>One brother at a time, we're capturing the stories. New interviews drop regularly — become a member and we'll tell you when.</p>
     </div>
     <div class="cards">
       <a href="brent-allen.html" class="card">
@@ -556,19 +556,15 @@
 </section>
 
 
-<!-- ── Newsletter ── -->
+<!-- ── Become a member ── -->
 <section id="join" style="padding-top:24px">
   <div class="wrap">
     <div class="news">
       <span class="eyebrow">Stay in the bonds</span>
-      <h2>Don't miss the next story.</h2>
-      <p>Join the mailing list. We'll send a note each time a new interview drops — and when the next gathering is on the calendar.</p>
-      <!-- EmailOctopus: paste your form action URL into the action="" below -->
-      <form action="REPLACE_WITH_EMAILOCTOPUS_FORM_ACTION" method="post">
-        <input type="email" name="email_address" placeholder="you@email.com" aria-label="Email address" required>
-        <button class="btn btn-gold" type="submit">Sign me up</button>
-      </form>
-      <small>Powered by Email Octopus · No spam, brother. Unsubscribe anytime.</small>
+      <h2>Become a member.</h2>
+      <p>One free account does it all — unlock the full interviews and we'll email you every time a new story drops or a get-together hits the calendar. No separate mailing list to manage; your membership is your seat at the fire.</p>
+      <button class="btn btn-gold" type="button" data-join>Create your member account</button>
+      <small>Already a member? <a href="brent-allen.html" style="color:#fff;text-decoration:underline">Log in here</a> · We review each request, brother.</small>
     </div>
   </div>
 </section>
@@ -581,7 +577,7 @@
     <a href="#interviews">Interviews</a>
     <a href="#events">Events</a>
     <a href="#about">About</a>
-    <a href="#join">Join the List</a>
+    <a href="#join">Become a Member</a>
     <a href="brent-allen.html">Members Listen</a>
   </div>
   <p class="f-fine" style="color:var(--brand-gold);font-family:var(--font-display);font-style:italic;font-size:.95rem;margin-bottom:8px">Better Men. Better Lives.</p>
@@ -692,6 +688,36 @@
     </form>
   </div>
 </div>
+<!-- Become-a-member modal -->
+<div class="esm-overlay" id="join-modal">
+  <div class="esm-card">
+    <button class="esm-close" id="jm-x" aria-label="Close">&times;</button>
+    <h3>Become a member</h3>
+    <p class="lead">Create your free account to unlock the full interviews — and we'll email you whenever a new story drops or a get-together is on the calendar. We review each request, so you'll get a confirmation once you're approved.</p>
+    <form class="efm" id="jform">
+      <div><label>Full name</label><input id="j-name" type="text" placeholder="First &amp; last name"></div>
+      <div class="row">
+        <div><label>Email</label><input id="j-email" type="email" placeholder="you@email.com"></div>
+        <div><label>Create a password</label><input id="j-pass" type="password" placeholder="At least 8 characters"></div>
+      </div>
+      <div class="row">
+        <div><label>Delta Sig pledge class</label><input id="j-class" type="text" placeholder="e.g. Alpha Beta"></div>
+        <div><label>Year graduated NIU</label><input id="j-grad" type="text" placeholder="e.g. 1989"></div>
+      </div>
+      <div><label>Contact phone</label><input id="j-phone" type="tel" placeholder="(555) 555-5555"></div>
+      <div><label>Street address</label><input id="j-street" type="text" placeholder="123 Main St"></div>
+      <div class="row">
+        <div><label>City</label><input id="j-city" type="text"></div>
+        <div><label>State</label><input id="j-state" type="text" placeholder="IL"></div>
+      </div>
+      <div><label>ZIP</label><input id="j-zip" type="text" placeholder="60115"></div>
+      <button class="btn btn-primary" id="j-send" type="button" style="justify-content:center">Create my account</button>
+      <div class="estatus" id="j-status"></div>
+      <p style="text-align:center;font-size:.85rem;color:var(--brand-muted);margin:2px 0 0">Already a member? <a href="brent-allen.html" style="color:var(--brand-primary);font-weight:600">Log in</a></p>
+      <div class="edone" id="j-done"><span class="big">🎉 Almost there — check your email!</span>Click the confirmation link from Delta Sigs NIU, then sit tight. We review each new brother and email you the moment you have full access — usually within 10–60 minutes. Yours in the Bond of the Sphinx.</div>
+    </form>
+  </div>
+</div>
 <script src="assets/supabase-config.js"></script>
 <script>
 (function(){
@@ -741,6 +767,45 @@
     else { btn.innerHTML=OFF; if(hint) hint.style.opacity=''; }
   });
 })();
+</script>
+<!-- Become-a-member signup (Supabase account + admin notification) -->
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+  var modal=document.getElementById('join-modal');
+  function openJoin(){ if(modal){ modal.classList.add('show'); document.body.style.overflow='hidden'; } }
+  function closeJoin(){ if(modal){ modal.classList.remove('show'); document.body.style.overflow=''; } }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-join]'),function(b){ b.addEventListener('click',function(e){ e.preventDefault(); openJoin(); }); });
+  if(modal){
+    document.getElementById('jm-x').addEventListener('click',closeJoin);
+    modal.addEventListener('click',function(e){ if(e.target===modal) closeJoin(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&modal.classList.contains('show')) closeJoin(); });
+  }
+  var URL=window.DS_SUPABASE_URL, KEY=window.DS_SUPABASE_ANON_KEY;
+  var send=document.getElementById('j-send'); if(!send) { /* no modal */ }
+  var v=function(id){ var e=document.getElementById(id); return e?e.value.trim():''; };
+  var stat=document.getElementById('j-status');
+  if(send && URL && KEY && !/YOUR-/.test(URL)){
+    var sb=createClient(URL,KEY);
+    send.addEventListener('click', async function(){
+      var name=v('j-name'), email=v('j-email'), password=document.getElementById('j-pass').value;
+      if(!name){ stat.textContent='Please add your full name.'; return; }
+      if(!email||!password){ stat.textContent='Enter your email and a password.'; return; }
+      if(password.length<8){ stat.textContent='Password must be at least 8 characters.'; return; }
+      send.disabled=true; stat.textContent='Creating your account…';
+      var addr=[v('j-street'), v('j-city'), [v('j-state'), v('j-zip')].filter(Boolean).join(' ')].filter(Boolean).join(', ');
+      var meta={ full_name:name, pledge_class:v('j-class'), grad_year:v('j-grad'), phone:v('j-phone'), address:addr };
+      var res=await sb.auth.signUp({ email:email, password:password, options:{ data:meta, emailRedirectTo:window.location.origin+'/?confirmed=1' } });
+      if(res.error){ send.disabled=false; stat.textContent=res.error.message; return; }
+      var payload={ name:name, email:email, pledge_class:meta.pledge_class, grad_year:meta.grad_year, phone:meta.phone, address:addr };
+      try{ fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(Object.assign({'form-name':'member-signup'},payload)).toString()}); }catch(e){}
+      try{ fetch('/.netlify/functions/notify-signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}); }catch(e){}
+      var form=document.getElementById('jform');
+      Array.prototype.forEach.call(form.children,function(c){ if(c.id!=='j-done') c.style.display='none'; });
+      document.getElementById('j-done').style.display='block';
+    });
+  } else if(send){
+    send.addEventListener('click',function(){ stat.textContent='Member signup isn’t configured yet — please email gary.ricke@deltasigsniu.com.'; });
+  }
 </script>
 <script src="assets/admin.js"></script>
 
