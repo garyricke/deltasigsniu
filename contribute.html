@@ -137,10 +137,11 @@
   function slug(s){return (s||'').toLowerCase().replace(/\.[a-z0-9]+$/,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
   function ext(n){var m=/\.([a-z0-9]+)$/i.exec(n);return m?m[1]:'';}
   function netlify(form,data){data['form-name']=form;return fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()}).catch(function(){});}
-  function upload(file,publicId){
+  function upload(file,assetFolder,publicId){
     return new Promise(function(res,rej){
       var fd=new FormData();
       fd.append('file',file);fd.append('upload_preset',PRESET);
+      if(assetFolder) fd.append('asset_folder',assetFolder);
       if(publicId) fd.append('public_id',publicId);
       var x=new XMLHttpRequest();
       x.open('POST','https://api.cloudinary.com/v1_1/'+CLOUD+'/auto/upload');
@@ -170,8 +171,8 @@
     var email=document.getElementById('i-email').value.trim();
     if(!brother){iStat.innerHTML='<div class="item"><span class="s s-err">Please add the brother’s full name.</span></div>';return;}
     iSend.disabled=true; iStat.innerHTML='<div class="item"><span class="n">'+f.name+'</span><span class="s s-up">uploading…</span></div>';
-    var pid='deltasigsniu/submissions/interviews/'+(slug(brother)||'interview')+'-'+Date.now();
-    upload(f,pid).then(function(r){
+    var pid=(slug(brother)||'interview')+'-'+Date.now();
+    upload(f,'deltasigsniu/submissions/interviews',pid).then(function(r){
       iStat.innerHTML='<div class="item"><span class="n">'+f.name+'</span><span class="s s-ok">uploaded ✓</span></div>';
       netlify('interview-upload',{submitter:submitter,email:email,brother:brother,file_url:r.secure_url||''});
       iDone.style.display='block';
@@ -199,8 +200,8 @@
       if(i>=files.length){ netlify('photo-upload',{submitter:submitter,email:email,files:urls.join('\n')}); pDone.style.display='block'; return; }
       var f=files[i], row=rows[i], st=row.querySelector('.s');
       st.textContent='uploading…';
-      var pid='deltasigsniu/submissions/photos/'+(slug(f.name)||('photo-'+Date.now()));
-      upload(f,pid).then(function(r){ st.textContent='uploaded ✓'; st.className='s s-ok'; urls.push(r.secure_url||''); i++; next(); })
+      var pid=slug(f.name)||('photo-'+Date.now());
+      upload(f,'deltasigsniu/submissions/photos',pid).then(function(r){ st.textContent='uploaded ✓'; st.className='s s-ok'; urls.push(r.secure_url||''); i++; next(); })
         .catch(function(err){ st.textContent=String(err); st.className='s s-err'; i++; next(); });
     }
     next();
