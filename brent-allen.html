@@ -222,6 +222,13 @@
     <h2 id="m-title">Brothers Only</h2>
     <p id="m-sub">Log in to listen to the interview.</p>
     <div id="m-form">
+      <div id="m-extra" style="display:none">
+        <input id="m-name" class="gate-input" type="text" placeholder="Full name" autocomplete="name">
+        <input id="m-class" class="gate-input" type="text" placeholder="Delta Sig pledge class">
+        <input id="m-grad" class="gate-input" type="text" placeholder="Year graduated NIU" inputmode="numeric">
+        <input id="m-phone" class="gate-input" type="tel" placeholder="Contact phone" autocomplete="tel">
+        <input id="m-address" class="gate-input" type="text" placeholder="Current address" autocomplete="street-address">
+      </div>
       <input id="m-email" class="gate-input" type="email" placeholder="Email" autocomplete="email">
       <input id="m-pass" class="gate-input" type="password" placeholder="Password" autocomplete="current-password">
       <button class="gate-btn" id="m-primary">Log in</button>
@@ -597,6 +604,12 @@
       mode = m; setMsg('');
       if (m === 'login'){ titleEl.textContent='Brothers Only'; subEl.textContent='Log in to listen to the interview.'; primaryBtn.textContent='Log in'; toggleEl.textContent='Need an account? Request access'; }
       else { titleEl.textContent='Request Access'; subEl.textContent='Create your account — a brother will approve you.'; primaryBtn.textContent='Create account'; toggleEl.textContent='Already have an account? Log in'; }
+      document.getElementById('m-extra').style.display = (m==='signup') ? 'block' : 'none';
+    }
+    function val(id){ var el=document.getElementById(id); return el ? el.value.trim() : ''; }
+    function notifySignup(meta, email){
+      try{ fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:new URLSearchParams({'form-name':'member-signup',name:meta.full_name,email:email,pledge_class:meta.pledge_class,grad_year:meta.grad_year,phone:meta.phone,address:meta.address}).toString()}); }catch(e){}
     }
     function pending(email){
       titleEl.textContent='Pending Approval';
@@ -625,9 +638,12 @@
         if (error){ setMsg(error.message); return; }
         gateCheck();
       } else {
-        const { error } = await sb.auth.signUp({ email, password });
+        if (!val('m-name')){ primaryBtn.disabled=false; setMsg('Please add your full name.'); return; }
+        var meta={ full_name:val('m-name'), pledge_class:val('m-class'), grad_year:val('m-grad'), phone:val('m-phone'), address:val('m-address') };
+        const { error } = await sb.auth.signUp({ email, password, options:{ data:meta }});
         primaryBtn.disabled = false;
         if (error){ setMsg(error.message); return; }
+        notifySignup(meta, email);
         setMsg('Account created. Confirm via the email we sent, then a brother will approve you.', true);
       }
     }
@@ -643,5 +659,6 @@
     gateCheck();
   }
 </script>
+<script src="assets/admin.js"></script>
 </body>
 </html>

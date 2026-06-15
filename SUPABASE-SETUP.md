@@ -90,3 +90,61 @@ That's it. Reload `brent-allen.html`:
   the right bar.
 - **Local testing:** opening the file via `file://` may hit CORS limits on the Supabase calls.
   Serve locally instead, e.g. `python3 -m http.server` then visit `http://localhost:8000/brent-allen.html`.
+
+---
+
+# Update — June 15, 2026
+
+## A. Extra signup fields (run this SQL once)
+The signup form now collects full name, pledge class, grad year, phone, and address.
+**SQL Editor → New query → Run:**
+
+```sql
+alter table public.profiles
+  add column if not exists full_name   text,
+  add column if not exists pledge_class text,
+  add column if not exists grad_year   text,
+  add column if not exists phone       text,
+  add column if not exists address     text;
+
+create or replace function public.handle_new_user()
+returns trigger language plpgsql security definer set search_path = public as $$
+begin
+  insert into public.profiles (id, email, full_name, pledge_class, grad_year, phone, address)
+  values (
+    new.id, new.email,
+    new.raw_user_meta_data->>'full_name',
+    new.raw_user_meta_data->>'pledge_class',
+    new.raw_user_meta_data->>'grad_year',
+    new.raw_user_meta_data->>'phone',
+    new.raw_user_meta_data->>'address'
+  ) on conflict (id) do nothing;
+  return new;
+end; $$;
+```
+
+When you approve a brother (Table Editor → profiles → `approved` = true) you'll now see all
+their details in the same row.
+
+## B. Email notifications (Netlify Forms) — so you know to act
+The site sends a few things to **Netlify Forms**, which can email you. In Netlify:
+**Site → Forms → Form notifications → Add notification → Email notification →**
+send to **gary.ricke@orbisdesign.com** for each form:
+- **member-signup** — a brother created an account (go approve them in Supabase)
+- **interview-request** — someone wants to schedule an interview
+- **interview-upload** — a brother uploaded an interview recording
+- **photo-upload** — a brother uploaded photos
+
+(Netlify auto-detects the forms on the next deploy from the hidden form markup in `index.html`.)
+
+## C. Brother uploads (Cloudinary unsigned preset)
+`contribute.html` lets brothers upload interview recordings and photos straight to Cloudinary.
+Create an **unsigned** preset:
+**Cloudinary → Settings → Upload → Upload presets → Add → Signing mode: Unsigned**,
+set **Use filename = on**, **Unique filename = off**, save, then copy the preset name into
+`assets/supabase-config.js` (`DS_CLOUDINARY_UPLOAD_PRESET`).
+- Interview files land in `deltasigsniu/submissions/interviews/`
+- Photos land in `deltasigsniu/submissions/photos/` (filenames preserved, e.g.
+  `brent-allen-sailboat-lake-michigan` — that's how the AI knows whose story they belong to).
+- You'll get an email (form **interview-upload** / **photo-upload**) with the file link(s);
+  process and add to the site when ready.

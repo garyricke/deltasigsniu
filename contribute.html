@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contribute — Delta Sigs NIU</title>
+<meta name="description" content="Brothers: submit an interview you recorded, or add photos to a brother's story.">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/favicon">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--brand-primary:#489868;--brand-pine:#2C5C42;--brand-cream:#FAF8F3;--brand-white:#FFFFFF;--brand-ink:#1F2A24;--brand-gold:#C9A24B;--brand-line:#E6E9E6;--brand-muted:#8A938C;--font-display:'Fraunces',Georgia,serif;--font-body:'Inter',sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--font-body);background:var(--brand-cream);color:var(--brand-ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--font-display);color:var(--brand-pine);line-height:1.15}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:600;color:var(--brand-primary)}
+  .nav{position:sticky;top:0;z-index:100;background:rgba(250,248,243,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--brand-line)}
+  .nav-inner{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav-inner img{height:34px}
+  .back-link{display:flex;align-items:center;gap:6px;color:var(--brand-muted);font-size:.875rem;font-weight:600;text-decoration:none}
+  .back-link:hover{color:var(--brand-pine)}
+  .top{background:linear-gradient(150deg,#16271d,#2C5C42 60%,#234c37);color:#fff;padding:56px 0 48px;text-align:center}
+  .top .eyebrow{color:var(--brand-gold)}
+  .top h1{color:#fff;font-size:clamp(2.1rem,5vw,3rem);font-weight:600;margin:10px 0 12px}
+  .top p{color:rgba(255,255,255,.82);max-width:54ch;margin:0 auto}
+  section{padding:48px 0;border-bottom:1px solid var(--brand-line)}
+  .card{background:var(--brand-white);border:1px solid var(--brand-line);border-radius:18px;padding:30px;box-shadow:0 10px 30px rgba(31,42,36,.06)}
+  .card h2{font-size:1.5rem;display:flex;align-items:center;gap:11px;margin-bottom:8px}
+  .card h2 svg{width:24px;height:24px;color:var(--brand-primary);flex:none}
+  .card .lead{color:#4a564f;font-size:.97rem;margin-bottom:22px}
+  .steps{list-style:none;display:grid;gap:8px;margin:0 0 22px;padding:16px 18px;background:var(--brand-cream);border-radius:12px}
+  .steps li{font-size:.9rem;color:#43504a;padding-left:24px;position:relative}
+  .steps li::before{content:'✓';position:absolute;left:0;color:var(--brand-primary);font-weight:700}
+  label{font-size:.8rem;font-weight:600;color:var(--brand-pine);display:block;margin-bottom:6px}
+  input[type=text],input[type=email]{width:100%;border:1px solid var(--brand-line);border-radius:10px;padding:12px 14px;font-family:var(--font-body);font-size:.95rem;background:var(--brand-cream);color:var(--brand-ink);margin-bottom:16px}
+  input:focus{outline:none;border-color:var(--brand-primary)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.row{grid-template-columns:1fr}}
+  .drop{border:2px dashed color-mix(in srgb,var(--brand-primary) 45%,transparent);border-radius:14px;padding:26px;text-align:center;background:var(--brand-cream);cursor:pointer;transition:.15s;margin-bottom:16px}
+  .drop:hover{border-color:var(--brand-primary);background:rgba(72,152,104,.05)}
+  .drop svg{width:30px;height:30px;color:var(--brand-primary)}
+  .drop p{font-size:.9rem;color:var(--brand-muted);margin-top:8px}
+  .drop b{color:var(--brand-pine)}
+  .rule{background:rgba(201,162,75,.1);border:1px solid rgba(201,162,75,.4);border-radius:12px;padding:14px 16px;font-size:.86rem;color:#6f5a25;margin-bottom:18px;line-height:1.55}
+  .rule code{background:rgba(0,0,0,.06);padding:1px 6px;border-radius:5px;font-size:.82em}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:600;font-size:.95rem;border-radius:999px;padding:13px 26px;cursor:pointer;border:0;background:var(--brand-primary);color:#fff;transition:.15s}
+  .btn:hover{background:var(--brand-pine)}
+  .btn:disabled{opacity:.55;cursor:default}
+  .status{margin-top:16px;font-size:.9rem}
+  .status .item{display:flex;justify-content:space-between;gap:10px;padding:8px 12px;border:1px solid var(--brand-line);border-radius:9px;margin-bottom:7px;background:var(--brand-white)}
+  .status .item .n{color:var(--brand-ink);font-weight:500;word-break:break-all}
+  .status .item .s{flex:none;font-size:.8rem;font-weight:600}
+  .s-ok{color:var(--brand-primary)} .s-err{color:#c0573e} .s-up{color:var(--brand-muted)}
+  .done{display:none;background:rgba(72,152,104,.1);border:1px solid rgba(72,152,104,.4);color:var(--brand-pine);border-radius:10px;padding:16px;font-size:.95rem;margin-top:16px}
+  .setup-warn{display:none;background:#fdf3f0;border:1px solid #e6b8a8;color:#8a3d27;border-radius:10px;padding:14px 16px;font-size:.86rem;margin-bottom:18px}
+  footer{padding:34px 0 50px;text-align:center;color:var(--brand-muted);font-size:.8rem}
+  footer a{color:var(--brand-pine);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html"><img src="assets/delta-sigs-logo.svg" alt="Delta Sigs NIU"></a>
+  <a href="index.html" class="back-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg> Home</a>
+</div></nav>
+
+<header class="top"><div class="wrap">
+  <span class="eyebrow">For brothers</span>
+  <h1>Contribute to the archive</h1>
+  <p>Recorded an interview with a brother? Got photos for someone's story? Send them in here — Gary reviews everything and adds it to the site.</p>
+</div></header>
+
+<!-- Interview upload -->
+<section><div class="wrap">
+  <div class="card">
+    <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 19v3"/></svg> Submit an interview</h2>
+    <p class="lead">Any brother can interview another. Record a voice memo on your phone following our interview structure, then upload it here. We'll handle the editing and build the page.</p>
+    <ul class="steps">
+      <li>Use your phone's voice memo app (or any recorder).</li>
+      <li>Follow the <a href="index.html#interview" style="color:var(--brand-primary)">interview structure</a> — before NIU, finding Delta Sigs, the stories, career &amp; family, and the advice to your younger self.</li>
+      <li>Upload the file below. Audio or video both work.</li>
+    </ul>
+    <div class="setup-warn" id="warn-i"></div>
+    <div class="row">
+      <div><label>Your name (who recorded it)</label><input type="text" id="i-submitter"></div>
+      <div><label>Your email</label><input type="email" id="i-email"></div>
+    </div>
+    <label>Brother interviewed (full name)</label><input type="text" id="i-brother" placeholder="e.g. Brent Allen">
+    <div class="drop" id="i-drop">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0 4 4m-4-4-4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <p><b id="i-fname">Tap to choose your recording</b><br>audio or video</p>
+      <input type="file" id="i-file" accept="audio/*,video/*" hidden>
+    </div>
+    <button class="btn" id="i-send" disabled>Upload interview</button>
+    <div class="status" id="i-status"></div>
+    <div class="done" id="i-done">Thank you — your interview is in. Gary will review it and build the page. Yours in the Bonds.</div>
+  </div>
+</div></section>
+
+<!-- Photo upload -->
+<section style="border-bottom:none"><div class="wrap">
+  <div class="card">
+    <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg> Add your photos</h2>
+    <p class="lead">Upload photos to be added to your story — anytime, whether or not your interview is done yet.</p>
+    <div class="rule">
+      <b>One important rule:</b> name each file with the full name(s) of the brother(s) in it, using hyphens — so our tool knows whose story it belongs to. For example:
+      <code>brent-allen-sailboat-lake-michigan.jpg</code> or <code>gary-ricke-brent-allen-by-the-fire.jpg</code>.
+    </div>
+    <div class="row">
+      <div><label>Your name</label><input type="text" id="p-submitter"></div>
+      <div><label>Your email</label><input type="email" id="p-email"></div>
+    </div>
+    <div class="drop" id="p-drop">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0 4 4m-4-4-4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <p><b id="p-fname">Tap to choose photos</b><br>you can select several at once</p>
+      <input type="file" id="p-file" accept="image/*" multiple hidden>
+    </div>
+    <button class="btn" id="p-send" disabled>Upload photos</button>
+    <div class="status" id="p-status"></div>
+    <div class="done" id="p-done">Thank you — your photos are in. Gary will add them to the right stories. Yours in the Bonds.</div>
+  </div>
+</div></section>
+
+<footer><a href="index.html">← Back to Delta Sigs NIU</a><br><br>Delta Sigs NIU · Yours in the Bonds</footer>
+
+<script src="assets/supabase-config.js"></script>
+<script>
+(function(){
+  var CLOUD=window.DS_CLOUDINARY_CLOUD, PRESET=window.DS_CLOUDINARY_UPLOAD_PRESET;
+  var ready = CLOUD && PRESET && !/YOUR-/.test(PRESET);
+  if(!ready){
+    var w=document.getElementById('warn-i');
+    w.style.display='block';
+    w.textContent='Uploads aren’t configured yet — add your Cloudinary unsigned upload preset to assets/supabase-config.js (see SUPABASE-SETUP.md).';
+  }
+  function slug(s){return (s||'').toLowerCase().replace(/\.[a-z0-9]+$/,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+  function ext(n){var m=/\.([a-z0-9]+)$/i.exec(n);return m?m[1]:'';}
+  function netlify(form,data){data['form-name']=form;return fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()}).catch(function(){});}
+  function upload(file,publicId){
+    return new Promise(function(res,rej){
+      var fd=new FormData();
+      fd.append('file',file);fd.append('upload_preset',PRESET);
+      if(publicId) fd.append('public_id',publicId);
+      var x=new XMLHttpRequest();
+      x.open('POST','https://api.cloudinary.com/v1_1/'+CLOUD+'/auto/upload');
+      x.onload=function(){ try{var j=JSON.parse(x.responseText);}catch(e){return rej('bad response');} (x.status>=200&&x.status<300)?res(j):rej((j.error&&j.error.message)||'upload failed'); };
+      x.onerror=function(){rej('network error');};
+      x.send(fd);
+    });
+  }
+  function wireDrop(dropId,inputId,nameId,onPick){
+    var drop=document.getElementById(dropId),inp=document.getElementById(inputId),nm=document.getElementById(nameId);
+    drop.addEventListener('click',function(){inp.click();});
+    inp.addEventListener('change',function(){
+      if(!inp.files.length){return;}
+      nm.textContent = inp.files.length===1 ? inp.files[0].name : inp.files.length+' files selected';
+      onPick();
+    });
+  }
+
+  /* ---- Interview ---- */
+  var iFile=document.getElementById('i-file'),iSend=document.getElementById('i-send'),
+      iStat=document.getElementById('i-status'),iDone=document.getElementById('i-done');
+  wireDrop('i-drop','i-file','i-fname',function(){ iSend.disabled=!ready; });
+  iSend.addEventListener('click',function(){
+    var f=iFile.files[0]; if(!f) return;
+    var brother=document.getElementById('i-brother').value.trim();
+    var submitter=document.getElementById('i-submitter').value.trim();
+    var email=document.getElementById('i-email').value.trim();
+    if(!brother){iStat.innerHTML='<div class="item"><span class="s s-err">Please add the brother’s full name.</span></div>';return;}
+    iSend.disabled=true; iStat.innerHTML='<div class="item"><span class="n">'+f.name+'</span><span class="s s-up">uploading…</span></div>';
+    var pid='deltasigsniu/submissions/interviews/'+(slug(brother)||'interview')+'-'+Date.now();
+    upload(f,pid).then(function(r){
+      iStat.innerHTML='<div class="item"><span class="n">'+f.name+'</span><span class="s s-ok">uploaded ✓</span></div>';
+      netlify('interview-upload',{submitter:submitter,email:email,brother:brother,file_url:r.secure_url||''});
+      iDone.style.display='block';
+    }).catch(function(err){
+      iSend.disabled=false;
+      iStat.innerHTML='<div class="item"><span class="n">'+f.name+'</span><span class="s s-err">'+err+'</span></div>';
+    });
+  });
+
+  /* ---- Photos ---- */
+  var pFile=document.getElementById('p-file'),pSend=document.getElementById('p-send'),
+      pStat=document.getElementById('p-status'),pDone=document.getElementById('p-done');
+  wireDrop('p-drop','p-file','p-fname',function(){ pSend.disabled=!ready; });
+  pSend.addEventListener('click',function(){
+    var files=Array.prototype.slice.call(pFile.files); if(!files.length) return;
+    var submitter=document.getElementById('p-submitter').value.trim();
+    var email=document.getElementById('p-email').value.trim();
+    pSend.disabled=true; pStat.innerHTML=''; var urls=[]; var i=0;
+    var rows=files.map(function(f){
+      var d=document.createElement('div');d.className='item';
+      d.innerHTML='<span class="n">'+f.name+'</span><span class="s s-up">waiting…</span>';
+      pStat.appendChild(d);return d;
+    });
+    function next(){
+      if(i>=files.length){ netlify('photo-upload',{submitter:submitter,email:email,files:urls.join('\n')}); pDone.style.display='block'; return; }
+      var f=files[i], row=rows[i], st=row.querySelector('.s');
+      st.textContent='uploading…';
+      var pid='deltasigsniu/submissions/photos/'+(slug(f.name)||('photo-'+Date.now()));
+      upload(f,pid).then(function(r){ st.textContent='uploaded ✓'; st.className='s s-ok'; urls.push(r.secure_url||''); i++; next(); })
+        .catch(function(err){ st.textContent=String(err); st.className='s s-err'; i++; next(); });
+    }
+    next();
+  });
+})();
+</script>
+<script src="assets/admin.js"></script>
+</body>
+</html>
