@@ -448,7 +448,7 @@
 </section>
 
 <!-- ── Interviews grid ── -->
-<section id="interviews" style="padding-top:24px">
+<section id="interviews" style="padding-top:24px;scroll-margin-top:84px">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">The Archive</span>
@@ -848,6 +848,24 @@
   }
 </script>
 <script src="assets/admin.js"></script>
+<script>
+/* Land on the interviews grid when arriving via index.html#interviews.
+   Images/galleries above the section load after first paint and shift the
+   layout, so the browser's load-time hash jump can land stale — re-align
+   instantly (honoring the section's scroll-margin-top) after content settles. */
+(function(){
+  if (location.hash !== '#interviews') return;
+  function align(){
+    var e = document.getElementById('interviews');
+    if (!e) return;
+    var y = e.getBoundingClientRect().top + window.pageYOffset - 84;
+    window.scrollTo({ top: y, behavior: 'instant' });
+  }
+  align();
+  document.addEventListener('DOMContentLoaded', align);
+  window.addEventListener('load', function(){ align(); setTimeout(align, 300); });
+})();
+</script>
 
 </body>
 </html>
