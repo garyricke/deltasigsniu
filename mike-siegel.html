@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start From Nothing — A Conversation with Mike Siegel, Founder of Delta Sigs NIU</title>
+<meta name="description" content="From a shy kid in Chicago's south suburbs to helping found Delta Sigs at NIU, to a life on stage in Los Angeles — Mike Siegel tells the whole story. Listen full, or in a 60, 30, 15, or 5-minute cut.">
+<meta property="og:title" content="Start From Nothing — Mike Siegel, Founder of Delta Sigs NIU">
+<meta property="og:description" content="Founding a fraternity from nothing, the Berlin Wall, the hardest thing he ever did, and a life on stage. A Founders' Series conversation.">
+<meta property="og:type" content="article">
+<meta name="article:published_time" content="2026-07-12">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/favicon-sphinx">
+<link rel="apple-touch-icon" href="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/favicon-sphinx">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand-primary:#489868;
+    --brand-pine:#2C5C42;
+    --brand-cream:#FAF8F3;
+    --brand-white:#FFFFFF;
+    --brand-ink:#1F2A24;
+    --brand-gold:#C9A24B;
+    --brand-line:#E6E9E6;
+    --brand-muted:#8A938C;
+    --font-display:'Fraunces', Georgia, serif;
+    --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);background:var(--brand-cream);color:var(--brand-ink);-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:var(--font-display)}
+
+  /* ── Password Gate ── */
+  #gate{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(150deg,#1c3b2b 0%,#2C5C42 55%,#234734 100%)}
+  #gate.fade-out{opacity:0;transition:opacity .5s ease;pointer-events:none}
+  .gate-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(16px);
+    border-radius:20px;padding:46px 38px;width:100%;max-width:400px;text-align:center;margin:20px}
+  .gate-logo{width:180px;height:auto;margin:0 auto 22px;display:block}
+  .gate-card h2{color:#fff;font-size:1.35rem;font-weight:600;margin-bottom:8px}
+  .gate-card p{color:rgba(255,255,255,.6);font-size:.875rem;margin-bottom:26px;font-family:var(--font-body)}
+  .gate-input{width:100%;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);color:#fff;font-size:1rem;outline:none;margin-bottom:14px;
+    letter-spacing:.05em;transition:border-color .2s;font-family:var(--font-body)}
+  .gate-input:focus{border-color:var(--brand-gold)}
+  .gate-input::placeholder{color:rgba(255,255,255,.4)}
+  .gate-btn{width:100%;padding:14px;border-radius:12px;border:none;background:var(--brand-gold);
+    color:#3a2f12;font-weight:700;font-size:1rem;cursor:pointer;font-family:var(--font-body);letter-spacing:.03em;transition:filter .2s}
+  .gate-btn:hover{filter:brightness(.96)}
+  .gate-error{color:#f6b6a6;font-size:.8rem;margin-top:10px;min-height:20px}
+  .gate-hint{color:rgba(255,255,255,.4);font-size:.72rem;margin-top:18px;font-family:var(--font-body)}
+
+  /* ── Nav ── */
+  .site-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,243,.92);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--brand-line);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:62px}
+  .nav-logo{height:34px}
+  .back-link{display:flex;align-items:center;gap:6px;color:var(--brand-muted);font-size:.875rem;font-weight:600;
+    text-decoration:none;transition:color .2s}
+  .back-link:hover{color:var(--brand-pine)}
+
+  /* ── Hero ── */
+  .hero-wrap{position:relative;width:100%;overflow:hidden;background:#13201a}
+  .hero-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;min-height:540px}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr}}
+  .hero-photo-col{position:relative;background:radial-gradient(circle at 30% 20%,rgba(72,152,104,.22),transparent 60%),#13201a;
+    display:flex;align-items:center;justify-content:center;padding:40px}
+  .hero-photo-frame{position:relative;width:100%;max-width:360px;border:10px solid #fff;border-radius:3px;
+    box-shadow:0 24px 60px rgba(0,0,0,.5);transform:rotate(-2deg)}
+  .hero-photo-frame img{display:block;width:100%}
+  .hero-photo-tag{position:absolute;bottom:-14px;right:-10px;background:var(--brand-gold);color:#3a2f12;
+    font-family:var(--font-body);font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    padding:5px 11px;border-radius:99px;transform:rotate(2deg);box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .hero-text-col{display:flex;flex-direction:column;justify-content:center;padding:56px 48px}
+  @media(max-width:820px){.hero-text-col{padding:36px 28px 52px}}
+  .hero-badges{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+  .hero-pill{background:rgba(72,152,104,.22);border:1px solid rgba(72,152,104,.5);color:#bfe6cf;
+    font-family:var(--font-body);font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    padding:4px 12px;border-radius:99px}
+  .hero-date{color:rgba(255,255,255,.55);font-size:.85rem}
+  .hero-h1{font-size:clamp(2.4rem,5.2vw,3.6rem);font-weight:600;color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:18px}
+  .hero-dek{color:rgba(255,255,255,.8);font-size:1.05rem;line-height:1.6;max-width:460px}
+  .hero-byline{margin-top:24px;display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.6);font-size:.85rem;flex-wrap:wrap}
+  .hero-byline .dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4)}
+
+  /* ── Article ── */
+  .article-outer{background:var(--brand-white)}
+  .article-inner{max-width:760px;margin:0 auto;padding:44px 24px 80px}
+  .lede{font-size:1.28rem;line-height:1.7;color:var(--brand-ink);font-family:var(--font-display);font-style:italic;
+    margin:8px 0 40px;padding-left:20px;border-left:3px solid var(--brand-primary)}
+  .body-p{font-size:1.07rem;line-height:1.85;color:#33403a;margin-bottom:24px}
+  .body-p strong{color:var(--brand-pine);font-weight:600}
+  .section-heading{font-size:1.6rem;font-weight:600;color:var(--brand-pine);margin:54px 0 18px;letter-spacing:-.01em;
+    display:flex;align-items:center;gap:12px;line-height:1.2}
+  .section-heading .kicker-num{font-family:var(--font-body);font-size:.8rem;color:var(--brand-primary);
+    border:1.5px solid rgba(72,152,104,.45);border-radius:8px;padding:3px 8px;flex-shrink:0;font-weight:700}
+
+  .pullquote{margin:40px 0;padding:8px 0 8px 28px;border-left:4px solid var(--brand-gold)}
+  .pullquote p{font-family:var(--font-display);font-size:1.5rem;line-height:1.35;font-weight:500;color:var(--brand-pine);font-style:italic}
+  .pullquote cite{display:block;font-family:var(--font-body);font-style:normal;font-size:.82rem;color:var(--brand-muted);margin-top:14px;letter-spacing:.02em}
+
+  .bio-card{display:flex;gap:20px;align-items:center;margin:36px 0;padding:22px;
+    background:linear-gradient(135deg,rgba(44,92,66,.05),rgba(72,152,104,.08));border:1px solid rgba(44,92,66,.1);border-radius:18px}
+  .bio-card img{width:92px;height:92px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 6px 18px rgba(44,92,66,.25)}
+  .bio-name{font-family:var(--font-display);font-weight:600;color:var(--brand-pine);font-size:1.2rem}
+  .bio-role{color:#5a655e;font-size:.9rem;margin-top:3px;line-height:1.5;font-family:var(--font-body)}
+
+  /* ── Quick profile: stats / interests / chips ── */
+  .facts-head{margin:50px 0 18px}
+  .facts-head .ey{display:block;font-family:var(--font-body);text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:600;color:var(--brand-primary);margin-bottom:8px}
+  .facts-head h3{font-family:var(--font-display);font-size:1.6rem;color:var(--brand-pine);font-weight:600}
+  .profile-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:600px){.profile-stats{grid-template-columns:repeat(2,1fr)}}
+  .pstat{background:linear-gradient(150deg,var(--brand-pine),#1f4231);color:#fff;border-radius:16px;padding:22px 16px;text-align:center}
+  .pstat .n{font-family:var(--font-display);font-weight:600;font-size:1.9rem;line-height:1;color:#fff}
+  .pstat .n span{color:var(--brand-gold);font-size:1.2rem}
+  .pstat .l{font-size:.78rem;color:rgba(255,255,255,.78);margin-top:9px;line-height:1.4}
+  .interest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:640px){.interest-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:420px){.interest-grid{grid-template-columns:1fr}}
+  .icard{background:var(--brand-white);border:1px solid var(--brand-line);border-radius:16px;padding:20px;box-shadow:0 1px 2px rgba(31,42,36,.04),0 10px 26px rgba(31,42,36,.05)}
+  .icard .ico{width:42px;height:42px;border-radius:11px;background:rgba(72,152,104,.12);display:flex;align-items:center;justify-content:center;color:var(--brand-primary);margin-bottom:13px}
+  .icard .ico svg{width:22px;height:22px}
+  .icard h4{font-family:var(--font-display);font-size:1.08rem;color:var(--brand-ink);margin-bottom:5px;font-weight:600}
+  .icard p{font-size:.86rem;color:var(--brand-muted);line-height:1.5}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+  .chip{background:rgba(201,162,75,.14);color:#7a5e1b;border:1px solid rgba(201,162,75,.38);border-radius:999px;padding:7px 14px;font-size:.8rem;font-weight:600}
+
+  .fig{margin:42px 0}
+  .fig img,.fig video{width:100%;border-radius:16px;display:block;box-shadow:0 10px 30px rgba(44,92,66,.14)}
+  .fig video{aspect-ratio:16/9;background:#13201a;object-fit:cover}
+  .fig figcaption{font-size:.82rem;color:var(--brand-muted);margin-top:10px;text-align:center;font-style:italic;font-family:var(--font-display)}
+
+  /* ── Photo grids (weekend + archive) ── */
+  .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0}
+  @media(max-width:560px){.pgrid{grid-template-columns:1fr}}
+  .pgrid figure{margin:0}
+  .pgrid img{width:100%;border-radius:14px;display:block;box-shadow:0 8px 22px rgba(44,92,66,.14);aspect-ratio:4/3;object-fit:cover}
+  .pgrid figcaption{font-size:.78rem;color:var(--brand-muted);margin-top:8px;font-style:italic;font-family:var(--font-display);text-align:center}
+  .arch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0}
+  @media(max-width:560px){.arch-grid{grid-template-columns:repeat(2,1fr)}}
+  .arch-grid a{display:block}
+  .arch-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;box-shadow:0 6px 16px rgba(44,92,66,.12);transition:transform .2s}
+  .arch-grid img:hover{transform:scale(1.03)}
+
+  .divider{border:none;border-top:1px solid var(--brand-line);margin:46px 0}
+
+  .cta-block{margin:56px 0 0;padding:44px 40px;background:linear-gradient(150deg,var(--brand-pine),#1f4231);
+    border-radius:22px;text-align:center;position:relative;overflow:hidden}
+  .cta-block::after{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,162,75,.3),transparent 70%)}
+  .cta-block h3{color:#fff;font-size:1.6rem;font-weight:600;margin-bottom:10px;position:relative}
+  .cta-block p{color:rgba(255,255,255,.72);font-size:.97rem;margin-bottom:26px;line-height:1.6;position:relative;font-family:var(--font-body);max-width:48ch;margin-left:auto;margin-right:auto}
+  .cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:99px;background:var(--brand-gold);
+    color:#3a2f12;font-family:var(--font-body);font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s,filter .2s;position:relative}
+  .cta-btn:hover{filter:brightness(.97);transform:translateY(-1px)}
+
+  /* Editor note */
+  .ed-note{margin:40px 0 0;padding:16px 20px;background:rgba(201,162,75,.08);border:1px solid rgba(201,162,75,.3);
+    border-radius:14px;font-size:.85rem;color:#6f5a25;line-height:1.6;font-family:var(--font-body)}
+  .ed-note b{color:#5a4a1c}
+
+  /* ── Footer ── */
+  footer{background:var(--brand-pine);padding:40px 24px;text-align:center}
+  footer img{height:38px;margin:0 auto 16px;display:block}
+  footer p{color:rgba(255,255,255,.55);font-size:.82rem;font-family:var(--font-body)}
+  footer a{color:rgba(255,255,255,.7);text-decoration:none}
+  footer a:hover{color:#fff}
+
+  /* ════ CHAPTERED AUDIO PLAYER ════ */
+  .player{margin:-46px auto 44px;max-width:720px;position:relative;z-index:20;border-radius:22px;
+    background:linear-gradient(150deg,#16271d 0%,#2C5C42 60%,#234c37 100%);
+    box-shadow:0 24px 60px rgba(19,32,26,.45);overflow:hidden;border:1px solid rgba(255,255,255,.09)}
+  .player-top{padding:24px 26px 18px}
+  .player-head{display:flex;gap:18px;align-items:center;margin-bottom:6px}
+  .player-avatar{width:82px;height:82px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid rgba(255,255,255,.2);box-shadow:0 6px 20px rgba(0,0,0,.4);transition:opacity .18s ease}
+  @media(max-width:480px){.player-avatar{width:62px;height:62px}}
+  .player-headtext{min-width:0}
+  .player-label{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .eq{display:flex;align-items:flex-end;gap:3px;height:20px}
+  .eq span{width:3px;background:var(--brand-gold);border-radius:2px;height:6px}
+  .player.is-playing .eq span{animation:eq .9s ease-in-out infinite}
+  .player.is-playing .eq span:nth-child(2){animation-delay:.15s}
+  .player.is-playing .eq span:nth-child(3){animation-delay:.3s}
+  .player.is-playing .eq span:nth-child(4){animation-delay:.45s}
+  @keyframes eq{0%,100%{height:5px}50%{height:19px}}
+  .player-label-text{font-family:var(--font-body);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-gold)}
+  .player-title{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:#fff;line-height:1.25}
+  .player-now{margin-top:8px;font-size:.82rem;color:rgba(255,255,255,.62);display:flex;align-items:center;gap:8px;font-family:var(--font-body)}
+  .player-now b{color:#dcc488;font-weight:600}
+  .now-dot{width:7px;height:7px;border-radius:50%;background:var(--brand-gold);flex-shrink:0}
+  .player.is-playing .now-dot{animation:pulse 1.6s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(201,162,75,.55)}70%{box-shadow:0 0 0 8px rgba(201,162,75,0)}100%{box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+
+  /* ── Length selector ── */
+  .len-wrap{padding:2px 26px 6px}
+  .len-label{font-family:var(--font-body);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:0 0 9px;display:flex;align-items:center;gap:8px}
+  .len-label svg{width:13px;height:13px;opacity:.7}
+  .len-select{display:flex;gap:7px}
+  @media(max-width:480px){.len-select{flex-wrap:wrap}}
+  .len-btn{flex:1;min-width:54px;padding:9px 6px;border-radius:12px;border:1.5px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.06);color:rgba(255,255,255,.72);cursor:pointer;font-family:var(--font-body);
+    text-align:center;transition:background .15s,color .15s,border-color .15s,box-shadow .15s;line-height:1.1}
+  .len-btn:hover{background:rgba(255,255,255,.13);color:#fff}
+  .len-btn.active{background:linear-gradient(135deg,var(--brand-primary),var(--brand-gold));border-color:transparent;color:#12251b;box-shadow:0 5px 16px rgba(72,152,104,.45)}
+  .len-btn b{display:block;font-size:.9rem;font-weight:800}
+  .len-btn span{display:block;font-size:.6rem;opacity:.82;margin-top:2px;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+
+  .player-progress{position:relative;height:8px;margin:16px 0 8px;border-radius:99px;background:rgba(255,255,255,.15);cursor:pointer}
+  .player-fill{position:absolute;left:0;top:0;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--brand-primary),var(--brand-gold));pointer-events:none;width:0%}
+  .player-thumb{position:absolute;top:50%;transform:translate(-50%,-50%);width:15px;height:15px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.4);pointer-events:none;left:0%}
+  .player-tick{position:absolute;top:50%;transform:translate(-50%,-50%);width:2px;height:12px;background:rgba(255,255,255,.5);border-radius:2px;pointer-events:none}
+  .player-times{display:flex;justify-content:space-between;font-size:.74rem;color:rgba(255,255,255,.5);font-variant-numeric:tabular-nums}
+  .player-controls{display:flex;align-items:center;justify-content:center;gap:14px;padding:6px 26px 22px}
+  .pc-btn{width:42px;height:42px;border-radius:50%;border:none;background:rgba(255,255,255,.1);cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.82);transition:transform .15s,background .15s;font-family:var(--font-body);font-size:.72rem;font-weight:700}
+  .pc-btn:hover{transform:scale(1.08);background:rgba(255,255,255,.18)}
+  .pc-play{width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,var(--brand-primary),var(--brand-gold));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(72,152,104,.5);transition:transform .15s}
+  .pc-play:hover{transform:scale(1.06)}
+  .pc-chapters{display:flex;align-items:center;gap:8px;padding:0 16px 0 18px;height:44px;border-radius:99px;border:1.5px solid rgba(201,162,75,.6);background:rgba(201,162,75,.18);color:#f3e6c6;cursor:pointer;font-family:var(--font-body);font-size:.82rem;font-weight:700;transition:background .15s,border-color .15s,transform .15s}
+  .pc-chapters:hover{background:rgba(201,162,75,.32);border-color:rgba(201,162,75,.95);transform:scale(1.04)}
+  .pc-chapters svg{transition:transform .25s}
+  .pc-chapters[hidden]{display:none}
+  .player.chapters-open .pc-chapters svg.chev{transform:rotate(180deg)}
+  .ch-count{display:inline-flex;align-items:center;justify-content:center;min-width:19px;height:19px;padding:0 5px;border-radius:99px;background:var(--brand-gold);color:#3a2f12;font-size:.66rem;font-weight:800;line-height:1}
+  @keyframes chapterPulse{0%{box-shadow:0 0 0 0 rgba(201,162,75,.5)}70%{box-shadow:0 0 0 9px rgba(201,162,75,0)}100%{box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+  .player:not(.chapters-open) .pc-chapters{animation:chapterPulse 2.4s ease-out infinite}
+  @media(prefers-reduced-motion:reduce){.player:not(.chapters-open) .pc-chapters{animation:none}}
+  .chapters-panel{max-height:0;overflow:hidden;transition:max-height .35s ease;background:rgba(9,18,13,.5);border-top:1px solid rgba(255,255,255,.08)}
+  .player.chapters-open .chapters-panel{max-height:580px;overflow-y:auto}
+  .chapters-head{padding:16px 24px 6px;font-family:var(--font-body);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+  .chapter-row{display:flex;align-items:center;gap:14px;width:100%;text-align:left;border:none;background:transparent;cursor:pointer;padding:12px 24px;color:rgba(255,255,255,.84);transition:background .15s;border-left:3px solid transparent}
+  .chapter-row:hover{background:rgba(255,255,255,.06)}
+  .chapter-row.active{background:rgba(201,162,75,.12);border-left-color:var(--brand-gold)}
+  .chapter-idx{flex-shrink:0;width:26px;height:26px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-family:var(--font-body);font-size:.72rem;font-weight:700;color:rgba(255,255,255,.7)}
+  .chapter-row.active .chapter-idx{background:var(--brand-gold);color:#3a2f12}
+  .chapter-info{flex:1;min-width:0}
+  .chapter-name{font-family:var(--font-body);font-size:.9rem;font-weight:600;line-height:1.3}
+  .chapter-time{font-size:.72rem;color:rgba(255,255,255,.45);font-variant-numeric:tabular-nums;margin-top:1px}
+  .chapter-playing-ico{flex-shrink:0;color:var(--brand-gold);opacity:0}
+  .chapter-row.active .chapter-playing-ico{opacity:1}
+
+  /* ════ Photo gallery — full-width section ════ */
+  .gal-band{background:linear-gradient(165deg,#16271d 0%,#22492f 55%,#1b3b29 100%);padding:62px 0 66px;color:#fff;position:relative;overflow:hidden}
+  .gal-band::before{content:'';position:absolute;top:-70px;right:-50px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,75,.16),transparent 70%);pointer-events:none}
+  .gal-head{max-width:760px;margin:0 auto 22px;padding:0 24px;text-align:center;position:relative}
+  .gal-ey{display:block;font-family:var(--font-body);text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:600;color:var(--brand-gold);margin-bottom:11px}
+  .gal-h2{font-family:var(--font-display);font-size:clamp(1.9rem,4vw,2.6rem);color:#fff;font-weight:600;line-height:1.08;margin-bottom:14px}
+  .gal-sub{color:rgba(255,255,255,.72);font-size:1rem;line-height:1.6;max-width:58ch;margin:0 auto;font-family:var(--font-body)}
+  .gal-sub b{color:#e7d9b4}
+  .gal-pills{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;max-width:900px;margin:0 auto 30px;padding:0 24px}
+  .gal-pill{padding:8px 17px;border-radius:999px;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:rgba(255,255,255,.82);font-family:var(--font-body);font-size:.85rem;font-weight:600;cursor:pointer;transition:background .15s,border-color .15s,color .15s;white-space:nowrap}
+  .gal-pill:hover{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.4)}
+  .gal-pill.active{background:var(--brand-gold);border-color:var(--brand-gold);color:#3a2f12}
+  .gal-carousel{position:relative;width:100%}
+  .gal-scroller{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x proximity;padding:8px 72px 12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .gal-scroller::-webkit-scrollbar{display:none}
+  @media(max-width:640px){.gal-scroller{padding:8px 22px 12px}}
+  .g-card{flex:0 0 350px;scroll-snap-align:center;background:#fff;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 18px 46px rgba(0,0,0,.36);position:relative}
+  @media(max-width:640px){.g-card{flex-basis:84vw}}
+  .g-img{position:relative;border:none;padding:0;margin:0;background:#dfe4df;cursor:zoom-in;display:block;width:100%;aspect-ratio:4/3;overflow:hidden}
+  .g-img.g-video{cursor:pointer}
+  .g-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+  .g-img:hover img{transform:scale(1.05)}
+  .g-playicon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+  .g-playicon span{width:58px;height:58px;border-radius:50%;background:rgba(201,162,75,.94);color:#3a2f12;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.5);transition:transform .15s}
+  .g-img.g-video:hover .g-playicon span{transform:scale(1.09)}
+  .g-playicon svg{width:25px;height:25px;margin-left:3px}
+  .g-meta{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .g-title{font-family:var(--font-display);font-size:1.14rem;color:var(--brand-pine);font-weight:600;line-height:1.25}
+  .g-desc{font-size:.88rem;color:#5a655e;line-height:1.55}
+  .g-editbtn{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:none;background:rgba(20,37,27,.6);backdrop-filter:blur(4px);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,transform .15s;box-shadow:0 3px 12px rgba(0,0,0,.35)}
+  .g-editbtn:hover{background:var(--brand-pine);transform:scale(1.09)}
+  .g-editbtn svg{width:20px;height:20px}
+  .g-editform{padding:16px 18px 18px;display:flex;flex-direction:column;gap:9px}
+  .g-editform[hidden],.g-view[hidden]{display:none}
+  .g-editform input,.g-editform textarea{width:100%;border:1.5px solid var(--brand-line);border-radius:9px;padding:9px 11px;font-family:var(--font-body);font-size:.88rem;color:var(--brand-ink);outline:none;background:#fff}
+  .g-editform input:focus,.g-editform textarea:focus{border-color:var(--brand-primary)}
+  .g-editform textarea{resize:vertical;min-height:70px;line-height:1.5}
+  .g-btns{display:flex;align-items:center;gap:10px}
+  .g-save{background:var(--brand-primary);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-family:var(--font-body);font-size:.82rem;font-weight:700;cursor:pointer;transition:filter .15s}
+  .g-save:hover{filter:brightness(.96)}
+  .g-save:disabled{opacity:.5;cursor:default}
+  .g-cancel{background:none;border:none;color:var(--brand-muted);font-family:var(--font-body);font-size:.82rem;font-weight:600;cursor:pointer}
+  .g-status{font-size:.78rem;color:var(--brand-primary)}
+  .g-status.err{color:#c0553b}
+  /* carousel arrows */
+  .gal-arrow{position:absolute;top:calc(50% - 12px);transform:translateY(-50%);z-index:5;width:54px;height:54px;border-radius:50%;border:none;background:var(--brand-gold);color:#3a2f12;font-size:1.8rem;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 26px rgba(0,0,0,.45);transition:transform .15s,opacity .25s,visibility .25s}
+  .gal-arrow:hover{transform:translateY(-50%) scale(1.09)}
+  .gal-arrow-left{left:16px}
+  .gal-arrow-right{right:16px}
+  .gal-arrow[disabled]{opacity:0;visibility:hidden;pointer-events:none}
+  @media(max-width:640px){.gal-arrow{width:44px;height:44px;font-size:1.5rem}.gal-arrow-left{left:8px}.gal-arrow-right{right:8px}}
+  /* weekend gallery — full-width band, ocean-teal (distinct from the archive's pine) */
+  .gal-band-weekend{background:linear-gradient(165deg,#123a40 0%,#1e5f66 55%,#154a50 100%)}
+  /* video gallery — full-width cinematic band */
+  .vid-band{background:linear-gradient(165deg,#12140f 0%,#20261d 55%,#141711 100%)}
+  .vid-row{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;max-width:1040px;margin:0 auto;padding:0 24px}
+  .vid-card{flex:0 1 460px;max-width:460px;background:none;border:none;padding:0;cursor:pointer;text-align:left;font-family:var(--font-body)}
+  .vid-thumb{position:relative;display:block;border-radius:16px;overflow:hidden;box-shadow:0 18px 46px rgba(0,0,0,.45);aspect-ratio:16/9;background:#000}
+  .vid-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+  .vid-card:hover .vid-thumb img{transform:scale(1.05)}
+  .vid-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+  .vid-play span{width:74px;height:74px;border-radius:50%;background:rgba(201,162,75,.94);color:#3a2f12;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 26px rgba(0,0,0,.5);transition:transform .15s}
+  .vid-card:hover .vid-play span{transform:scale(1.09)}
+  .vid-play svg{width:32px;height:32px;margin-left:5px}
+  .vid-cap{display:block;margin-top:14px;font-size:1.05rem;font-weight:600;color:#fff;line-height:1.3}
+  .vid-cap small{display:block;font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-gold);margin-bottom:4px}
+  /* video lightbox */
+  .vid-lb{position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:24px}
+  .vid-lb.open{display:flex}
+  .vid-lb-inner{width:min(1200px,96vw);display:flex;flex-direction:column;gap:12px;align-items:center}
+  .vid-lb video{width:100%;max-height:82vh;border-radius:10px;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.7);display:block}
+  .vid-lb-cap{color:rgba(255,255,255,.8);font-family:var(--font-body);font-size:.95rem;text-align:center}
+  .vid-lb-close{position:fixed;top:18px;right:22px;background:rgba(255,255,255,.14);border:none;color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.5rem;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+  .vid-lb-close:hover{background:rgba(255,255,255,.24)}
+  /* lightbox */
+  .gal-lb{position:fixed;inset:0;z-index:9998;background:rgba(9,18,13,.92);display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)}
+  .gal-lb.open{display:flex}
+  .gal-lb-inner{max-width:min(1000px,94vw);display:flex;flex-direction:column;gap:14px;align-items:center}
+  .gal-lb img{max-width:100%;max-height:76vh;object-fit:contain;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+  .gal-lb-cap{text-align:center;color:#fff;max-width:70ch}
+  .gal-lb-cap h4{font-family:var(--font-display);font-size:1.2rem;margin-bottom:5px;font-weight:600}
+  .gal-lb-cap p{color:rgba(255,255,255,.72);font-size:.9rem;line-height:1.55}
+  .gal-lb-close{position:fixed;top:18px;right:22px;background:rgba(255,255,255,.14);border:none;color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.5rem;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+  .gal-lb-close:hover{background:rgba(255,255,255,.24)}
+  .gal-lb-nav{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.14);border:none;color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:1.5rem;display:flex;align-items:center;justify-content:center}
+  .gal-lb-nav:hover{background:rgba(255,255,255,.24)}
+  .gal-lb-prev{left:18px}.gal-lb-next{right:18px}
+  @media(max-width:560px){.gal-lb-nav{width:40px;height:40px}}
+</style>
+</head>
+<body>
+
+<!-- ── Password Gate ── -->
+<div id="gate">
+  <div class="gate-card">
+    <img class="gate-logo" src="assets/delta-sigs-logo-white.svg" alt="Delta Sigs NIU">
+    <h2 id="m-title">Brothers Only</h2>
+    <p id="m-sub">Log in to listen to the interview.</p>
+    <div id="m-form">
+      <div id="m-extra" style="display:none">
+        <input id="m-name" class="gate-input" type="text" placeholder="Full name" autocomplete="name">
+        <input id="m-class" class="gate-input" type="text" placeholder="Delta Sig pledge class">
+        <input id="m-grad" class="gate-input" type="text" placeholder="Year graduated NIU" inputmode="numeric">
+        <input id="m-phone" class="gate-input" type="tel" placeholder="Contact phone" autocomplete="tel">
+        <input id="m-street" class="gate-input" type="text" placeholder="Street address" autocomplete="address-line1">
+        <input id="m-city" class="gate-input" type="text" placeholder="City" autocomplete="address-level2">
+        <div style="display:flex;gap:10px">
+          <input id="m-state" class="gate-input" type="text" placeholder="State" autocomplete="address-level1" style="flex:1;min-width:0">
+          <input id="m-zip" class="gate-input" type="text" placeholder="ZIP" inputmode="numeric" autocomplete="postal-code" style="flex:1;min-width:0">
+        </div>
+      </div>
+      <input id="m-email" class="gate-input" type="email" placeholder="Email" autocomplete="email">
+      <input id="m-pass" class="gate-input" type="password" placeholder="Password" autocomplete="current-password">
+      <button class="gate-btn" id="m-primary">Log in</button>
+    </div>
+    <p class="gate-error" id="m-msg"></p>
+    <a href="#" id="m-toggle" style="display:inline-block;margin-top:4px;color:var(--brand-gold);font-size:.82rem;text-decoration:underline;cursor:pointer;font-family:var(--font-body)">Need an account? Request access</a>
+    <p class="gate-hint">Yours in the Bond of the Sphinx. <a href="#" id="m-logout-link" style="display:none;color:rgba(255,255,255,.6);text-decoration:underline;cursor:pointer">Log out</a></p>
+  </div>
+</div>
+
+<!-- ── Main ── -->
+<div id="app" style="display:none">
+
+  <nav class="site-nav">
+    <a href="index.html"><img class="nav-logo" src="assets/delta-sigs-logo.svg" alt="Delta Sigs NIU"></a>
+    <div style="display:flex;align-items:center;gap:20px">
+      <a href="index.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        All Interviews
+      </a>
+      <button id="m-logout" class="back-link" style="display:none;background:none;border:none;cursor:pointer;font:inherit">Log out</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero-wrap">
+    <div class="hero-grid">
+      <div class="hero-photo-col">
+        <div class="hero-photo-frame">
+          <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto,w_720/deltasigsniu/mike-gary-boat" alt="Mike Siegel and Gary Ricke on a boat in Redondo Beach harbor">
+          <span class="hero-photo-tag">Mike &amp; Gary · Redondo Beach, 2026</span>
+        </div>
+      </div>
+      <div class="hero-text-col">
+        <div class="hero-badges">
+          <span class="hero-pill">Founders' Series · No. 2</span>
+          <span class="hero-date">Recorded Jul 12, 2026 · 5 min – 2h40m</span>
+        </div>
+        <h1 class="hero-h1">Start From Nothing</h1>
+        <p class="hero-dek">A shy kid from the south suburbs helps build a fraternity out of nothing at NIU — then spends the next forty years turning that same idea into a life on stage. Comedy clubs, the Berlin Wall, cruise ships, and the hardest thing he ever did. Mike Siegel tells the whole story.</p>
+        <div class="hero-byline">
+          <span>A conversation with Gary Ricke</span>
+          <span class="dot"></span>
+          <span>Delta Sigs NIU</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article -->
+  <div class="article-outer">
+    <div class="article-inner">
+
+      <!-- ════ PLAYER ════ -->
+      <div class="player" id="player">
+        <audio id="audio" preload="none" data-audio-path="mike-siegel-full.mp3"></audio>
+        <audio id="transition" preload="auto"></audio>
+        <div class="player-top">
+          <div class="player-head">
+            <img class="player-avatar" src="https://res.cloudinary.com/dsbllwpbh/image/upload/e_gen_restore,e_upscale/c_fill,g_face,w_170,h_170,f_auto,q_auto/deltasigsniu/mike-pp-euro" alt="Mike Siegel">
+            <div class="player-headtext">
+              <div class="player-label">
+                <div class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                <span class="player-label-text">Listen to the Interview</span>
+              </div>
+              <div class="player-title">Mike Siegel · Founder, Delta Sigs NIU</div>
+              <div class="player-now"><span class="now-dot"></span><span>Now playing: <b id="now-chapter">Choose your length below</b></span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Length selector -->
+        <div class="len-wrap">
+          <div class="len-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Got a minute or an afternoon? Pick your length
+          </div>
+          <div class="len-select" id="len-select">
+            <button class="len-btn active" data-v="full"><b>Full</b><span>2h40m</span></button>
+            <button class="len-btn" data-v="60"><b>1 hr</b><span>condensed</span></button>
+            <button class="len-btn" data-v="30"><b>30 min</b><span>tighter</span></button>
+            <button class="len-btn" data-v="15"><b>15 min</b><span>highlights</span></button>
+            <button class="len-btn" data-v="5"><b>5 min</b><span>trailer</span></button>
+          </div>
+        </div>
+
+        <div class="player-top" style="padding-top:6px">
+          <div class="player-progress" id="progress">
+            <div class="player-fill" id="fill"></div>
+            <div class="player-thumb" id="thumb"></div>
+          </div>
+          <div class="player-times"><span id="cur">0:00</span><span id="dur">--:--</span></div>
+        </div>
+        <div class="player-controls">
+          <button class="pc-btn" id="speed" onclick="cycleSpeed()" title="Playback speed">1×</button>
+          <button class="pc-btn" onclick="skip(-15)" title="Back 15 seconds">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+          </button>
+          <button class="pc-play" id="playBtn" onclick="toggle()" title="Play / pause">
+            <svg id="playIcon" width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="7,4 20,12 7,20"/></svg>
+          </button>
+          <button class="pc-btn" onclick="skip(15)" title="Forward 15 seconds">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          </button>
+          <button class="pc-chapters" id="chapters-btn" onclick="toggleChapters()" title="Chapters">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            <span>Chapters</span><span class="ch-count" id="ch-count">12</span>
+            <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <div class="chapters-panel">
+          <div class="chapters-head" id="chapters-head">12 Chapters · Tap to jump</div>
+          <div id="chapter-list"></div>
+        </div>
+      </div>
+
+      <div class="ed-note" style="margin:0 0 28px"><b>New: choose your length.</b> This is a long, wandering, two-and-a-half-hour conversation — and worth every minute. But if you're short on time, use the buttons above to hear a tighter <b>1-hour</b>, <b>30-minute</b>, <b>15-minute</b>, or <b>5-minute</b> cut instead. Each shorter version lives inside the longer one, so you never lose the thread — you just get more of the story as you go up. Every length is chaptered, and a little banjo bleeds in to mark each change of subject.</div>
+
+      <p class="lede">A small backyard three blocks from the water in Redondo Beach. A little fire going, a dog named Gracie underfoot, and two men from Northern Illinois University who've been brothers for forty years. One of them flew in from Chicago with a microphone. What follows is a whole life, told the long way.</p>
+
+      <p class="body-p">Mike Siegel has done stand-up for thirty-five years, hosted shows on VH1, TBS and HGTV, walked red carpets, and made a fourteen-year passion project out of a travel podcast. But among the men who came up with him, he's known for something that predates all of it. In the mid-1980s, as a broke seventeen-year-old freshman at NIU, Mike fell in with a handful of guys who decided that if the fraternities on campus weren't worth the price, they'd build their own. That became <strong>Delta Sigs</strong> — and Mike was there at the very start, when there was no house and the meetings were held in a dorm room.</p>
+
+      <p class="body-p">This is the second interview in our Founders' Series — a companion to <a href="brent-allen.html" style="color:var(--brand-primary);font-weight:600">Brent Allen's "Lightning Struck."</a> Where Brent was the first president and the driving force, Mike is the one who can tell you what it actually <em>felt</em> like to start something from nothing — and what that lesson was worth for the rest of his life.</p>
+
+      <div class="bio-card">
+        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/c_fill,g_face,w_200,h_200,f_auto,q_auto/deltasigsniu/mike-pp-boat2" alt="Mike Siegel">
+        <div>
+          <div class="bio-name">Mike Siegel</div>
+          <div class="bio-role">Founding member of Delta Sigs at NIU. Crete-Monee kid, stand-up comedian, former VH1 VJ, TV host, and creator of the <em>Travel Tales</em> podcast. Twenty-plus years in the South Bay — still moving, still chasing the next stage and the next country.</div>
+        </div>
+      </div>
+
+      <!-- ════ By the numbers ════ -->
+      <div class="facts-head">
+        <span class="ey">Mike, by the numbers</span>
+        <h3>The short version of a long story</h3>
+      </div>
+      <div class="profile-stats">
+        <div class="pstat"><div class="n">'<span>85</span></div><div class="l">Among the founders of Delta Sigs at NIU</div></div>
+        <div class="pstat"><div class="n">35<span> yrs</span></div><div class="l">On stage as a stand-up comedian</div></div>
+        <div class="pstat"><div class="n">'<span>89</span></div><div class="l">Backpacked Europe — and West Berlin, pre-Wall</div></div>
+        <div class="pstat"><div class="n">14<span> yrs</span></div><div class="l">Hosting the <em>Travel Tales</em> podcast</div></div>
+        <div class="pstat"><div class="n">20<span>+</span></div><div class="l">Years living in the South Bay, Los Angeles</div></div>
+        <div class="pstat"><div class="n">1</div><div class="l">Very good dog (Gracie) — thief of toothbrushes</div></div>
+      </div>
+
+      <!-- ════ Interests & pursuits ════ -->
+      <div class="facts-head">
+        <span class="ey">What he's into</span>
+        <h3>Interests &amp; pursuits</h3>
+      </div>
+      <div class="interest-grid">
+        <div class="icard">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div>
+          <h4>Stand-up comedy</h4>
+          <p>Thirty-five years of stage time — from Chicago open mics to clubs coast to coast.</p>
+        </div>
+        <div class="icard">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></div>
+          <h4>Solo travel</h4>
+          <p>Ever since Europe '89 — the conviction that he could handle being alone anywhere.</p>
+        </div>
+        <div class="icard">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div>
+          <h4>The Travel Tales podcast</h4>
+          <p>A fourteen-year passion project — the subject he never gets tired of talking about.</p>
+        </div>
+        <div class="icard">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2c1.3 0 1.9.5 2.5 1"/><path d="M19 5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v11l14-3V5Z"/><path d="M5 16l14-3"/></svg></div>
+          <h4>Cruise-ship hosting</h4>
+          <p>Travel-comedy cruises that keep him funded and perpetually in motion.</p>
+        </div>
+        <div class="icard">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 2l-5 5-5-5"/></svg></div>
+          <h4>TV &amp; hosting</h4>
+          <p>VH1 VJ, an NBC development deal, and hosting for TBS and HGTV.</p>
+        </div>
+        <div class="icard">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h4>Starting from nothing</h4>
+          <p>The founder's lesson — build the thing yourself, then it's your rules.</p>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">Delta Sigs founder</span>
+        <span class="chip">Stand-up comedian</span>
+        <span class="chip">VH1 VJ</span>
+        <span class="chip">Travel Tales podcast</span>
+        <span class="chip">Cruise-ship host</span>
+        <span class="chip">Solo traveler</span>
+        <span class="chip">South Bay lifer</span>
+      </div>
+
+      <h2 class="section-heading"><span class="kicker-num">01</span> A South-Suburbs Kid Who Landed at Northern</h2>
+      <p class="body-p">Mike grew up in Chicago's far south suburbs — Crete-Monee, University Park — a quiet, confidence-shy kid who played soccer and baseball and had no plans whatsoever for a life in the arts. He ended up at NIU almost by accident; his father's rule was simply "any Illinois state school." But getting out from under a critical father's roof, and into a place he could build himself, changed everything.</p>
+
+      <h2 class="section-heading"><span class="kicker-num">02</span> Starting Something From Nothing</h2>
+      <p class="body-p">He got pulled into the fledgling Delta Sigs the way everything happened back then — through the Crete connection. Paul, then Tony, then Larry and Brent. As a broke seventeen-year-old, what he mostly understood was "free beer." What he got was a front-row seat to a group of guys building a fraternity out of thin air: no house, meetings in a dorm, and eventually twenty of them crammed into a craftsman at <strong>503 College Ave</strong> paying fifty bucks a month, with mats on the floor of a triangular attic.</p>
+
+      <p class="body-p">It was there — homecoming, the "D for Dude" lip-sync competition, doing Greased Lightning with his shirt off in front of everyone — that the shy kid disappeared for good. He'll tell you plainly: college gave him the confidence his father's house never did. And later, tasked with finding the house on Greek Row, he watched the thing he'd helped start become something real.</p>
+
+      <div class="pullquote">
+        <p>"We started from nothing. And to start something from nothing and watch it turn into something — that's what I got out of it."</p>
+        <cite>— Mike Siegel</cite>
+      </div>
+
+      <div class="fig">
+        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto,w_1000/photo-history/mike-siegel/gallery/90s__2_Album_8__01" alt="Four Delta Sig brothers, arms around each other, in the early days">
+        <figcaption>From the archive: the early Delta Sigs — the characters who happened to land in the same place at the same time.</figcaption>
+      </div>
+
+      <h2 class="section-heading"><span class="kicker-num">03</span> Europe '89, and the Night the Wall Came Down</h2>
+      <p class="body-p">After graduating in 1989, Mike backpacked across Europe on a shoestring with a few friends — Madrid to Berlin, Bastille Day in Paris, Swedish girls with a Saab and a country house — and then peeled off to travel solo, a habit that would define the rest of his life. The stretch he never stops thinking about was a summer in <strong>West Berlin</strong>, an island of democracy walled inside East Germany, staying in the apartment of a young local who'd grown up there.</p>
+
+      <div class="pullquote">
+        <p>"I asked him, 'You think this wall's ever coming down?' And he goes, 'Nah, I don't really see it.' Six months later I'm watching them smash it on TV — 'Holy shit, we were just there.'"</p>
+        <cite>— Mike Siegel</cite>
+      </div>
+
+      <p class="body-p">He rode the subway past "ghost stops" sealed since the divide, bought a day pass into East Germany, and came home with East German money he couldn't spend anywhere — money he still has. The lesson stuck harder than any souvenir: countries, borders, the whole map — it's all fluid. <strong>Everything can change.</strong></p>
+
+      <figure class="fig" style="max-width:520px;margin-left:auto;margin-right:auto">
+        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto,w_900/photo-history/mike-siegel/gallery/Euro_89__photo_album_1__01" alt="Mike at the beginning of the 1989 Europe backpacking trip in Madrid">
+        <figcaption>Beginning the journey — Madrid, summer 1989. The trip that cracked the world open.</figcaption>
+      </figure>
+
+      <h2 class="section-heading"><span class="kicker-num">04</span> The Hardest Thing He Ever Did</h2>
+      <p class="body-p">Back home in Chicago, broke and waiting tables, Mike started sneaking off to open mics — telling no one, writing jokes alone in his room for months. His logic was airtight and a little heartbreaking: if he bombed, and he told nobody, then nobody he cared about would ever have to know. So he picked a bar where none of his friends would be — The Union, at Sheffield and Berry — signed up, and waited until the very end of the night to go on.</p>
+
+      <div class="pullquote">
+        <p>"It was the hardest thing I ever did. I kept walking around the block, saying the jokes over and over. And I came off stage and it was just — whoa. That adrenaline set the rest of my life in motion."</p>
+        <cite>— Mike Siegel, on his first open mic, May 1990</cite>
+      </div>
+
+      <p class="body-p">A comic at the bar handed him a list of clubs — a place to sign up every night of the week. "You just gotta keep going up," he told him. "It's all stage time." Mike kept his day job for a few more years, then, in 1993, leapt.</p>
+
+      <h2 class="section-heading"><span class="kicker-num">05</span> New York, a VH1 Badge, and an NBC Deal</h2>
+      <p class="body-p">From Chicago he moved to New York — Park Slope — and landed a thirteen-week contract as a VJ at VH1. He played the Just For Laughs festival in Montreal as a "New Face," walked out of a week of Los Angeles meetings with an <strong>NBC development deal</strong>, and moved west the right way: with a deal already in hand.</p>
+
+      <h2 class="section-heading"><span class="kicker-num">06</span> Chicago Was the Best Place to Be Bad</h2>
+      <p class="body-p">He's clear-eyed about why it worked. Chicago, in those years, was the perfect place to fail your way to good before anyone important was watching — a late-night, after-hours scene thick with people who'd go on to become famous. The lesson generalizes: get good where the stakes are low, then go sell it where they're high.</p>
+
+      <h2 class="section-heading"><span class="kicker-num">07</span> Travel Tales, and Choosing the Life</h2>
+      <p class="body-p">When his TBS show ended and television stopped wanting generalists, Mike leaned into the one subject he never tires of and started the <em>Travel Tales</em> podcast in 2011 — fourteen years and counting. These days he hosts travel-comedy cruises, keeps moving, and dreams openly about living in Europe before too long — Portugal, maybe. At sixty-something, he's done chasing metrics.</p>
+
+      <div class="pullquote">
+        <p>"All the best stuff comes out of doing what you love. I'll take the life over the subscribers."</p>
+        <cite>— Mike Siegel</cite>
+      </div>
+
+      <hr class="divider">
+
+      <!-- ════ Our long weekend ════ -->
+      <h2 class="section-heading"><span class="kicker-num">★</span> Our Long Weekend in Redondo</h2>
+      <p class="body-p">A word about how this one got made. Mike called in June — "What are you doing in July?" — and it turned out to be one of the only weekends he'd be home. Gary flew out for a long weekend, and here's how fast this man moves: within two hours of landing at LAX, Gary was standing on the front of a boat off the Redondo pier, filming a whole pod of dolphins hopping through the water. He turned around, and Mike was just standing there holding two beers. Welcome to California.</p>
+
+      <p class="body-p">That was the whole weekend: paddleboarding the marina, a long bike ride from Redondo down past Hermosa and Manhattan Beach to El Segundo and back, the old beach bars from the fifties — Old Tony's, the Bull Pen — a band playing Sublime at a bar with a hundred beers on tap, and Mike playing big brother the entire time, knowing every person we passed. It felt like the trip of a lifetime. To him, it was just a Tuesday. The photos and video are below — scroll all the way down.</p>
+
+    </div><!-- /.article-inner -->
+  </div><!-- /.article-outer -->
+
+  <!-- ════ Photo gallery — its own full-width section ════ -->
+  <section class="gal-band" id="gallery">
+    <div class="gal-head">
+      <span class="gal-ey">From Mike's albums</span>
+      <h2 class="gal-h2">The years in between</h2>
+      <p class="gal-sub">Scanned and restored from Mike's own photo albums. Pick an album, scroll the reel, and tap any photo to enlarge — and <b>any logged-in brother can fix a title or add a description</b>. (The titles are our best guesses until someone who was there sets us straight.)</p>
+    </div>
+    <div class="gal-pills" id="gal-pills"></div>
+    <div class="gal-carousel">
+      <button class="gal-arrow gal-arrow-left" id="gal-prev" type="button" aria-label="Previous photos" disabled>&lsaquo;</button>
+      <div class="gal-scroller" id="gal-scroller"><p class="gal-sub" style="padding:10px 24px">Loading the albums…</p></div>
+      <button class="gal-arrow gal-arrow-right" id="gal-next" type="button" aria-label="More photos">&rsaquo;</button>
+    </div>
+  </section>
+
+  <!-- ════ Weekend photos & video — combined full-width section (ocean teal), last ════ -->
+  <section class="gal-band gal-band-weekend">
+    <div class="gal-head">
+      <span class="gal-ey">The weekend in Redondo</span>
+      <h2 class="gal-h2">Three days on the South Bay</h2>
+      <p class="gal-sub">Video and photos from the long weekend — the two videos come first. Tap a video to play it full screen, tap a photo to enlarge, and <b>any logged-in brother can fix a title or add a description</b> with the pencil.</p>
+    </div>
+    <div class="gal-carousel">
+      <button class="gal-arrow gal-arrow-left" id="wk-prev" type="button" aria-label="Previous" disabled>&lsaquo;</button>
+      <div class="gal-scroller" id="wk-scroller"><p class="gal-sub" style="padding:10px 24px">Loading the weekend photos &amp; video…</p></div>
+      <button class="gal-arrow gal-arrow-right" id="wk-next" type="button" aria-label="More">&rsaquo;</button>
+    </div>
+  </section>
+
+  <!-- video lightbox (fixed overlay) -->
+  <div class="vid-lb" id="vid-lb" aria-hidden="true">
+    <button class="vid-lb-close" id="vid-lb-close" aria-label="Close">&times;</button>
+    <div class="vid-lb-inner">
+      <video id="vid-lb-video" controls playsinline preload="auto"></video>
+      <div class="vid-lb-cap" id="vid-lb-cap"></div>
+    </div>
+  </div>
+
+  <!-- gallery lightbox (fixed overlay) -->
+  <div class="gal-lb" id="gal-lb" aria-hidden="true">
+    <button class="gal-lb-close" id="gal-lb-close" aria-label="Close">&times;</button>
+    <button class="gal-lb-nav gal-lb-prev" id="gal-lb-prev" aria-label="Previous photo">&lsaquo;</button>
+    <button class="gal-lb-nav gal-lb-next" id="gal-lb-next" aria-label="Next photo">&rsaquo;</button>
+    <div class="gal-lb-inner">
+      <img id="gal-lb-img" src="" alt="">
+      <div class="gal-lb-cap"><h4 id="gal-lb-title"></h4><p id="gal-lb-desc"></p></div>
+    </div>
+  </div>
+
+  <div class="article-outer">
+    <div class="article-inner">
+
+      <div class="ed-note">
+        <b>A note for brothers:</b> This is a lightly cleaned cut of a long, wandering conversation — studio-sound polished and trimmed for filler, but never re-scripted. If you were there in the early days at NIU, remember 503 College Ave, or can put names to the faces in the archive photos, we'd love your help filling in the captions.
+      </div>
+
+      <hr class="divider">
+
+      <div class="cta-block">
+        <h3>Where are they now?</h3>
+        <p>This is the second of many. We're tracking down brothers from across the years to capture their stories — and to bring everyone back to the same table. Got a story, a name, or a number we should have?</p>
+        <a href="index.html" class="cta-btn">
+          Reconnect with Delta Sigs
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <img src="assets/delta-sigs-logo-white.svg" alt="Delta Sigs NIU">
+    <p style="margin-bottom:8px;"><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="index.html">Interviews</a></p>
+    <p>Delta Sigs NIU · Established 1985 · Yours in the Bond of the Sphinx</p>
+  </footer>
+
+</div>
+
+<script>
+  /* ── Multi-length chaptered player ──
+     Each version is a separate MP3 in the Supabase 'interviews' bucket.
+     The shorter cuts are nested subsets of the full, so a listener who bumps
+     up a length just hears "more of the same story." Every version has its own
+     chapter list (timestamps in that cut's own timeline). At each chapter/topic
+     change during playback, a short banjo sting bleeds in to signal the new subject. */
+  const TRANSITION_URL = 'https://res.cloudinary.com/dsbllwpbh/video/upload/deltasigsniu/banjo-transition.mp3';
+  const VERSIONS = {
+    full:{ path:'mike-siegel-full.mp3', label:'the full story', chapters:[
+      {t:0,    title:'A Quiet Kid From the South Suburbs'},
+      {t:460,  title:'How He Landed at Northern'},
+      {t:650,  title:'Building the Fraternity From Nothing'},
+      {t:877,  title:'503 College Ave & The Bitches Are Here'},
+      {t:1113, title:'D for Dude and the Transformation'},
+      {t:1770, title:'The Anti-Frat: What the House Really Was'},
+      {t:2183, title:"Europe '89 & the Berlin Wall"},
+      {t:2624, title:'Going Solo: Kerouac vs. Art of the Deal'},
+      {t:3068, title:'England, John Cleese & Going It Alone'},
+      {t:4081, title:'The Hardest Thing: The First Open Mic'},
+      {t:5022, title:'Chicago: Grinding the Open Mics'},
+      {t:5641, title:'Solo Abroad: Australia & New Zealand'},
+      {t:6380, title:'New York: Clubs, Comics & VH1'},
+      {t:6901, title:'Montreal & the NBC Deal'},
+      {t:7200, title:'TBS and Interviewing the Stars'},
+      {t:7920, title:'Travel Tales & the Podcast'},
+      {t:8931, title:'Living Abroad: The Portugal Dream'},
+      {t:9371, title:'Choosing the Life Over the Subscribers'},
+    ]},
+    '60':{ path:'mike-siegel-60.mp3', label:'the one-hour cut', chapters:[
+      {t:0,    title:'A Quiet Kid From the South Suburbs'},
+      {t:143,  title:'How He Landed at Northern'},
+      {t:228,  title:'Building the Fraternity From Nothing'},
+      {t:360,  title:'503 College Ave & The Bitches Are Here'},
+      {t:447,  title:'D for Dude and the Transformation'},
+      {t:747,  title:'The Anti-Frat: What the House Really Was'},
+      {t:951,  title:"Europe '89 & the Berlin Wall"},
+      {t:1250, title:'Going Solo: Kerouac vs. Art of the Deal'},
+      {t:1835, title:'The Hardest Thing: The First Open Mic'},
+      {t:2381, title:'Chicago: Grinding the Open Mics'},
+      {t:2765, title:'Montreal & the NBC Deal'},
+      {t:2974, title:'TBS and Interviewing the Stars'},
+      {t:3258, title:'Travel Tales & the Podcast'},
+      {t:3404, title:'Living Abroad & Choosing the Life'},
+    ]},
+    '30':{ path:'mike-siegel-30.mp3', label:'the thirty-minute cut', chapters:[
+      {t:0,    title:'A Quiet Kid From the South Suburbs'},
+      {t:116,  title:'How He Landed at Northern'},
+      {t:202,  title:'Building the Fraternity From Nothing'},
+      {t:276,  title:'503 College Ave & The Bitches Are Here'},
+      {t:357,  title:'D for Dude and the Transformation'},
+      {t:461,  title:'The Anti-Frat: What the House Really Was'},
+      {t:547,  title:"Europe '89 & the Berlin Wall"},
+      {t:772,  title:'Going Solo: Kerouac vs. Art of the Deal'},
+      {t:1102, title:'The Hardest Thing: The First Open Mic'},
+      {t:1415, title:'Chicago, VH1 & the Montreal Deal'},
+      {t:1576, title:'TBS, Travel Tales & Choosing the Life'},
+    ]},
+    '15':{ path:'mike-siegel-15.mp3', label:'the fifteen-minute highlights', chapters:[
+      {t:0,   title:'A Quiet Kid, and Landing at Northern'},
+      {t:103, title:'Building the Fraternity From Nothing'},
+      {t:176, title:'503 College Ave & The Bitches Are Here'},
+      {t:258, title:'D for Dude and the Transformation'},
+      {t:309, title:"Europe '89 & the Berlin Wall"},
+      {t:536, title:'The Hardest Thing: The First Open Mic'},
+      {t:763, title:'Montreal, and Making It'},
+      {t:838, title:'Travel Tales & Choosing the Life'},
+    ]},
+    '5' :{ path:'mike-siegel-5.mp3',  label:'the five-minute trailer', chapters:[
+      {t:0,   title:'A Quiet Kid From the South Suburbs'},
+      {t:21,  title:"West Berlin & the Wall"},
+      {t:156, title:'The Hardest Thing: The First Open Mic'},
+      {t:330, title:'Choosing the Life Over the Subscribers'},
+    ]},
+  };
+
+  const player=document.getElementById('player'),audio=document.getElementById('audio'),fill=document.getElementById('fill'),
+    thumb=document.getElementById('thumb'),curEl=document.getElementById('cur'),durEl=document.getElementById('dur'),
+    playIcon=document.getElementById('playIcon'),speedBtn=document.getElementById('speed'),nowEl=document.getElementById('now-chapter'),
+    progress=document.getElementById('progress'),listEl=document.getElementById('chapter-list'),
+    chaptersBtn=document.getElementById('chapters-btn'),chCount=document.getElementById('ch-count'),
+    chaptersHead=document.getElementById('chapters-head'),lenSelect=document.getElementById('len-select');
+  const SPEEDS=[1,1.25,1.5,2];let speedIdx=0,activeIdx=-1,curVersion='full',rows=[];
+  const fmt=s=>{s=s||0;const m=Math.floor(s/60),sec=Math.floor(s%60);return`${m}:${sec<10?'0':''}${sec}`;};
+
+  /* ── Topic-change transition: a short banjo sting bleeds under the speech at each new chapter ── */
+  const transitionEl=document.getElementById('transition');
+  transitionEl.src=TRANSITION_URL;
+  const TRANS_VOL=0.32, DUCK_VOL=0.8; let transTimer=null,lastTrans=0;
+  function playTransition(){
+    const now=Date.now(); if(now-lastTrans<3500) return; lastTrans=now;   // debounce so scrubbing can't machine-gun it
+    try{ transitionEl.currentTime=0; }catch(e){}
+    transitionEl.volume=TRANS_VOL; audio.volume=DUCK_VOL;                  // duck the voice slightly so the banjo reads
+    transitionEl.play().catch(()=>{});
+    clearTimeout(transTimer);
+    const restore=()=>{ audio.volume=1; };
+    transitionEl.onended=restore;
+    transTimer=setTimeout(restore,7500);
+  }
+
+  /* ── Chapter avatars: the player photo changes with each chapter (young Mike → recent) ── */
+  const avatarEl=document.querySelector('.player-avatar');
+  const AV_BASE='https://res.cloudinary.com/dsbllwpbh/image/upload/', AV_CROP='c_fill,g_face,w_170,h_170,f_auto,q_auto/';
+  const AV_UP='e_gen_restore,e_upscale/';   // the small, low-res shots get AI restore + upscale
+  const AVATARS=[
+    AV_BASE+AV_UP+AV_CROP+'deltasigsniu/mike-pp-euro',       // young Mike
+    AV_BASE+AV_UP+AV_CROP+'deltasigsniu/mike-pp-colorado',
+    AV_BASE+AV_UP+AV_CROP+'deltasigsniu/mike-pp-skydiving',
+    AV_BASE+AV_CROP+'deltasigsniu/mike-pp-martini',          // recent Mike
+    AV_BASE+AV_CROP+'deltasigsniu/mike-pp-boat',
+    AV_BASE+AV_CROP+'deltasigsniu/mike-pp-boat2',
+  ];
+  AVATARS.forEach(u=>{ const im=new Image(); im.src=u; });   // preload so swaps are instant
+  function setAvatar(idx){
+    const u=AVATARS[((idx%AVATARS.length)+AVATARS.length)%AVATARS.length];
+    if(avatarEl.getAttribute('src')===u) return;
+    avatarEl.style.opacity='0';
+    setTimeout(()=>{ avatarEl.src=u; avatarEl.style.opacity='1'; },170);
+  }
+
+  function buildChapters(){
+    const chs=VERSIONS[curVersion].chapters;
+    listEl.innerHTML='';activeIdx=-1;
+    if(!chs.length){
+      chaptersBtn.hidden=true;player.classList.remove('chapters-open');
+      nowEl.textContent=VERSIONS[curVersion].label.replace(/^the /,'').replace(/^\w/,c=>c.toUpperCase());
+      rows=[];return;
+    }
+    chaptersBtn.hidden=false;chCount.textContent=chs.length;chaptersHead.textContent=chs.length+' Chapters · Tap to jump';
+    chs.forEach((c,i)=>{
+      const row=document.createElement('button');row.className='chapter-row';row.dataset.idx=i;
+      row.innerHTML=`<span class="chapter-idx">${i+1}</span><span class="chapter-info"><span class="chapter-name">${c.title}</span><span class="chapter-time">${fmt(c.t)}</span></span><span class="chapter-playing-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg></span>`;
+      row.addEventListener('click',()=>jumpTo(i));listEl.appendChild(row);
+    });
+    rows=Array.from(listEl.children);
+    nowEl.textContent=chs[0].title;
+    setAvatar(0);
+  }
+  function placeTicks(){
+    progress.querySelectorAll('.player-tick').forEach(t=>t.remove());
+    const chs=VERSIONS[curVersion].chapters;if(!audio.duration||!chs.length)return;
+    chs.forEach((c,i)=>{if(i===0)return;const t=document.createElement('div');t.className='player-tick';t.style.left=(c.t/audio.duration*100)+'%';progress.appendChild(t);});
+  }
+  audio.addEventListener('loadedmetadata',()=>{durEl.textContent=fmt(audio.duration);placeTicks();});
+  function chapterAt(time){const chs=VERSIONS[curVersion].chapters;let idx=0;for(let i=0;i<chs.length;i++){if(time>=chs[i].t-0.3)idx=i;}return idx;}
+  function setActive(idx){const chs=VERSIONS[curVersion].chapters;if(!chs.length||idx===activeIdx)return;const prev=activeIdx;activeIdx=idx;nowEl.textContent=chs[idx].title;rows.forEach((r,i)=>r.classList.toggle('active',i===idx));setAvatar(idx);if(prev>=0&&idx>prev&&!audio.paused)playTransition();}
+  function refreshUI(){const pct=audio.duration?(audio.currentTime/audio.duration)*100:0;fill.style.width=pct+'%';thumb.style.left=pct+'%';curEl.textContent=fmt(audio.currentTime);setActive(chapterAt(audio.currentTime));}
+  audio.addEventListener('timeupdate',refreshUI);
+  audio.addEventListener('ended',()=>{playIcon.innerHTML='<polygon points="7,4 20,12 7,20"/>';player.classList.remove('is-playing');});
+  function toggle(){if(!audio.src)return;if(audio.paused){audio.play();playIcon.innerHTML='<rect x="6" y="4" width="4" height="16" rx="1.2"/><rect x="14" y="4" width="4" height="16" rx="1.2"/>';player.classList.add('is-playing');}else{audio.pause();playIcon.innerHTML='<polygon points="7,4 20,12 7,20"/>';player.classList.remove('is-playing');}}
+  function skip(sec){audio.currentTime=Math.max(0,Math.min(audio.duration||0,audio.currentTime+sec));}
+  function cycleSpeed(){speedIdx=(speedIdx+1)%SPEEDS.length;audio.playbackRate=SPEEDS[speedIdx];speedBtn.textContent=SPEEDS[speedIdx]+'×';}
+  function jumpTo(i){const chs=VERSIONS[curVersion].chapters;if(!chs[i])return;audio.currentTime=chs[i].t;refreshUI();if(audio.paused)toggle();}
+  function toggleChapters(){player.classList.toggle('chapters-open');}
+  progress.addEventListener('click',e=>{const r=progress.getBoundingClientRect();const pct=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));if(audio.duration){audio.currentTime=pct*audio.duration;refreshUI();}});
+
+  /* Switch length: sign the new file's URL, reset the player, rebuild chapters */
+  async function loadVersion(key,autoplay){
+    if(!VERSIONS[key])return;
+    curVersion=key;
+    Array.from(lenSelect.children).forEach(b=>b.classList.toggle('active',b.dataset.v===key));
+    audio.dataset.audioPath=VERSIONS[key].path;
+    // reset UI
+    const wasPlaying=autoplay;audio.pause();player.classList.remove('is-playing');
+    playIcon.innerHTML='<polygon points="7,4 20,12 7,20"/>';
+    fill.style.width='0%';thumb.style.left='0%';curEl.textContent='0:00';durEl.textContent='--:--';
+    speedIdx=0;audio.playbackRate=1;speedBtn.textContent='1×';
+    buildChapters();
+    // sign + set source (the auth module provides window.DS_getSignedUrl once approved)
+    if(window.DS_getSignedUrl){
+      const url=await window.DS_getSignedUrl(VERSIONS[key].path);
+      if(url){audio.src=url;audio.load();if(wasPlaying){audio.addEventListener('canplay',()=>toggle(),{once:true});}}
+    }
+  }
+  Array.from(lenSelect.children).forEach(b=>b.addEventListener('click',()=>{const wasPlaying=!audio.paused;loadVersion(b.dataset.v,wasPlaying);}));
+
+  // Build default chapters immediately (so the panel is populated pre-auth), load audio after auth.
+  buildChapters();
+  document.addEventListener('ds-authed',()=>loadVersion('full',false));
+</script>
+
+<!-- ── Interactive, member-editable photo gallery ── -->
+<script>
+(function(){
+  const tx=(u,t)=> u.indexOf('/upload/')>-1 ? u.replace('/upload/','/upload/'+t+'/') : u;
+  const thumb=u=>tx(u,'c_fill,ar_4:3,w_640,f_auto,q_auto');
+  const big=u=>tx(u,'w_1500,c_limit,f_auto,q_auto');
+  const esc=s=>(s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const PENCIL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
+
+  // ── shared lightbox ──
+  const lb=document.getElementById('gal-lb'), lbImg=document.getElementById('gal-lb-img'),
+        lbTitle=document.getElementById('gal-lb-title'), lbDesc=document.getElementById('gal-lb-desc');
+  let lbList=[], lbIndex=0;
+  function openLb(list,i){ lbList=list; lbIndex=i; showLb(); lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); }
+  function closeLb(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
+  function showLb(){ const p=lbList[lbIndex]; if(!p)return; lbImg.src=big(p.url); lbImg.alt=p.title; lbTitle.textContent=p.title||'Untitled'; lbDesc.textContent=p.description||''; }
+  document.getElementById('gal-lb-close').onclick=closeLb;
+  document.getElementById('gal-lb-prev').onclick=()=>{ if(!lbList.length)return; lbIndex=(lbIndex-1+lbList.length)%lbList.length; showLb(); };
+  document.getElementById('gal-lb-next').onclick=()=>{ if(!lbList.length)return; lbIndex=(lbIndex+1)%lbList.length; showLb(); };
+  lb.onclick=e=>{ if(e.target===lb) closeLb(); };
+  document.addEventListener('keydown',e=>{ if(!lb.classList.contains('open'))return; if(e.key==='Escape')closeLb(); else if(e.key==='ArrowLeft')document.getElementById('gal-lb-prev').click(); else if(e.key==='ArrowRight')document.getElementById('gal-lb-next').click(); });
+
+  // ── reusable gallery ──
+  function makeGallery(opts){
+    const {manifest, person, scrollerEl, prevBtn, nextBtn, pillsEl, featuredFirst}=opts;
+    let groups=[], photos=[], activeList=[];
+    async function init(){
+      let mani;
+      try{ mani=await (await fetch(manifest,{cache:'no-store'})).json(); }
+      catch(e){ scrollerEl.innerHTML='<p class="gal-sub" style="padding:10px 24px;color:var(--brand-muted)">Couldn’t load the photos.</p>'; return; }
+      photos=(mani.photos||[]).map(p=>({id:p.id,group:p.group,url:p.url,title:p.title||'',description:(p.description!=null?p.description:(p.caption||'')),featured:!!p.featured,video:!!p.video,src:p.src||'',poster:p.poster||''}));
+      if(featuredFirst) photos=photos.slice().sort((a,b)=>(a.featured?0:1)-(b.featured?0:1));
+      try{
+        if(window.DS_photoMeta){
+          const {rows}=await window.DS_photoMeta.load(person);
+          const map={}; (rows||[]).forEach(r=>{map[r.photo_id]=r;});
+          photos.forEach(p=>{ const o=map[p.id]; if(o){ if(o.title!=null&&o.title!=='')p.title=o.title; if(o.description!=null)p.description=o.description; } });
+        }
+      }catch(e){}
+      groups = (mani.groups&&mani.groups.length)?mani.groups:[];
+      if(groups.length && pillsEl){ renderPills(); selectAlbum(groups[0]); }
+      else { activeList=photos; renderCards(); }
+    }
+    function renderPills(){
+      pillsEl.innerHTML='';
+      groups.forEach(g=>{ const b=document.createElement('button'); b.className='gal-pill'; b.type='button'; b.textContent=g; b.onclick=()=>selectAlbum(g); pillsEl.appendChild(b); });
+    }
+    function selectAlbum(g){
+      [...pillsEl.children].forEach(b=>b.classList.toggle('active',b.textContent===g));
+      activeList=photos.filter(p=>p.group===g);
+      renderCards();
+    }
+    function renderCards(){
+      scrollerEl.innerHTML='';
+      if(!activeList.length){ scrollerEl.innerHTML='<p class="gal-sub" style="padding:10px 24px;color:var(--brand-muted)">No photos here yet.</p>'; updateArrows(); return; }
+      activeList.forEach((p,i)=>scrollerEl.appendChild(card(p,i)));
+      scrollerEl.scrollLeft=0; setTimeout(updateArrows,60);
+    }
+    function card(p,i){
+      const fig=document.createElement('figure'); fig.className='g-card'; fig.dataset.id=p.id;
+      const desc=(p.description&&p.description.trim())?'<p class="g-desc">'+esc(p.description)+'</p>':'';
+      const imgSrc = p.video ? (p.poster||thumb(p.url)) : thumb(p.url);
+      const lazy = p.video ? '' : 'loading="lazy" ';   // videos (few, first) load eagerly
+      const play = p.video ? '<span class="g-playicon"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>' : '';
+      fig.innerHTML=
+        '<button class="g-img'+(p.video?' g-video':'')+'" type="button" title="'+(p.video?'Play video':'View larger')+'"><img '+lazy+'src="'+imgSrc+'" alt="'+esc(p.title)+'">'+play+'</button>'+
+        '<button class="g-editbtn" type="button" title="Edit title & description" aria-label="Edit">'+PENCIL+'</button>'+
+        '<div class="g-meta g-view"><h4 class="g-title">'+(esc(p.title)||'Untitled')+'</h4>'+desc+'</div>'+
+        '<div class="g-editform" hidden>'+
+          '<input class="g-title-in" type="text" maxlength="120" value="'+esc(p.title)+'" placeholder="Photo title">'+
+          '<textarea class="g-desc-in" maxlength="600" placeholder="Add a short description…">'+esc(p.description)+'</textarea>'+
+          '<div class="g-btns"><button class="g-save" type="button">Save</button><button class="g-cancel" type="button">Cancel</button><span class="g-status"></span></div>'+
+        '</div>';
+      fig.querySelector('.g-img').onclick=()=>{
+        if(p.video){ if(window.DS_openVideo) window.DS_openVideo(p.src,p.title); }
+        else { const pl=activeList.filter(x=>!x.video); openLb(pl, pl.indexOf(p)); }
+      };
+      fig.querySelector('.g-editbtn').onclick=()=>toggleEdit(fig,true);
+      fig.querySelector('.g-cancel').onclick=()=>{ fig.querySelector('.g-title-in').value=p.title; fig.querySelector('.g-desc-in').value=p.description; const st=fig.querySelector('.g-status'); st.textContent=''; st.className='g-status'; toggleEdit(fig,false); };
+      fig.querySelector('.g-save').onclick=()=>save(fig,p);
+      return fig;
+    }
+    function toggleEdit(fig,on){ fig.querySelector('.g-view').hidden=on; fig.querySelector('.g-editform').hidden=!on; fig.querySelector('.g-editbtn').style.display=on?'none':''; if(on) fig.querySelector('.g-title-in').focus(); }
+    async function save(fig,p){
+      const title=fig.querySelector('.g-title-in').value.trim();
+      const description=fig.querySelector('.g-desc-in').value.trim();
+      const status=fig.querySelector('.g-status'), btn=fig.querySelector('.g-save');
+      status.className='g-status';
+      if(!window.DS_photoMeta){ status.textContent='Editing isn’t available right now.'; status.className='g-status err'; return; }
+      btn.disabled=true; status.textContent='Saving…';
+      const {error}=await window.DS_photoMeta.save(person,p.id,title,description);
+      btn.disabled=false;
+      if(error){ status.textContent='Couldn’t save — the photo_meta table may not be set up yet.'; status.className='g-status err'; return; }
+      p.title=title; p.description=description;
+      const v=fig.querySelector('.g-view');
+      v.innerHTML='<h4 class="g-title">'+(esc(title)||'Untitled')+'</h4>'+(description?'<p class="g-desc">'+esc(description)+'</p>':'');
+      fig.querySelector('.g-img img').alt=title;
+      toggleEdit(fig,false);
+    }
+    function scrollPage(dir){
+      const amt=Math.max(300,scrollerEl.clientWidth*0.82);
+      const max=scrollerEl.scrollWidth-scrollerEl.clientWidth;
+      const target=Math.max(0,Math.min(max,scrollerEl.scrollLeft+dir*amt));
+      scrollerEl.scrollTo({left:target,behavior:'smooth'});
+      setTimeout(updateArrows,80); setTimeout(updateArrows,500);
+    }
+    function updateArrows(){
+      const overflow=scrollerEl.scrollWidth-scrollerEl.clientWidth;
+      if(overflow<=4){ prevBtn.disabled=true; nextBtn.disabled=true; return; }
+      prevBtn.disabled=scrollerEl.scrollLeft<=2;
+      nextBtn.disabled=scrollerEl.scrollLeft>=overflow-2;
+    }
+    prevBtn.onclick=()=>scrollPage(-1);
+    nextBtn.onclick=()=>scrollPage(1);
+    scrollerEl.addEventListener('scroll',updateArrows,{passive:true});
+    window.addEventListener('resize',updateArrows);
+    return { init };
+  }
+
+  const archive = makeGallery({ manifest:'assets/people/mike-siegel/photo-history/manifest.json', person:'mike-siegel',
+    scrollerEl:document.getElementById('gal-scroller'), prevBtn:document.getElementById('gal-prev'), nextBtn:document.getElementById('gal-next'), pillsEl:document.getElementById('gal-pills') });
+  const weekend = document.getElementById('wk-scroller') ? makeGallery({ manifest:'assets/people/mike-siegel/weekend-trip-photos/weekend-manifest.json', person:'mike-siegel-weekend',
+    scrollerEl:document.getElementById('wk-scroller'), prevBtn:document.getElementById('wk-prev'), nextBtn:document.getElementById('wk-next'), pillsEl:null, featuredFirst:true }) : null;
+
+  document.addEventListener('ds-authed', ()=>{ archive.init(); if(weekend) weekend.init(); }, {once:true});
+})();
+</script>
+
+<!-- ── Video gallery lightbox ── -->
+<script>
+(function(){
+  const lb=document.getElementById('vid-lb'), vid=document.getElementById('vid-lb-video'), cap=document.getElementById('vid-lb-cap');
+  if(!lb) return;
+  function openVid(src,title){ vid.src=src; cap.textContent=title||''; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); const p=vid.play(); if(p&&p.catch)p.catch(()=>{}); }
+  function closeVid(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); try{vid.pause();}catch(e){} vid.removeAttribute('src'); vid.load(); }
+  window.DS_openVideo = openVid;   // used by the weekend gallery's video cards
+  document.querySelectorAll('.vid-card').forEach(c=>c.addEventListener('click',()=>openVid(c.dataset.src,c.dataset.title)));
+  document.getElementById('vid-lb-close').onclick=closeVid;
+  lb.addEventListener('click',e=>{ if(e.target===lb) closeVid(); });
+  document.addEventListener('keydown',e=>{ if(lb.classList.contains('open')&&e.key==='Escape') closeVid(); });
+})();
+</script>
+
+<!-- ── Supabase config (assets/supabase-config.js: project URL + anon key) ── -->
+<script src="assets/supabase-config.js"></script>
+<!-- ── Member auth + secure signed-URL audio ── -->
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+  const BUCKET = 'interviews';
+
+  const gate = document.getElementById('gate');
+  const app  = document.getElementById('app');
+  const titleEl = document.getElementById('m-title');
+  const subEl   = document.getElementById('m-sub');
+  const formEl  = document.getElementById('m-form');
+  const emailEl = document.getElementById('m-email');
+  const passEl  = document.getElementById('m-pass');
+  const msgEl   = document.getElementById('m-msg');
+  const primaryBtn = document.getElementById('m-primary');
+  const toggleEl   = document.getElementById('m-toggle');
+  const logoutLink = document.getElementById('m-logout-link');
+  const logoutBtn  = document.getElementById('m-logout');
+
+  const URL = window.DS_SUPABASE_URL, KEY = window.DS_SUPABASE_ANON_KEY;
+  const configured = URL && KEY && !/YOUR-/.test(URL) && !/YOUR-/.test(KEY);
+
+  function setMsg(t, ok){ msgEl.textContent = t || ''; msgEl.style.color = ok ? '#bfe6cf' : ''; }
+  function reveal(){ gate.classList.add('fade-out'); setTimeout(()=>{gate.style.display='none';},450); app.style.display=''; logoutBtn.style.display=''; }
+
+  if (!configured) {
+    titleEl.textContent = 'Setup needed';
+    subEl.textContent = 'Supabase isn’t configured yet. Add your project URL and anon key to assets/supabase-config.js (see SUPABASE-SETUP.md).';
+    formEl.style.display = 'none'; toggleEl.style.display = 'none';
+  } else {
+    const sb = createClient(URL, KEY);
+    let mode = 'login';
+
+    // Member-editable photo metadata (gallery). Reads/writes the public.photo_meta table.
+    window.DS_photoMeta = {
+      async load(person){
+        const { data, error } = await sb.from('photo_meta').select('photo_id,title,description').eq('person', person);
+        if (error) return { rows: [], error };
+        return { rows: data || [] };
+      },
+      async save(person, photo_id, title, description){
+        const { data:{ session } } = await sb.auth.getSession();
+        const { error } = await sb.from('photo_meta').upsert(
+          { photo_id, person, title, description, updated_by: (session && session.user) ? session.user.email : null },
+          { onConflict: 'photo_id' }
+        );
+        return { error };
+      }
+    };
+
+    // Exposed to the player so it can fetch a fresh signed URL for whichever length is selected.
+    window.DS_getSignedUrl = async function(path){
+      const { data, error } = await sb.storage.from(BUCKET).createSignedUrl(path, 3600);
+      if (error || !data) return null;
+      return data.signedUrl;
+    };
+
+    function setMode(m){
+      mode = m; setMsg('');
+      if (m === 'login'){ titleEl.textContent='Brothers Only'; subEl.textContent='Log in to listen to the interview.'; primaryBtn.textContent='Log in'; toggleEl.textContent='Need an account? Request access'; }
+      else { titleEl.textContent='Request Access'; subEl.textContent='Create your account — a brother will approve you.'; primaryBtn.textContent='Create account'; toggleEl.textContent='Already have an account? Log in'; }
+      document.getElementById('m-extra').style.display = (m==='signup') ? 'block' : 'none';
+    }
+    function val(id){ var el=document.getElementById(id); return el ? el.value.trim() : ''; }
+    function notifySignup(meta, email){
+      try{ fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:new URLSearchParams({'form-name':'member-signup',name:meta.full_name,email:email,pledge_class:meta.pledge_class,grad_year:meta.grad_year,phone:meta.phone,address:meta.address}).toString()}); }catch(e){}
+      try{ fetch('/.netlify/functions/notify-signup',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({name:meta.full_name,email:email,pledge_class:meta.pledge_class,grad_year:meta.grad_year,phone:meta.phone,address:meta.address})}); }catch(e){}
+    }
+    function pending(email){
+      titleEl.textContent='Thanks — you’re confirmed!';
+      subEl.innerHTML='Welcome, brother. Your account is being reviewed — we’ll email you the moment you have full access, usually within <b>10–60 minutes</b>. Then just come back and log in. Yours in the Bond of the Sphinx.';
+      formEl.style.display='none'; toggleEl.style.display='none'; logoutLink.style.display='inline';
+    }
+
+    async function gateCheck(){
+      const { data:{ session } } = await sb.auth.getSession();
+      if (!session){ gate.style.display='flex'; return; }
+      const { data:prof } = await sb.from('profiles').select('approved').eq('id', session.user.id).maybeSingle();
+      if (!prof || !prof.approved){ pending(session.user.email); return; }
+      // Approved: reveal, then let the player load the default length via a signed URL.
+      reveal();
+      document.dispatchEvent(new Event('ds-authed'));
+    }
+
+    async function primary(){
+      const email = emailEl.value.trim(), password = passEl.value;
+      if (!email || !password){ setMsg('Enter your email and password.'); return; }
+      primaryBtn.disabled = true;
+      if (mode === 'login'){
+        const { error } = await sb.auth.signInWithPassword({ email, password });
+        primaryBtn.disabled = false;
+        if (error){ setMsg(error.message); return; }
+        gateCheck();
+      } else {
+        if (!val('m-name')){ primaryBtn.disabled=false; setMsg('Please add your full name.'); return; }
+        var addr=[ val('m-street'), val('m-city'), [val('m-state'), val('m-zip')].filter(Boolean).join(' ') ].filter(Boolean).join(', ');
+        var meta={ full_name:val('m-name'), pledge_class:val('m-class'), grad_year:val('m-grad'), phone:val('m-phone'), address:addr };
+        const { error } = await sb.auth.signUp({ email, password, options:{ data:meta, emailRedirectTo: window.location.origin + '/?confirmed=1' }});
+        primaryBtn.disabled = false;
+        if (error){ setMsg(error.message); return; }
+        notifySignup(meta, email);
+        formEl.style.display='none'; toggleEl.style.display='none'; setMsg('');
+        titleEl.textContent='Almost there — check your email';
+        subEl.innerHTML="We just emailed you a confirmation link from <b>Delta Sigs NIU</b>. Click it, then we'll review your account and email you the moment you have full access — usually within <b>10–60 minutes</b>.";
+      }
+    }
+
+    primaryBtn.addEventListener('click', primary);
+    passEl.addEventListener('keydown', e=>{ if (e.key === 'Enter') primary(); });
+    toggleEl.addEventListener('click', e=>{ e.preventDefault(); setMode(mode==='login'?'signup':'login'); });
+    const doLogout = async e=>{ if(e) e.preventDefault(); await sb.auth.signOut(); location.reload(); };
+    logoutLink.addEventListener('click', doLogout);
+    logoutBtn.addEventListener('click', doLogout);
+
+    setMode('login');
+    gateCheck();
+    sb.auth.onAuthStateChange(function(event){ if (event === 'SIGNED_IN') gateCheck(); });
+  }
+</script>
+<script src="assets/admin.js"></script>
+</body>
+</html>

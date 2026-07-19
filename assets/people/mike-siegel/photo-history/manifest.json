@@ -1,0 +1,632 @@
+{
+ "person": "Mike Siegel",
+ "count": 88,
+ "note": "Album photos separated from scanned pages, straightened, border-trimmed, dark shots lifted, AI-upscaled 3x (Topaz). Descriptive titles are placeholders to be refined against the interview audio.",
+ "cloudinary_folder": "photo-history/mike-siegel/gallery",
+ "groups": [
+  "The beach house",
+  "Spring break",
+  "In the mountains",
+  "Skydiving & camping",
+  "Around the house",
+  "Europe ’89"
+ ],
+ "photos": [
+  {
+   "id": "COLLEGE_3_album_10__01",
+   "group": "The beach house",
+   "title": "Sunset on the dock",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416754/photo-history/mike-siegel/gallery/COLLEGE_3_album_10__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_10__02",
+   "group": "The beach house",
+   "title": "Horsing around at the canal",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416756/photo-history/mike-siegel/gallery/COLLEGE_3_album_10__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_10__03",
+   "group": "The beach house",
+   "title": "The magic show",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416756/photo-history/mike-siegel/gallery/COLLEGE_3_album_10__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_10__04",
+   "group": "The beach house",
+   "title": "Flat out in the sun",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416757/photo-history/mike-siegel/gallery/COLLEGE_3_album_10__04.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_10__05",
+   "group": "The beach house",
+   "title": "Four on the balcony",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416758/photo-history/mike-siegel/gallery/COLLEGE_3_album_10__05.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_11__01",
+   "group": "The beach house",
+   "title": "Beach at golden hour",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416758/photo-history/mike-siegel/gallery/COLLEGE_3_album_11__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_11__02",
+   "group": "The beach house",
+   "title": "Two on the lounge chair",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416759/photo-history/mike-siegel/gallery/COLLEGE_3_album_11__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_11__03",
+   "group": "The beach house",
+   "title": "The crew on the beach",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416760/photo-history/mike-siegel/gallery/COLLEGE_3_album_11__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_11__04",
+   "group": "The beach house",
+   "title": "Three brothers, cleaned up",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416775/photo-history/mike-siegel/gallery/COLLEGE_3_album_11__04.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_11__05",
+   "group": "The beach house",
+   "title": "On camera at the beach",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416776/photo-history/mike-siegel/gallery/COLLEGE_3_album_11__05.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_14__01",
+   "group": "The beach house",
+   "title": "Five on the balcony rail",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416781/photo-history/mike-siegel/gallery/COLLEGE_3_album_14__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_14__02",
+   "group": "The beach house",
+   "title": "Palm against the sunset",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416782/photo-history/mike-siegel/gallery/COLLEGE_3_album_14__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_14__03",
+   "group": "The beach house",
+   "title": "Clouds at dusk",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416783/photo-history/mike-siegel/gallery/COLLEGE_3_album_14__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_14__04",
+   "group": "The beach house",
+   "title": "Fire in the sky",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416784/photo-history/mike-siegel/gallery/COLLEGE_3_album_14__04.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_14__05",
+   "group": "The beach house",
+   "title": "Filming from the balcony",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416785/photo-history/mike-siegel/gallery/COLLEGE_3_album_14__05.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_1__01",
+   "group": "The beach house",
+   "title": "Sunbathing by the pool",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416750/photo-history/mike-siegel/gallery/COLLEGE_3_album_1__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_1__02",
+   "group": "The beach house",
+   "title": "Poolside palms",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416751/photo-history/mike-siegel/gallery/COLLEGE_3_album_1__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_1__03",
+   "group": "The beach house",
+   "title": "Boombox and a beach towel",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416752/photo-history/mike-siegel/gallery/COLLEGE_3_album_1__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_1__04",
+   "group": "The beach house",
+   "title": "Working on the tan lines",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416753/photo-history/mike-siegel/gallery/COLLEGE_3_album_1__04.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_1__05",
+   "group": "The beach house",
+   "title": "Piled on the stairs",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416754/photo-history/mike-siegel/gallery/COLLEGE_3_album_1__05.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_2__01",
+   "group": "The beach house",
+   "title": "Cracking a cold one at the house",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416814/photo-history/mike-siegel/gallery/COLLEGE_3_album_2__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_2__02",
+   "group": "The beach house",
+   "title": "Morning in the wicker chair",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416815/photo-history/mike-siegel/gallery/COLLEGE_3_album_2__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_2__03",
+   "group": "The beach house",
+   "title": "Lunch by the canal",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416815/photo-history/mike-siegel/gallery/COLLEGE_3_album_2__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_2__04",
+   "group": "The beach house",
+   "title": "Bay view through the door",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416816/photo-history/mike-siegel/gallery/COLLEGE_3_album_2__04.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_2__05",
+   "group": "The beach house",
+   "title": "Sundown over the water",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416817/photo-history/mike-siegel/gallery/COLLEGE_3_album_2__05.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_6__01",
+   "group": "The beach house",
+   "title": "Another Keys sunset",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416830/photo-history/mike-siegel/gallery/COLLEGE_3_album_6__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_6__02",
+   "group": "The beach house",
+   "title": "Out cold after Spring Formal",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416831/photo-history/mike-siegel/gallery/COLLEGE_3_album_6__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_6__03",
+   "group": "The beach house",
+   "title": "Afternoon on the sand",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416831/photo-history/mike-siegel/gallery/COLLEGE_3_album_6__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_6__04",
+   "group": "The beach house",
+   "title": "Last light over the bay",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416832/photo-history/mike-siegel/gallery/COLLEGE_3_album_6__04.jpg",
+   "caption": null
+  },
+  {
+   "id": "dan_college_photos_4__01",
+   "group": "The beach house",
+   "title": "On the deck over the canal",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416833/photo-history/mike-siegel/gallery/dan_college_photos_4__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_2_album_12__01",
+   "group": "Spring break",
+   "title": "Three friends by the water",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416748/photo-history/mike-siegel/gallery/COLLEGE_2_album_12__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_2_album_12__02",
+   "group": "Spring break",
+   "title": "The whole gang on the sand",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416749/photo-history/mike-siegel/gallery/COLLEGE_2_album_12__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_12__01",
+   "group": "Spring break",
+   "title": "Sailboats off the beach",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416777/photo-history/mike-siegel/gallery/COLLEGE_3_album_12__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_12__02",
+   "group": "Spring break",
+   "title": "Toes in the sand",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416778/photo-history/mike-siegel/gallery/COLLEGE_3_album_12__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_12__03",
+   "group": "Spring break",
+   "title": "Crowded spring-break beach",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416779/photo-history/mike-siegel/gallery/COLLEGE_3_album_12__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_12__04",
+   "group": "Spring break",
+   "title": "Beach volleyball crowd",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416780/photo-history/mike-siegel/gallery/COLLEGE_3_album_12__04.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_12__05",
+   "group": "Spring break",
+   "title": "Scooters at the Southernmost Point",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416781/photo-history/mike-siegel/gallery/COLLEGE_3_album_12__05.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_3__01",
+   "group": "Spring break",
+   "title": "Two couples under the umbrella",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416818/photo-history/mike-siegel/gallery/COLLEGE_3_album_3__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_3__02",
+   "group": "Spring break",
+   "title": "Sun, sand, and the whole crew",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416819/photo-history/mike-siegel/gallery/COLLEGE_3_album_3__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_3__03",
+   "group": "Spring break",
+   "title": "Kicking back on the towels",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416820/photo-history/mike-siegel/gallery/COLLEGE_3_album_3__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_3__04",
+   "group": "Spring break",
+   "title": "A walk along the shoreline",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416821/photo-history/mike-siegel/gallery/COLLEGE_3_album_3__04.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_3__05",
+   "group": "Spring break",
+   "title": "Rolling the camcorder",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416822/photo-history/mike-siegel/gallery/COLLEGE_3_album_3__05.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_4__01",
+   "group": "Spring break",
+   "title": "“Welcome Students” — the crowd",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416823/photo-history/mike-siegel/gallery/COLLEGE_3_album_4__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_4__02",
+   "group": "Spring break",
+   "title": "Diving into the hatchback",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416823/photo-history/mike-siegel/gallery/COLLEGE_3_album_4__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_4__03",
+   "group": "Spring break",
+   "title": "Victory on the beach",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416824/photo-history/mike-siegel/gallery/COLLEGE_3_album_4__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_4__04",
+   "group": "Spring break",
+   "title": "Drum circle in the sand",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416825/photo-history/mike-siegel/gallery/COLLEGE_3_album_4__04.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_4__05",
+   "group": "Spring break",
+   "title": "The dance-contest crowd",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416826/photo-history/mike-siegel/gallery/COLLEGE_3_album_4__05.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_5__01",
+   "group": "Spring break",
+   "title": "Beach games, Bud ball",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416827/photo-history/mike-siegel/gallery/COLLEGE_3_album_5__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_5__02",
+   "group": "Spring break",
+   "title": "Packed beach under the palms",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416828/photo-history/mike-siegel/gallery/COLLEGE_3_album_5__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_5__03",
+   "group": "Spring break",
+   "title": "With the Bud Man",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416829/photo-history/mike-siegel/gallery/COLLEGE_3_album_5__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__3_Album_10__01",
+   "group": "In the mountains",
+   "title": "Beers on the lodge deck",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416737/photo-history/mike-siegel/gallery/90s__3_Album_10__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__3_Album_10__02",
+   "group": "In the mountains",
+   "title": "Bikes and the Jeep",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416738/photo-history/mike-siegel/gallery/90s__3_Album_10__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__3_Album_12__01",
+   "group": "In the mountains",
+   "title": "Mountain biking the pines",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416739/photo-history/mike-siegel/gallery/90s__3_Album_12__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__3_Album_12__02",
+   "group": "In the mountains",
+   "title": "Three in the pines",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416740/photo-history/mike-siegel/gallery/90s__3_Album_12__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__3_Album_5__01",
+   "group": "In the mountains",
+   "title": "At the old miner's cabin",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416741/photo-history/mike-siegel/gallery/90s__3_Album_5__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__3_Album_5__02",
+   "group": "In the mountains",
+   "title": "Two at the cabin",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416742/photo-history/mike-siegel/gallery/90s__3_Album_5__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__3_Album_6__01",
+   "group": "In the mountains",
+   "title": "High on the mountainside",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416742/photo-history/mike-siegel/gallery/90s__3_Album_6__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__3_Album_6__02",
+   "group": "In the mountains",
+   "title": "Deck with a mountain view",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416743/photo-history/mike-siegel/gallery/90s__3_Album_6__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__3_Album_9__01",
+   "group": "In the mountains",
+   "title": "Cheers on the deck",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416744/photo-history/mike-siegel/gallery/90s__3_Album_9__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__3_Album_9__02",
+   "group": "In the mountains",
+   "title": "Above the golf course",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416745/photo-history/mike-siegel/gallery/90s__3_Album_9__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_15__01",
+   "group": "Skydiving & camping",
+   "title": "Suiting up to jump",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416786/photo-history/mike-siegel/gallery/COLLEGE_3_album_15__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_15__02",
+   "group": "Skydiving & camping",
+   "title": "Dusk at the drop zone",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416787/photo-history/mike-siegel/gallery/COLLEGE_3_album_15__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_15__03",
+   "group": "Skydiving & camping",
+   "title": "Beers after the jump",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416788/photo-history/mike-siegel/gallery/COLLEGE_3_album_15__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_15__04",
+   "group": "Skydiving & camping",
+   "title": "Ready for the first jump",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416789/photo-history/mike-siegel/gallery/COLLEGE_3_album_15__04.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_15__05",
+   "group": "Skydiving & camping",
+   "title": "Tailgating at the airfield",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416789/photo-history/mike-siegel/gallery/COLLEGE_3_album_15__05.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_16__01",
+   "group": "Skydiving & camping",
+   "title": "Red chute coming in",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416790/photo-history/mike-siegel/gallery/COLLEGE_3_album_16__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_16__02",
+   "group": "Skydiving & camping",
+   "title": "By the van",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416792/photo-history/mike-siegel/gallery/COLLEGE_3_album_16__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_16__03",
+   "group": "Skydiving & camping",
+   "title": "Blue chute over the field",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416793/photo-history/mike-siegel/gallery/COLLEGE_3_album_16__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_16__04",
+   "group": "Skydiving & camping",
+   "title": "By the tent",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416794/photo-history/mike-siegel/gallery/COLLEGE_3_album_16__04.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_16__05",
+   "group": "Skydiving & camping",
+   "title": "The whole group at the field",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416796/photo-history/mike-siegel/gallery/COLLEGE_3_album_16__05.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_17__01",
+   "group": "Skydiving & camping",
+   "title": "Floating down",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416796/photo-history/mike-siegel/gallery/COLLEGE_3_album_17__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_17__02",
+   "group": "Skydiving & camping",
+   "title": "Out on the wing strut",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416797/photo-history/mike-siegel/gallery/COLLEGE_3_album_17__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_17__03",
+   "group": "Skydiving & camping",
+   "title": "Three jumpers, geared up",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416798/photo-history/mike-siegel/gallery/COLLEGE_3_album_17__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_18__01",
+   "group": "Skydiving & camping",
+   "title": "Hanging off the wing",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416799/photo-history/mike-siegel/gallery/COLLEGE_3_album_18__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_18__02",
+   "group": "Skydiving & camping",
+   "title": "Camp in the clearing",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416800/photo-history/mike-siegel/gallery/COLLEGE_3_album_18__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_18__03",
+   "group": "Skydiving & camping",
+   "title": "Lakeside cabin afternoon",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416800/photo-history/mike-siegel/gallery/COLLEGE_3_album_18__03.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_18__04",
+   "group": "Skydiving & camping",
+   "title": "Around the table",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416801/photo-history/mike-siegel/gallery/COLLEGE_3_album_18__04.jpg",
+   "caption": null
+  },
+  {
+   "id": "COLLEGE_3_album_18__05",
+   "group": "Skydiving & camping",
+   "title": "Backyard bonfire",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416802/photo-history/mike-siegel/gallery/COLLEGE_3_album_18__05.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__2_Album_8__01",
+   "group": "Around the house",
+   "title": "Four brothers, arms around",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416735/photo-history/mike-siegel/gallery/90s__2_Album_8__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__2_Album_8__02",
+   "group": "Around the house",
+   "title": "A quiet drink",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416736/photo-history/mike-siegel/gallery/90s__2_Album_8__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__4_Album_12__01",
+   "group": "Around the house",
+   "title": "Two brothers in the kitchen",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416746/photo-history/mike-siegel/gallery/90s__4_Album_12__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__4_Album_3__01",
+   "group": "Around the house",
+   "title": "Grilling in the courtyard",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416747/photo-history/mike-siegel/gallery/90s__4_Album_3__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "90s__4_Album_3__02",
+   "group": "Around the house",
+   "title": "Dinner with friends",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416747/photo-history/mike-siegel/gallery/90s__4_Album_3__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "Euro_89_LAST_england_photo_album__01",
+   "group": "Europe ’89",
+   "title": "Back home in Chicago",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416838/photo-history/mike-siegel/gallery/Euro_89_LAST_england_photo_album__01.jpg",
+   "caption": "Six weeks later, our weary, weather-beaten traveler arrives back home in Chicago. As you can see, he looks eager to begin his job search."
+  },
+  {
+   "id": "Euro_89__photo_album_1__01",
+   "group": "Europe ’89",
+   "title": "Beginning the journey in Madrid",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416834/photo-history/mike-siegel/gallery/Euro_89__photo_album_1__01.jpg",
+   "caption": "Fresh-faced young traveler begins his journey in Madrid…"
+  },
+  {
+   "id": "Euro_89__yet_more_photo_album_1__01",
+   "group": "Europe ’89",
+   "title": "Campsite in the woods",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416835/photo-history/mike-siegel/gallery/Euro_89__yet_more_photo_album_1__01.jpg",
+   "caption": null
+  },
+  {
+   "id": "Euro_89__yet_more_photo_album_1__02",
+   "group": "Europe ’89",
+   "title": "Seaside tennis courts, Sweden",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416836/photo-history/mike-siegel/gallery/Euro_89__yet_more_photo_album_1__02.jpg",
+   "caption": null
+  },
+  {
+   "id": "Euro_89_england_CLEESE_photo_album_1__01",
+   "group": "Europe ’89",
+   "title": "John Cleese across the street",
+   "url": "https://res.cloudinary.com/dsbllwpbh/image/upload/v1784416837/photo-history/mike-siegel/gallery/Euro_89_england_CLEESE_photo_album_1__01.jpg",
+   "caption": "Actor John Cleese walking away from me! Across the street from his house. Oh well, we still said “hi” to each other."
+  }
+ ]
+}
