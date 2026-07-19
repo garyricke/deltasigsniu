@@ -99,6 +99,23 @@
   .pullquote{margin:40px 0;padding:8px 0 8px 28px;border-left:4px solid var(--brand-gold)}
   .pullquote p{font-family:var(--font-display);font-size:1.5rem;line-height:1.35;font-weight:500;color:var(--brand-pine);font-style:italic}
   .pullquote cite{display:block;font-family:var(--font-body);font-style:normal;font-size:.82rem;color:var(--brand-muted);margin-top:14px;letter-spacing:.02em}
+  /* Floated 9:16 weekend clip */
+  .weekend-float{float:right;width:238px;max-width:46%;margin:6px 0 16px 30px}
+  .wf-media{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#0d1f16;
+    box-shadow:0 16px 38px rgba(31,42,36,.24);border:1px solid rgba(0,0,0,.06)}
+  .wf-video{width:100%;height:100%;object-fit:cover;display:block}
+  .wf-sound{position:absolute;bottom:10px;left:10px;right:10px;display:inline-flex;align-items:center;gap:7px;
+    padding:8px 12px;border:none;border-radius:999px;cursor:pointer;font:600 .74rem/1 var(--font-body);letter-spacing:.02em;
+    color:#fff;background:rgba(13,31,22,.58);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+    justify-content:center;transition:background .2s,transform .12s}
+  .wf-sound:hover{background:rgba(13,31,22,.82)}
+  .wf-sound:active{transform:scale(.97)}
+  .wf-sound svg{width:17px;height:17px;flex:none}
+  .wf-sound .wf-ico-on{display:none}
+  .wf-sound.is-on .wf-ico-off{display:none}
+  .wf-sound.is-on .wf-ico-on{display:inline}
+  .wf-cap{margin:9px 2px 0;font-size:.78rem;line-height:1.45;color:var(--brand-muted);font-style:italic}
+  @media(max-width:600px){.weekend-float{float:none;width:100%;max-width:300px;margin:8px auto 22px}}
 
   .bio-card{display:flex;gap:20px;align-items:center;margin:36px 0;padding:22px;
     background:linear-gradient(135deg,rgba(44,92,66,.05),rgba(72,152,104,.08));border:1px solid rgba(44,92,66,.1);border-radius:18px}
@@ -606,9 +623,24 @@
 
       <!-- ════ Our long weekend ════ -->
       <h2 class="section-heading"><span class="kicker-num">★</span> Our Long Weekend in Redondo</h2>
+      <figure class="weekend-float">
+        <div class="wf-media">
+          <video id="wf-video" class="wf-video" playsinline autoplay muted loop preload="metadata"
+                 poster="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/mike-beer-after-dolphins-poster.jpg">
+            <source src="https://res.cloudinary.com/dsbllwpbh/video/upload/q_auto/deltasigsniu/mike-beer-after-dolphins.mp4" type="video/mp4">
+          </video>
+          <button type="button" class="wf-sound" id="wf-sound" aria-pressed="false" aria-label="Unmute video">
+            <svg class="wf-ico-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
+            <svg class="wf-ico-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            <span class="wf-sound-txt">Tap for sound</span>
+          </button>
+        </div>
+        <figcaption class="wf-cap">Two hours off the plane — Mike hands me a beer after the dolphins.</figcaption>
+      </figure>
       <p class="body-p">A word about how this one got made. Mike called in June — "What are you doing in July?" — and it turned out to be one of the only weekends he'd be home. Gary flew out for a long weekend, and here's how fast this man moves: within two hours of landing at LAX, Gary was standing on the front of a boat off the Redondo pier, filming a whole pod of dolphins hopping through the water. He turned around, and Mike was just standing there holding two beers. Welcome to California.</p>
 
       <p class="body-p">That was the whole weekend: paddleboarding the marina, a long bike ride from Redondo down past Hermosa and Manhattan Beach to El Segundo and back, the old beach bars from the fifties — Old Tony's, the Bull Pen — a band playing Sublime at a bar with a hundred beers on tap, and Mike playing big brother the entire time, knowing every person we passed. It felt like the trip of a lifetime. To him, it was just a Tuesday. The photos and video are below — scroll all the way down.</p>
+      <div style="clear:both"></div>
 
     </div><!-- /.article-inner -->
   </div><!-- /.article-outer -->
@@ -1163,5 +1195,29 @@
   }
 </script>
 <script src="assets/admin.js"></script>
+<script>
+/* Floated weekend clip: keep it autoplaying muted+looping, toggle sound on tap. */
+(function(){
+  var v = document.getElementById('wf-video'), b = document.getElementById('wf-sound');
+  if(!v || !b) return;
+  var txt = b.querySelector('.wf-sound-txt');
+  v.muted = true;
+  var pr = v.play(); if(pr && pr.catch) pr.catch(function(){});
+  function render(){
+    var on = !v.muted;
+    b.classList.toggle('is-on', on);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.setAttribute('aria-label', on ? 'Mute video' : 'Unmute video');
+    if(txt) txt.textContent = on ? 'Sound on' : 'Tap for sound';
+  }
+  b.addEventListener('click', function(e){
+    e.preventDefault(); e.stopPropagation();
+    v.muted = !v.muted;
+    if(!v.muted){ v.volume = 1; var p = v.play(); if(p && p.catch) p.catch(function(){}); }
+    render();
+  });
+  render();
+})();
+</script>
 </body>
 </html>
