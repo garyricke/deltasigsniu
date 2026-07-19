@@ -46,9 +46,9 @@
   section .lead{color:#4b564e;font-size:1.02rem;margin:10px 0 20px}
   section p{margin-bottom:16px;color:#33403a;font-size:1.02rem}
   section p strong{color:var(--brand-pine)}
-  section ul{margin:0 0 18px 0;padding-left:0;list-style:none;display:grid;gap:11px}
-  section ul li{display:flex;gap:11px;align-items:flex-start;font-size:1rem;color:#33403a}
-  section ul li::before{content:'';flex:none;width:8px;height:8px;border-radius:50%;background:var(--brand-gold);margin-top:9px}
+  section ul{margin:0 0 18px 0;padding-left:22px;list-style:none;display:grid;gap:11px}
+  section ul li{position:relative;font-size:1rem;color:#33403a;line-height:1.65}
+  section ul li::before{content:'';position:absolute;left:-18px;top:10px;width:8px;height:8px;border-radius:50%;background:var(--brand-gold)}
   .step-list{counter-reset:step;list-style:none;display:grid;gap:12px;margin:6px 0 20px}
   .step-list li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--brand-line);border-radius:13px;padding:15px 17px;box-shadow:0 1px 2px rgba(31,42,36,.04)}
   .step-list li::before{counter-increment:step;content:counter(step);flex:none;width:26px;height:26px;border-radius:8px;background:rgba(72,152,104,.12);color:var(--brand-primary);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;margin:0}
@@ -71,7 +71,7 @@
   .gc h4{font-size:1.05rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
   .gc.real h4{color:var(--brand-pine)}
   .gc.help h4{color:#7a5e1b}
-  .gc ul{gap:9px;margin:0}
+  .gc ul{gap:9px;margin:0;padding-left:18px}
   .gc ul li{font-size:.94rem}
   .gc.real ul li::before{background:var(--brand-primary)}
 
