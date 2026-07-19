@@ -240,6 +240,7 @@
     </div>
     <p class="gate-error" id="m-msg"></p>
     <a href="#" id="m-toggle" style="display:inline-block;margin-top:4px;color:var(--brand-gold);font-size:.82rem;text-decoration:underline;cursor:pointer;font-family:var(--font-body)">Need an account? Request access</a>
+    <a href="#" id="m-forgot" style="display:block;margin-top:10px;color:rgba(255,255,255,.55);font-size:.8rem;text-decoration:underline;cursor:pointer;font-family:var(--font-body)">Forgot your password?</a>
     <p class="gate-hint">Yours in the Bond of the Sphinx. <a href="#" id="m-logout-link" style="display:none;color:rgba(255,255,255,.6);text-decoration:underline;cursor:pointer">Log out</a></p>
   </div>
 </div>
@@ -584,6 +585,7 @@
   const msgEl   = document.getElementById('m-msg');
   const primaryBtn = document.getElementById('m-primary');
   const toggleEl   = document.getElementById('m-toggle');
+  const forgotEl   = document.getElementById('m-forgot');
   const logoutLink = document.getElementById('m-logout-link');
   const logoutBtn  = document.getElementById('m-logout');
 
@@ -603,9 +605,12 @@
 
     function setMode(m){
       mode = m; setMsg('');
-      if (m === 'login'){ titleEl.textContent='Brothers Only'; subEl.textContent='Log in to listen to the interview.'; primaryBtn.textContent='Log in'; toggleEl.textContent='Need an account? Request access'; }
-      else { titleEl.textContent='Request Access'; subEl.textContent='Create your account — a brother will approve you.'; primaryBtn.textContent='Create account'; toggleEl.textContent='Already have an account? Log in'; }
+      passEl.style.display = (m==='reset') ? 'none' : '';
       document.getElementById('m-extra').style.display = (m==='signup') ? 'block' : 'none';
+      if (forgotEl) forgotEl.style.display = (m==='login') ? 'block' : 'none';
+      if (m === 'login'){ titleEl.textContent='Brothers Only'; subEl.textContent='Log in to listen to the interview.'; primaryBtn.textContent='Log in'; toggleEl.textContent='Need an account? Request access'; }
+      else if (m === 'signup'){ titleEl.textContent='Request Access'; subEl.textContent='Create your account — a brother will approve you.'; primaryBtn.textContent='Create account'; toggleEl.textContent='Already have an account? Log in'; }
+      else { titleEl.textContent='Reset your password'; subEl.textContent='Enter your email and we’ll send you a reset link.'; primaryBtn.textContent='Send reset link'; toggleEl.textContent='Back to log in'; }
     }
     function val(id){ var el=document.getElementById(id); return el ? el.value.trim() : ''; }
     function notifySignup(meta, email){
@@ -633,7 +638,19 @@
     }
 
     async function primary(){
-      const email = emailEl.value.trim(), password = passEl.value;
+      const email = emailEl.value.trim();
+      if (mode === 'reset'){
+        if (!email){ setMsg('Enter your email.'); return; }
+        primaryBtn.disabled = true;
+        const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: window.location.origin + '/reset.html' });
+        primaryBtn.disabled = false;
+        if (error){ setMsg(error.message); return; }
+        formEl.style.display='none'; toggleEl.style.display='none'; if(forgotEl) forgotEl.style.display='none'; setMsg('');
+        titleEl.textContent='Check your email';
+        subEl.innerHTML='If that address has a Delta Sigs account, we just sent a password-reset link. Open it to choose a new password. (Check spam if you don’t see it.)';
+        return;
+      }
+      const password = passEl.value;
       if (!email || !password){ setMsg('Enter your email and password.'); return; }
       primaryBtn.disabled = true;
       if (mode === 'login'){
@@ -657,7 +674,9 @@
 
     primaryBtn.addEventListener('click', primary);
     passEl.addEventListener('keydown', e=>{ if (e.key === 'Enter') primary(); });
+    emailEl.addEventListener('keydown', e=>{ if (e.key === 'Enter' && (mode==='reset')) primary(); });
     toggleEl.addEventListener('click', e=>{ e.preventDefault(); setMode(mode==='login'?'signup':'login'); });
+    if (forgotEl) forgotEl.addEventListener('click', e=>{ e.preventDefault(); setMode('reset'); });
     const doLogout = async e=>{ if(e) e.preventDefault(); await sb.auth.signOut(); location.reload(); };
     logoutLink.addEventListener('click', doLogout);
     logoutBtn.addEventListener('click', doLogout);

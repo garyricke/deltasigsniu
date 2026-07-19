@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Reset your password — Delta Sigs NIU</title>
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/favicon-sphinx">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--brand-gold:#C9A24B;--font-display:'Fraunces',Georgia,serif;--font-body:'Inter',-apple-system,sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--font-body);min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(150deg,#1c3b2b 0%,#2C5C42 55%,#234734 100%);-webkit-font-smoothing:antialiased;padding:20px}
+  .rp-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(16px);
+    border-radius:20px;padding:46px 38px;width:100%;max-width:400px;text-align:center}
+  .rp-logo{width:180px;height:auto;margin:0 auto 22px;display:block}
+  .rp-card h2{color:#fff;font-family:var(--font-display);font-size:1.35rem;font-weight:600;margin-bottom:8px}
+  .rp-card p.sub{color:rgba(255,255,255,.62);font-size:.875rem;margin-bottom:26px;line-height:1.5}
+  .rp-card p.sub a{color:var(--brand-gold)}
+  .rp-input{width:100%;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);color:#fff;font-size:1rem;outline:none;margin-bottom:14px;
+    letter-spacing:.03em;transition:border-color .2s;font-family:var(--font-body)}
+  .rp-input:focus{border-color:var(--brand-gold)}
+  .rp-input::placeholder{color:rgba(255,255,255,.4)}
+  .rp-btn{width:100%;padding:14px;border-radius:12px;border:none;background:var(--brand-gold);
+    color:#3a2f12;font-weight:700;font-size:1rem;cursor:pointer;font-family:var(--font-body);letter-spacing:.03em;transition:filter .2s}
+  .rp-btn:hover{filter:brightness(.96)}
+  .rp-btn:disabled{opacity:.6;cursor:default}
+  .rp-msg{font-size:.82rem;margin-top:12px;min-height:20px;color:#f6b6a6}
+  .rp-hint{color:rgba(255,255,255,.4);font-size:.75rem;margin-top:20px}
+  .rp-hint a{color:rgba(255,255,255,.6)}
+</style>
+</head>
+<body>
+  <div class="rp-card">
+    <img class="rp-logo" src="assets/delta-sigs-logo-white.svg" alt="Delta Sigs NIU">
+    <h2 id="rp-title">Set a new password</h2>
+    <p class="sub" id="rp-sub">Choose a new password for your Delta Sigs account.</p>
+    <div id="rp-form">
+      <input id="rp-pass" class="rp-input" type="password" placeholder="New password" autocomplete="new-password">
+      <input id="rp-pass2" class="rp-input" type="password" placeholder="Confirm new password" autocomplete="new-password">
+      <button class="rp-btn" id="rp-btn">Update password</button>
+    </div>
+    <p class="rp-msg" id="rp-msg"></p>
+    <p class="rp-hint">Yours in the Bond of the Sphinx. &nbsp;·&nbsp; <a href="mike-siegel.html">Back to log in</a></p>
+  </div>
+
+<script src="assets/supabase-config.js"></script>
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+  const URL = window.DS_SUPABASE_URL, KEY = window.DS_SUPABASE_ANON_KEY;
+  const titleEl=document.getElementById('rp-title'), subEl=document.getElementById('rp-sub'),
+        formEl=document.getElementById('rp-form'), passEl=document.getElementById('rp-pass'),
+        pass2El=document.getElementById('rp-pass2'), btn=document.getElementById('rp-btn'), msgEl=document.getElementById('rp-msg');
+  function setMsg(t, ok){ msgEl.textContent = t || ''; msgEl.style.color = ok ? '#bfe6cf' : '#f6b6a6'; }
+
+  if (!URL || !KEY || /YOUR-/.test(URL) || /YOUR-/.test(KEY)) {
+    titleEl.textContent = 'Setup needed';
+    subEl.textContent = 'Supabase isn’t configured yet.';
+    formEl.style.display = 'none';
+  } else {
+    const sb = createClient(URL, KEY);   // detectSessionInUrl:true (default) consumes the recovery token in the URL
+    let hasSession = false;
+    sb.auth.onAuthStateChange((event, session) => { if (session) hasSession = true; if (event === 'PASSWORD_RECOVERY') hasSession = true; });
+
+    // If, after the URL is processed, there's no recovery session, this page was opened without a valid link.
+    (async () => {
+      const { data:{ session } } = await sb.auth.getSession();
+      if (session) { hasSession = true; return; }
+      setTimeout(async () => {
+        const { data:{ session:s2 } } = await sb.auth.getSession();
+        if (!s2 && !hasSession) {
+          titleEl.textContent = 'Open your reset link';
+          subEl.innerHTML = 'Use the password-reset link we emailed you to set a new password. If it has expired, request a new one from the <a href="mike-siegel.html">log-in screen</a>.';
+          formEl.style.display = 'none';
+        }
+      }, 1000);
+    })();
+
+    async function submit(){
+      const p = passEl.value, p2 = pass2El.value;
+      if (p.length < 8){ setMsg('Use at least 8 characters.'); return; }
+      if (p !== p2){ setMsg('Those passwords don’t match.'); return; }
+      btn.disabled = true; setMsg('Updating…', true);
+      const { error } = await sb.auth.updateUser({ password: p });
+      btn.disabled = false;
+      if (error){ setMsg(error.message); return; }
+      titleEl.textContent = 'Password updated';
+      subEl.innerHTML = 'You’re all set. <a href="mike-siegel.html">Log in</a> with your new password.';
+      formEl.style.display = 'none'; setMsg('');
+    }
+    btn.addEventListener('click', submit);
+    pass2El.addEventListener('keydown', e => { if (e.key === 'Enter') submit(); });
+  }
+</script>
+</body>
+</html>
