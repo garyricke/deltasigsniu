@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How AI Is Used to Make These — Delta Sigs NIU</title>
+<meta name="description" content="A transparent look at the AI-assisted workflow behind the Delta Sigs NIU interview project — how the audio, the multiple lengths, the chapters, and the photos are produced, which tools are used, and what it all costs.">
+<meta property="og:title" content="How AI Is Used to Make These — Delta Sigs NIU">
+<meta property="og:description" content="One person, plus AI: the tools, the workflow, and the costs behind the interviews.">
+<meta property="og:type" content="article">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/deltasigsniu/favicon-sphinx">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand-primary:#489868; --brand-pine:#2C5C42; --brand-cream:#FAF8F3; --brand-white:#FFFFFF;
+    --brand-ink:#1F2A24; --brand-gold:#C9A24B; --brand-line:#E6E9E6; --brand-muted:#8A938C;
+    --font-display:'Fraunces', Georgia, serif; --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);background:var(--brand-cream);color:var(--brand-ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:var(--font-display);color:var(--brand-pine)}
+  a{color:var(--brand-primary)}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+
+  /* nav */
+  .site-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,243,.92);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--brand-line);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:62px}
+  .nav-logo{height:34px}
+  .back-link{display:flex;align-items:center;gap:6px;color:var(--brand-muted);font-size:.875rem;font-weight:600;text-decoration:none}
+  .back-link:hover{color:var(--brand-pine)}
+
+  /* header */
+  .top{background:linear-gradient(150deg,#16271d,#2C5C42 60%,#234c37);color:#fff;padding:56px 0 50px;position:relative;overflow:hidden}
+  .top::after{content:'';position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,75,.18),transparent 70%)}
+  .top .ey{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-gold);font-weight:600}
+  .top h1{color:#fff;font-size:clamp(2.1rem,5.4vw,3.1rem);font-weight:600;margin:10px 0 14px;line-height:1.05;position:relative}
+  .top p{color:rgba(255,255,255,.82);font-size:1.08rem;max-width:60ch;position:relative}
+  .top .updated{margin-top:18px;font-size:.8rem;color:rgba(255,255,255,.6)}
+
+  section{padding:44px 0;border-bottom:1px solid var(--brand-line)}
+  section h2{font-size:1.7rem;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:12px;line-height:1.15}
+  section h2 .num{font-family:var(--font-body);font-size:.8rem;font-weight:700;color:var(--brand-primary);border:1.5px solid rgba(72,152,104,.4);border-radius:8px;padding:3px 8px;flex-shrink:0}
+  section .lead{color:#4b564e;font-size:1.02rem;margin:10px 0 20px}
+  section p{margin-bottom:16px;color:#33403a;font-size:1.02rem}
+  section p strong{color:var(--brand-pine)}
+  section ul{margin:0 0 18px 0;padding-left:0;list-style:none;display:grid;gap:11px}
+  section ul li{display:flex;gap:11px;align-items:flex-start;font-size:1rem;color:#33403a}
+  section ul li::before{content:'';flex:none;width:8px;height:8px;border-radius:50%;background:var(--brand-gold);margin-top:9px}
+  .step-list{counter-reset:step;list-style:none;display:grid;gap:12px;margin:6px 0 20px}
+  .step-list li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--brand-line);border-radius:13px;padding:15px 17px;box-shadow:0 1px 2px rgba(31,42,36,.04)}
+  .step-list li::before{counter-increment:step;content:counter(step);flex:none;width:26px;height:26px;border-radius:8px;background:rgba(72,152,104,.12);color:var(--brand-primary);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;margin:0}
+  .step-list li b{color:var(--brand-ink)}
+  .step-list li span{display:block;color:var(--brand-muted);font-size:.9rem;margin-top:2px}
+
+  .callout{background:linear-gradient(135deg,rgba(44,92,66,.05),rgba(72,152,104,.09));border:1px solid rgba(44,92,66,.14);border-radius:16px;padding:22px 24px;margin:20px 0}
+  .callout h4{font-size:1.12rem;margin-bottom:8px}
+  .callout p{margin-bottom:8px;font-size:.98rem}
+  .callout.gold{background:rgba(201,162,75,.09);border-color:rgba(201,162,75,.32)}
+  .callout.gold h4{color:#7a5e1b}
+
+  .example{border-left:3px solid var(--brand-gold);padding:4px 0 4px 18px;margin:18px 0;font-size:.98rem;color:#4b564e}
+  .example b{color:var(--brand-pine)}
+
+  /* two-column real/help */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:8px 0 4px}
+  @media(max-width:620px){.grid2{grid-template-columns:1fr}}
+  .gc{background:#fff;border:1px solid var(--brand-line);border-radius:14px;padding:20px}
+  .gc h4{font-size:1.05rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .gc.real h4{color:var(--brand-pine)}
+  .gc.help h4{color:#7a5e1b}
+  .gc ul{gap:9px;margin:0}
+  .gc ul li{font-size:.94rem}
+  .gc.real ul li::before{background:var(--brand-primary)}
+
+  /* cost table */
+  .tbl-scroll{overflow-x:auto;margin:14px 0 10px;border:1px solid var(--brand-line);border-radius:14px}
+  table{border-collapse:collapse;width:100%;min-width:560px;background:#fff;font-size:.94rem}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--brand-line);vertical-align:top}
+  th{background:rgba(44,92,66,.05);font-family:var(--font-body);font-weight:700;color:var(--brand-pine);font-size:.82rem;letter-spacing:.02em}
+  tr:last-child td{border-bottom:none}
+  td b{color:var(--brand-ink)}
+  .free{color:var(--brand-primary);font-weight:700}
+  .cost-note{font-size:.85rem;color:var(--brand-muted);margin-top:6px}
+
+  footer{background:var(--brand-pine);padding:38px 24px 46px;text-align:center;color:rgba(255,255,255,.6);font-size:.82rem}
+  footer img{height:36px;margin:0 auto 14px;display:block}
+  footer a{color:rgba(255,255,255,.78)}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html"><img class="nav-logo" src="assets/delta-sigs-logo.svg" alt="Delta Sigs NIU"></a>
+  <a href="index.html" class="back-link">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Home
+  </a>
+</nav>
+
+<header class="top">
+  <div class="wrap">
+    <span class="ey">Behind the scenes</span>
+    <h1>How AI Is Used to Make These</h1>
+    <p>These interviews are produced by one person. That's only possible because AI handles the slow, repetitive parts of the workflow — so the time goes into the stories, not the busywork. Here's exactly how it's done, which tools are used, where AI helps (and where it deliberately doesn't), and roughly what it costs.</p>
+    <div class="updated">Last updated: July 19, 2026 · We'll update this page as the workflow evolves.</div>
+  </div>
+</header>
+
+<!-- 1 -->
+<section><div class="wrap">
+  <h2><span class="num">01</span> The short version</h2>
+  <p class="lead">One brother, a microphone, and a stack of AI tools that do the work a small production team would normally do.</p>
+  <p>Recording a good conversation is the easy part. Turning it into something people will actually listen to — cleaned-up audio, several lengths for different attention spans, chapters to jump around, restored photos, and a members-only website to hold it all — is where the hours pile up. Most of that <strong>simply wouldn't get done by one person</strong> without help.</p>
+  <p>So AI is used as a <strong>force multiplier</strong>: it transcribes, cleans, condenses, organizes, restores, formats, and even helps write and build. The result is faster and more thorough than one person could manage alone — <strong>not perfect, but good, and real.</strong></p>
+  <div class="callout gold">
+    <h4>The one rule</h4>
+    <p>The stories, the words, the voices, and the faces are <strong>real</strong>. AI is used to <em>clean up and re-package</em> real material — never to invent it. No fake quotes, no made-up people, no fabricated events. Where AI touches a photo, it's to restore or enhance a real photo of a real person, not to conjure one.</p>
+  </div>
+</div></section>
+
+<!-- 2 -->
+<section><div class="wrap">
+  <h2><span class="num">02</span> What's real vs. where AI helps</h2>
+  <div class="grid2">
+    <div class="gc real">
+      <h4>Always 100% real</h4>
+      <ul>
+        <li>The interviews themselves — every word is the brother's own, spoken in a real conversation.</li>
+        <li>Every fact, name, quote, and story.</li>
+        <li>The people in every photo and video — their real faces, in real places.</li>
+        <li>The voices you hear — no voice cloning, no synthetic narration.</li>
+      </ul>
+    </div>
+    <div class="gc help">
+      <h4>Where AI does the work</h4>
+      <ul>
+        <li>Transcribing and cleaning the audio (removing "um"s, dead air).</li>
+        <li>Condensing the full interview into shorter versions.</li>
+        <li>Finding chapter breaks and writing chapter titles.</li>
+        <li>Restoring and upscaling old, faded, or low-resolution photos.</li>
+        <li>Building and running the website itself.</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top:18px"><strong>Generative AI — making new imagery — is used as little as possible.</strong> When it is used, it's on real source photos (restoring an old scan, or making a clean portrait from a real snapshot while keeping the person's real likeness and setting). It is never used to fabricate a moment that didn't happen.</p>
+</div></section>
+
+<!-- 3 -->
+<section><div class="wrap">
+  <h2><span class="num">03</span> The audio: from a raw recording to a finished episode</h2>
+  <p class="lead">The heart of the project. Here's the pipeline every interview goes through.</p>
+  <ol class="step-list">
+    <li><b>Record</b><span>Gary records the conversation — often across several sessions and a couple of hours.</span></li>
+    <li><b>Transcribe & merge</b><span>The recordings are imported into <strong>Descript</strong>, automatically transcribed, and stitched into one continuous interview.</span></li>
+    <li><b>Clean up</b><span>Descript's <strong>Studio Sound</strong> evens out the audio; an AI editing pass removes filler words, false starts, and long dead-air pauses — with smooth transitions, not harsh cuts.</span></li>
+    <li><b>Condense into multiple lengths</b><span>AI edits the full interview down into a 1-hour, 30-, 15-, and 5-minute version (more on this below).</span></li>
+    <li><b>Chapter & organize</b><span>AI reads the transcript, finds where the subject changes, and writes chapter titles and timestamps for each length.</span></li>
+    <li><b>Publish</b><span>The finished audio is stored privately and streamed to logged-in members through the website's player.</span></li>
+  </ol>
+  <div class="example"><b>Example — Mike Siegel:</b> three separate recordings (~2h45m of raw tape) became one clean, chaptered 2h40m episode, plus four shorter cuts — produced in an afternoon rather than a week.</div>
+</div></section>
+
+<!-- 4 -->
+<section><div class="wrap">
+  <h2><span class="num">04</span> The multiple lengths — the part AI makes possible</h2>
+  <p class="lead">Full, 60, 30, 15, or 5 minutes. Same story, your amount of time.</p>
+  <p>People explore stories differently. Some want the whole two-and-a-half-hour conversation; others have five minutes. So every interview is offered at several lengths, and <strong>AI figures out how to shrink it.</strong></p>
+  <p>It works like a set of Russian dolls: the AI takes the full interview and produces a tighter one-hour cut, then condenses <em>that</em> into thirty minutes, then fifteen, then five — each shorter version living <strong>inside</strong> the longer one. It's told to keep the narrative arc and protect the signature moments, and to cut repetition, tangents, and setup. A person then reviews the result.</p>
+  <p><strong>Is it perfect? No.</strong> An automated edit occasionally trims something it shouldn't, or a transition is a touch abrupt. But it turns a job that would take days of manual editing per episode — and therefore <em>wouldn't happen</em> — into something one person can actually ship. That's the whole point: it's not about replacing careful human work, it's about making the impossible-for-one-person possible.</p>
+  <div class="callout">
+    <h4>Chapters &amp; topic cues</h4>
+    <p>Because a listener can lose track of where a subject changes, each version is <strong>chaptered</strong> (jump to any topic), and a short musical sting bleeds in when the subject shifts. The player photo even changes through the chapters — moving from younger to present-day as the life story unfolds. All of it is generated from the real recording.</p>
+  </div>
+</div></section>
+
+<!-- 5 -->
+<section><div class="wrap">
+  <h2><span class="num">05</span> The words: transcripts, summaries &amp; hooks</h2>
+  <p>The same transcript that powers the audio also feeds the written side. AI is used to:</p>
+  <ul>
+    <li>Produce a full, searchable <strong>transcript</strong> of every interview.</li>
+    <li>Write a concise <strong>summary</strong> and a list of the most compelling <strong>moments</strong> to tease.</li>
+    <li>Draft the <strong>written feature</strong> that accompanies each episode — always built from what the person actually said, then reviewed and edited.</li>
+    <li>Draft a short <strong>intro voiceover script</strong> for the host to record in his own voice.</li>
+  </ul>
+  <p>Every one of these is a different on-ramp into the same real story — for people with different time, or who'd rather read than listen, or who want to skim.</p>
+</div></section>
+
+<!-- 6 -->
+<section><div class="wrap">
+  <h2><span class="num">06</span> The photos &amp; video — restoration, not invention</h2>
+  <p class="lead">Old scans made usable; new clips cut to music. Real faces kept real.</p>
+  <p>A lot of the imagery is decades old — faded album pages, dark snapshots, tiny low-resolution scans. AI is used to <strong>rescue</strong> these:</p>
+  <ul>
+    <li><strong>Restoring &amp; upscaling</strong> old photos — separating individual shots from scanned album pages, straightening them, lifting dark exposures, and sharpening/enlarging low-res originals so they hold up on screen.</li>
+    <li><strong>Face-aware cropping</strong> and automatic format/quality optimization so photos load fast and frame well on any device.</li>
+    <li><strong>Video</strong> is cut and set to music with standard editing tools; AI helps plan and assemble the montage, not generate footage.</li>
+  </ul>
+  <p><strong>On generative AI:</strong> it's used sparingly — for example, turning a real casual snapshot into a cleaner "portrait," always keeping the person's real likeness and their real surroundings. The line that isn't crossed: AI never invents a person, a place, or a moment. If it's in a photo here, it happened.</p>
+  <div class="example"><b>Example:</b> the 88 restored shots in Mike's photo history were pulled from scanned album pages, straightened, exposure-corrected, and AI-upscaled — the same people, the same 1980s, just legible again.</div>
+</div></section>
+
+<!-- 7 -->
+<section><div class="wrap">
+  <h2><span class="num">07</span> The website itself — also built with AI</h2>
+  <p class="lead">The site you're reading was built by describing it to an AI coding assistant.</p>
+  <p>Rather than hand-coding everything or hiring a developer, the entire site — pages, the audio player, the member login, the editable photo galleries, this page — was built by working with an <strong>AI coding assistant</strong> (Anthropic's Claude, via Claude Code). A person directs it in plain English; it writes and wires up the code, processes the media, and deploys. A few of the pieces it built:</p>
+  <ul>
+    <li><strong>Members-only audio</strong> — interview files live in private storage and stream to approved members through short-lived, single-use links, so they can't be hot-linked or downloaded wholesale.</li>
+    <li><strong>The choose-your-length player</strong> — swaps between the five versions and their chapter lists on the fly.</li>
+    <li><strong>Member-editable photo captions</strong> — any logged-in brother can fix a photo's title or add a description, saved for everyone.</li>
+    <li><strong>Accounts, approval, and email</strong> — real member accounts, a one-tap approval you get by email, branded confirmation and password-reset emails.</li>
+  </ul>
+</div></section>
+
+<!-- 8 -->
+<section><div class="wrap">
+  <h2><span class="num">08</span> The tools &amp; what they cost</h2>
+  <p class="lead">Most of the stack is free or a few dollars a month. Figures below are rough estimates as of mid-2026.</p>
+  <div class="tbl-scroll">
+  <table>
+    <thead><tr><th>Tool</th><th>What it does here</th><th>Rough cost</th></tr></thead>
+    <tbody>
+      <tr><td><b>Claude / Claude Code</b><br>(Anthropic)</td><td>The AI assistant that builds the site, processes media, condenses and edits, and drafts copy. Also powers Descript's editing.</td><td>~$20–200/mo<br><small>(subscription tier)</small></td></tr>
+      <tr><td><b>Descript</b></td><td>Transcription, Studio Sound, filler removal, and the AI editing that condenses each interview into shorter versions + chapters.</td><td>~$16–24/mo</td></tr>
+      <tr><td><b>Cloudinary</b></td><td>Image &amp; video hosting/CDN, automatic optimization, face-aware crops, AI photo restore/upscale, video transcoding.</td><td>Free tier → ~$0–100/mo<br><small>(with heavier AI use)</small></td></tr>
+      <tr><td><b>Supabase</b></td><td>Member accounts + private audio storage (secure links) + the photo-caption database.</td><td><span class="free">Free</span></td></tr>
+      <tr><td><b>Netlify</b></td><td>Website hosting, contact/signup forms, and small serverless functions.</td><td><span class="free">Free</span> <small>(Starter)</small></td></tr>
+      <tr><td><b>Resend</b></td><td>Branded signup, approval, and password-reset emails.</td><td><span class="free">Free</span> <small>(within limits)</small></td></tr>
+      <tr><td><b>Cloudflare</b></td><td>The domain and DNS (deltasigsniu.com).</td><td>~$10/yr <small>(domain)</small></td></tr>
+      <tr><td><b>GitHub</b></td><td>Stores and version-controls the site's code.</td><td><span class="free">Free</span></td></tr>
+      <tr><td><b>Topaz Photo AI</b></td><td>Restoring and upscaling the old scanned album photos.</td><td>~$99 one-time</td></tr>
+      <tr><td><b>Gemini / OpenAI / fal</b><br>(image tools)</td><td>Occasional photo enhancement — used sparingly, on real photos.</td><td>Pennies per image<br><small>(a few $ total)</small></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="cost-note">Notably, <strong>Supabase — which handles all the member accounts and the private audio — is free</strong>, as are hosting (Netlify), email (Resend), and code storage (GitHub) at this scale. The only real monthly subscriptions are the AI assistant and Descript.</p>
+  <div class="callout" style="margin-top:18px">
+    <h4>All in</h4>
+    <p>Depending on the AI-assistant plan and how heavily the media tools are used, the whole operation runs on the order of <strong>~$40–250 a month</strong>, plus a domain (~$10/yr) and a one-time photo tool. That's a small fraction of what it would cost to hire out the editing, restoration, and web work — which, realistically, means it would simply never get made.</p>
+  </div>
+</div></section>
+
+<!-- 9 -->
+<section style="border-bottom:none"><div class="wrap">
+  <h2><span class="num">09</span> Where AI stops</h2>
+  <p>To keep it plain: AI here is a <strong>workflow tool, not a storyteller.</strong> It doesn't decide what's true, invent quotes, fabricate people, or replace the real conversations. It removes the friction that would otherwise keep these stories from being captured and shared at all.</p>
+  <p>If any of this changes — new tools, new techniques, a different approach for a particular episode — we'll update this page. Questions about the process are welcome; that's the whole point of documenting it here.</p>
+  <p style="margin-top:6px"><a href="index.html">← Back to the interviews</a></p>
+</div></section>
+
+<footer>
+  <img src="assets/delta-sigs-logo-white.svg" alt="Delta Sigs NIU">
+  <p>Delta Sigs NIU · One person + AI · Yours in the Bond of the Sphinx</p>
+</footer>
+</body>
+</html>
