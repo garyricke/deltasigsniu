@@ -85,6 +85,17 @@
   .free{color:var(--brand-primary);font-weight:700}
   .cost-note{font-size:.85rem;color:var(--brand-muted);margin-top:6px}
 
+  /* gear */
+  .gear{display:grid;gap:14px;margin:6px 0 4px}
+  .gear-item{background:#fff;border:1px solid var(--brand-line);border-radius:14px;padding:18px 20px}
+  .gear-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:7px;flex-wrap:wrap}
+  .gear-head h4{font-size:1.14rem;color:var(--brand-pine)}
+  .gear-item p{margin:0;color:#33403a;font-size:.98rem;line-height:1.6}
+  .gear-item a{font-weight:600;white-space:nowrap}
+  .price{font-family:var(--font-body);font-weight:700;color:#7a5e1b;font-size:.9rem;white-space:nowrap;background:rgba(201,162,75,.14);border:1px solid rgba(201,162,75,.35);border-radius:999px;padding:3px 12px}
+  .price.free{color:var(--brand-primary);background:rgba(72,152,104,.12);border-color:rgba(72,152,104,.3)}
+  .muted{color:var(--brand-muted)}
+
   footer{background:var(--brand-pine);padding:38px 24px 46px;text-align:center;color:rgba(255,255,255,.6);font-size:.82rem}
   footer img{height:36px;margin:0 auto 14px;display:block}
   footer a{color:rgba(255,255,255,.78)}
@@ -161,6 +172,10 @@
     <li><b>Publish</b><span>The finished audio is stored privately and streamed to logged-in members through the website's player.</span></li>
   </ol>
   <div class="example"><b>Example — Mike Siegel:</b> three separate recordings (~2h45m of raw tape) became one clean, chaptered 2h40m episode, plus four shorter cuts — produced in an afternoon rather than a week.</div>
+  <div class="callout gold">
+    <h4>Wait — who's actually sitting in the editor?</h4>
+    <p><strong>Nobody.</strong> Descript is the editing tool, but a person isn't in it dragging clips around a timeline. <strong>Claude operates Descript directly</strong> — it connects to the app and runs the work itself: the merge, the Studio Sound pass, the filler-word removal, the condensing into shorter versions, and the chaptering, all from plain-English instructions. The human role is essentially to <strong>keep the account and publish the finished files</strong>. There's almost no manual editing — the AI is the editor; Descript is just the workshop it works in.</p>
+  </div>
 </div></section>
 
 <!-- 4 -->
@@ -191,13 +206,12 @@
 
 <!-- 6 -->
 <section><div class="wrap">
-  <h2><span class="num">06</span> The photos &amp; video — restoration, not invention</h2>
-  <p class="lead">Old scans made usable; new clips cut to music. Real faces kept real.</p>
+  <h2><span class="num">06</span> The photos — restoration, not invention</h2>
+  <p class="lead">Old scans made usable. Real faces kept real.</p>
   <p>A lot of the imagery is decades old — faded album pages, dark snapshots, tiny low-resolution scans. AI is used to <strong>rescue</strong> these:</p>
   <ul>
     <li><strong>Restoring &amp; upscaling</strong> old photos — separating individual shots from scanned album pages, straightening them, lifting dark exposures, and sharpening/enlarging low-res originals so they hold up on screen.</li>
     <li><strong>Face-aware cropping</strong> and automatic format/quality optimization so photos load fast and frame well on any device.</li>
-    <li><strong>Video</strong> is cut and set to music with standard editing tools; AI helps plan and assemble the montage, not generate footage.</li>
   </ul>
   <p><strong>On generative AI:</strong> it's used sparingly — for example, turning a real casual snapshot into a cleaner "portrait," always keeping the person's real likeness and their real surroundings. The line that isn't crossed: AI never invents a person, a place, or a moment. If it's in a photo here, it happened.</p>
   <div class="example"><b>Example:</b> the 88 restored shots in Mike's photo history were pulled from scanned album pages, straightened, exposure-corrected, and AI-upscaled — the same people, the same 1980s, just legible again.</div>
@@ -205,7 +219,23 @@
 
 <!-- 7 -->
 <section><div class="wrap">
-  <h2><span class="num">07</span> The website itself — also built with AI</h2>
+  <h2><span class="num">07</span> The videos — assembled by AI, frame by frame</h2>
+  <p class="lead">The trip videos aren't just uploaded phone clips — AI cuts them together.</p>
+  <p>Take the Day 2 video on Mike's page: paddleboarding out of the marina, then into the surf. It started as a pile of raw 360-camera clips. Turning that into a single watchable reel is real video editing — and here <strong>AI does the editing itself</strong>, not just the planning.</p>
+  <p>Directed in plain English — <em>"string these clips in order, start at the paddle house, then the ocean, put this song underneath but keep the natural sound, and drop the fade-in"</em> — the AI writes and runs the actual editing commands. Step by step, it:</p>
+  <ul>
+    <li><strong>Stitches the clips</strong> together in order and normalizes them to one consistent size, frame rate, and format so they play as one seamless piece.</li>
+    <li><strong>Mixes the audio</strong> — keeping the real sound from each clip (the ocean, the wind, the talking) while laying a music track underneath at a lower volume, with a limiter so nothing distorts.</li>
+    <li><strong>Adds fades and trims</strong>, and <strong>checks its own work</strong> by grabbing still frames across the timeline to confirm the sequence is right.</li>
+    <li><strong>Compresses</strong> the finished cut to a web-friendly size and hands it to Cloudinary, which transcodes it, adapts quality to each viewer's device, and auto-generates the poster thumbnail.</li>
+  </ul>
+  <p>The heavy lifting runs on <strong>FFmpeg</strong> — a free, open-source, command-line video engine most people never touch because it's daunting to script by hand. The AI writes those commands, so a non-editor gets studio-style assembly at essentially no cost.</p>
+  <div class="example"><b>Example — Mike's Day 2 reel:</b> twelve 360-camera clips became one two-minute montage with the natural audio plus a music bed — then re-cut on request (fade-in removed, clip audio kept) in minutes. No timeline, no dragging, no manual editing.</div>
+</div></section>
+
+<!-- 8 -->
+<section><div class="wrap">
+  <h2><span class="num">08</span> The website itself — also built with AI</h2>
   <p class="lead">The site you're reading was built by describing it to an AI coding assistant.</p>
   <p>Rather than hand-coding everything or hiring a developer, the entire site — pages, the audio player, the member login, the editable photo galleries, this page — was built by working with an <strong>AI coding assistant</strong> (Anthropic's Claude, via Claude Code). A person directs it in plain English; it writes and wires up the code, processes the media, and deploys. A few of the pieces it built:</p>
   <ul>
@@ -214,11 +244,15 @@
     <li><strong>Member-editable photo captions</strong> — any logged-in brother can fix a photo's title or add a description, saved for everyone.</li>
     <li><strong>Accounts, approval, and email</strong> — real member accounts, a one-tap approval you get by email, branded confirmation and password-reset emails.</li>
   </ul>
+  <div class="callout">
+    <h4>Documented together, by the members</h4>
+    <p>The photo captions aren't locked in. <strong>Any logged-in member can edit a photo's title or add a description right on the page</strong> — and it's saved for everyone. That turns the archive into a shared project: the person being interviewed can correct a name or a date, and any brother who was actually there can fill in what the AI could only guess at. The more people who pitch in, the truer and richer the record gets — collaboration is the point, not an afterthought.</p>
+  </div>
 </div></section>
 
-<!-- 8 -->
+<!-- 9 -->
 <section><div class="wrap">
-  <h2><span class="num">08</span> The tools &amp; what they cost</h2>
+  <h2><span class="num">09</span> The tools &amp; what they cost</h2>
   <p class="lead">Most of the stack is free or a few dollars a month. Figures below are rough estimates as of mid-2026.</p>
   <div class="tbl-scroll">
   <table>
@@ -227,6 +261,7 @@
       <tr><td><b>Claude / Claude Code</b><br>(Anthropic)</td><td>The AI assistant that builds the site, processes media, condenses and edits, and drafts copy. Also powers Descript's editing.</td><td>~$20–200/mo<br><small>(subscription tier)</small></td></tr>
       <tr><td><b>Descript</b></td><td>Transcription, Studio Sound, filler removal, and the AI editing that condenses each interview into shorter versions + chapters.</td><td>~$16–24/mo</td></tr>
       <tr><td><b>Cloudinary</b></td><td>Image &amp; video hosting/CDN, automatic optimization, face-aware crops, AI photo restore/upscale, video transcoding.</td><td>Free tier → ~$0–100/mo<br><small>(with heavier AI use)</small></td></tr>
+      <tr><td><b>FFmpeg</b><br>(open source)</td><td>The free video engine the AI scripts to stitch clips, mix in the music, add fades, and compress the trip videos.</td><td><span class="free">Free</span></td></tr>
       <tr><td><b>Supabase</b></td><td>Member accounts + private audio storage (secure links) + the photo-caption database.</td><td><span class="free">Free</span></td></tr>
       <tr><td><b>Netlify</b></td><td>Website hosting, contact/signup forms, and small serverless functions.</td><td><span class="free">Free</span> <small>(Starter)</small></td></tr>
       <tr><td><b>Resend</b></td><td>Branded signup, approval, and password-reset emails.</td><td><span class="free">Free</span> <small>(within limits)</small></td></tr>
@@ -244,9 +279,29 @@
   </div>
 </div></section>
 
-<!-- 9 -->
+<!-- 10 -->
+<section><div class="wrap">
+  <h2><span class="num">10</span> The gear</h2>
+  <p class="lead">The physical kit that captures the raw material. Prices are approximate, as of mid-2026 — check the links for current pricing.</p>
+  <div class="gear">
+    <div class="gear-item">
+      <div class="gear-head"><h4>Hollyland LARK M2S</h4><span class="price">~$149</span></div>
+      <p>The wireless clip-on microphones that capture clean interview audio — tiny, nearly invisible lavalier mics with noise cancelling and long range, so a conversation sounds good even outdoors or across a room. <a href="https://www.amazon.com/Hollyland-M2S-Lightning-Microphone-Cancelling/dp/B0DNQ8CLXR" target="_blank" rel="noopener">View on Amazon&nbsp;→</a></p>
+    </div>
+    <div class="gear-item">
+      <div class="gear-head"><h4>iPhone 16 · Voice Memos</h4><span class="price free">Free app</span></div>
+      <p>The recorder itself. The mics feed straight into Apple's built-in <strong>Voice Memos</strong> app — no special recording rig or software needed. (Uses a phone you likely already carry.)</p>
+    </div>
+    <div class="gear-item">
+      <div class="gear-head"><h4>Insta360 X5</h4><span class="price">~$480</span></div>
+      <p>The 360° action camera behind the immersive video and the "little planet" shots — the paddleboarding, the ocean footage, the overhead backyard view. Waterproof, replaceable lenses, and strong built-in stabilization, so one person can film hands-free and reframe later. <a href="https://www.amazon.com/Insta360-Waterproof-Replaceable-Built-Stabilization/dp/B0DZCBYCNY" target="_blank" rel="noopener">View on Amazon&nbsp;→</a></p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 11 -->
 <section style="border-bottom:none"><div class="wrap">
-  <h2><span class="num">09</span> Where AI stops</h2>
+  <h2><span class="num">11</span> Where AI stops</h2>
   <p>To keep it plain: AI here is a <strong>workflow tool, not a storyteller.</strong> It doesn't decide what's true, invent quotes, fabricate people, or replace the real conversations. It removes the friction that would otherwise keep these stories from being captured and shared at all.</p>
   <p>If any of this changes — new tools, new techniques, a different approach for a particular episode — we'll update this page. Questions about the process are welcome; that's the whole point of documenting it here.</p>
   <p style="margin-top:6px"><a href="index.html">← Back to the interviews</a></p>
